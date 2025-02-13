@@ -78,3 +78,5 @@ crashlytics-build.properties
 
 # Ignore Unity's Library/ folder
 /Library/
+Das-Schurkenhaft/Library/
+Das-Schurkenhaft/Temp/
