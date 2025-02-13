@@ -75,3 +75,6 @@ crashlytics-build.properties
 
 # macOS system file
 .DS_Store
+
+# Ignore Unity's Library/ folder
+/Library/
