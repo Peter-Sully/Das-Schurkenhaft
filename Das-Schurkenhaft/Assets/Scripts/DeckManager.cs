@@ -15,6 +15,8 @@ public class CardSpawner : MonoBehaviour
 
         ShuffleDeck();
         DrawCard();
+        DrawCard();
+        DrawCard();
     }
 
     void ShuffleDeck()

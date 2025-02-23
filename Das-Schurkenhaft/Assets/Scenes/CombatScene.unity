@@ -205,6 +205,8 @@ GameObject:
   - component: {fileID: 674599699}
   - component: {fileID: 674599701}
   - component: {fileID: 674599700}
+  - component: {fileID: 674599702}
+  - component: {fileID: 674599703}
   m_Layer: 5
   m_Name: PlayerHand
   m_TagString: Untagged
@@ -251,10 +253,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
-  m_FillCenter: 1
+  m_FillCenter: 0
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
@@ -269,6 +271,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674599698}
   m_CullTransparentMesh: 1
+--- !u!114 &674599702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674599698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d88ed048cc14d61b7e95c847896ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 7150780243129240036, guid: 1a9cbbbc0d56d402cafb25453ead4598, type: 3}
+  PlayerHand: {fileID: 674599699}
+  deck:
+  - {fileID: 11400000, guid: 41e8718e5325241f8929fe607815d4cd, type: 2}
+  - {fileID: 11400000, guid: e4e0c53b5695447349f02f77f7155558, type: 2}
+  - {fileID: 11400000, guid: 57787b4bc1c37413b9e24c0fd5728f15, type: 2}
+  deckSizeText: {fileID: 0}
+--- !u!114 &674599703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674599698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 6
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &694829548
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,61 +743,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052422292}
   m_CullTransparentMesh: 1
---- !u!1 &1686541708
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1686541709}
-  - component: {fileID: 1686541710}
-  m_Layer: 5
-  m_Name: Deck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1686541709
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686541708}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1983717299}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1686541710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686541708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45d88ed048cc14d61b7e95c847896ec4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 7150780243129240036, guid: 1a9cbbbc0d56d402cafb25453ead4598, type: 3}
-  PlayerHand: {fileID: 674599699}
-  deck:
-  - {fileID: 11400000, guid: e4e0c53b5695447349f02f77f7155558, type: 2}
-  - {fileID: 11400000, guid: 41e8718e5325241f8929fe607815d4cd, type: 2}
-  - {fileID: 11400000, guid: 57787b4bc1c37413b9e24c0fd5728f15, type: 2}
-  deckSizeText: {fileID: 0}
 --- !u!1 &1968727667
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,7 +962,6 @@ RectTransform:
   - {fileID: 430796322}
   - {fileID: 1968727668}
   - {fileID: 1052422293}
-  - {fileID: 1686541709}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
