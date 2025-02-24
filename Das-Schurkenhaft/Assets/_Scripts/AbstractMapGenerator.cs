@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class AbstractDungeonGenerator : MonoBehaviour
+public abstract class AbstractMapGenerator : MonoBehaviour
 {
     [SerializeField]
     protected TilemapVisualizer tilemapVisualizer = null;

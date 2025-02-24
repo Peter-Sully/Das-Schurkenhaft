@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(AbstractDungeonGenerator), true)]
+[CustomEditor(typeof(AbstractMapGenerator), true)]
 public class NewMonoBehaviourScript : Editor
 {
-    AbstractDungeonGenerator generator;
+    AbstractMapGenerator generator;
 
     private void Awake()
     {
-        generator = (AbstractDungeonGenerator)target;
+        generator = (AbstractMapGenerator)target;
     }
 
     public override void OnInspectorGUI()

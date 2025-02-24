@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 
-public class SimpleRandomWalkMapGenerator : AbstractDungeonGenerator
+public class SimpleRandomWalkMapGenerator : AbstractMapGenerator
 {
     [SerializeField]
     private SimpleRandomWalkData randomWalkParameters;
