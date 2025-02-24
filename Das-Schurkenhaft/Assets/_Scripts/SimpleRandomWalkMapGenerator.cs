@@ -8,19 +8,19 @@ using Debug = UnityEngine.Debug;
 public class SimpleRandomWalkMapGenerator : AbstractMapGenerator
 {
     [SerializeField]
-    private SimpleRandomWalkData randomWalkParameters;
+    protected SimpleRandomWalkData randomWalkParameters;
     
     protected override void RunProceduralGeneration()
     {
-        HashSet<Vector2Int> floorPositions = RunRandomWalk(randomWalkParameters);
+        HashSet<Vector2Int> floorPositions = RunRandomWalk(randomWalkParameters, startPosition);
         tilemapVisualizer.Clear();
         tilemapVisualizer.PaintFloorTiles(floorPositions);
         WallGenerator.CreateWalls(floorPositions, tilemapVisualizer);
     }
 
-    protected HashSet<Vector2Int> RunRandomWalk(SimpleRandomWalkData parameters)
+    protected HashSet<Vector2Int> RunRandomWalk(SimpleRandomWalkData parameters, Vector2Int position)
     {
-        var currentPosition = startPosition;
+        var currentPosition = position;
         HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
         for (int i = 0; i < parameters.iterations; i++)
         {
