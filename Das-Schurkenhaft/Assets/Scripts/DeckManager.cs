@@ -14,9 +14,10 @@ public class CardSpawner : MonoBehaviour
         if (deckSizeText != null) deckSizeText.text = "DeckSize: " + deck.Length;
 
         ShuffleDeck();
-        DrawCard();
-        DrawCard();
-        DrawCard();
+        for (int i = 0; i < 5; i++)  // Draw 5 cards initially
+        {
+            DrawCard();
+        }
     }
 
     void ShuffleDeck()
