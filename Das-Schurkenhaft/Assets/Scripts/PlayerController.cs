@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 3.0f;
     public int strength = 1;
     public int defense = 1;
-    private Shield currentShield; // Keeps track of if shield is equipped
+
     
     void Start()
     {
@@ -28,8 +28,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        move = MoveAction.ReadValue<Vector2>();
-
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+        move = new Vector2(moveX, moveY).normalized;
     }
 
     void FixedUpdate()
@@ -42,34 +43,4 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
     }
-    
-    public void ChangeDefense(int amount)
-    {
-        defense += amount;
-        Debug.Log("Player's defense updated to " + defense);
-    }
-    public void EquipShield(Shield shield)
-    {
-        if (currentShield == null)
-        {
-            currentShield = shield; // Equip the shield
-            ChangeDefense(currentShield.defenseBoost);
-            Debug.Log("Equipped shield: " + currentShield.name + ". Defense increased to " + defense);
-        }
-        else
-        {
-            Debug.Log("Already equipped with a shield: " + currentShield.name);
-        }
-    }
-    public void DestroyShield()
-    {
-        if (currentShield != null)
-        {
-            ChangeDefense(-currentShield.defenseBoost);
-            Debug.Log("Shield destroyed: " + currentShield.name + ". Defense decreased to " + defense);
-            currentShield = null; // Get rid of shield
-        }
-    }
-
 }
-
