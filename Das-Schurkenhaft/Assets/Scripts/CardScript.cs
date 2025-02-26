@@ -64,11 +64,24 @@ public class CardScript : MonoBehaviour, IPointerClickHandler
         Debug.Log($"Played {cardData.cardName}!");
         cardData.PlayCard();
         Destroy(gameObject);
+
+        DeckManager deckManager = Object.FindFirstObjectByType<DeckManager>();
+        if (deckManager != null)
+        {
+            deckManager.UpdateDeckSizeUI();
+            deckManager.UpdateCardLayoutUI();
+        }
     }
 
     public void ResetCardPosition() 
     {
         transform.SetParent(originalParent, true);
         transform.position = originalPosition;
+
+        DeckManager deckManager = Object.FindFirstObjectByType<DeckManager>();
+        if (deckManager != null)
+        {
+            deckManager.UpdateCardLayoutUI();
+        }
     }
 }
