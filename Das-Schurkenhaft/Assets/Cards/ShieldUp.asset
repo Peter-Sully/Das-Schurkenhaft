@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9166f132a5b944c3288db74ff1c7d725, type: 3}
-  m_Name: Fireball
+  m_Name: ShieldUp
   m_EditorClassIdentifier: 
-  cardName: Fireball
-  description: Deal 10 fire damage
-  artwork: {fileID: 2438356170935184457, guid: c7fd2242261c24dd9af05071f66ed993, type: 3}
+  cardName: Shield Up
+  description: Blocks 10 damage
+  artwork: {fileID: -1113201675638322521, guid: ef2df7f9d13fe417bacf8b4c66adb215, type: 3}
   cost: 2
-  type: 0
+  type: 1
   value: 10

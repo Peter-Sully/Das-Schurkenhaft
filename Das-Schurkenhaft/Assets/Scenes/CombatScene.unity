@@ -170,9 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previewImage: {fileID: 0}
-  cardNameText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  costText: {fileID: 0}
 --- !u!114 &212847944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +295,6 @@ GameObject:
   - component: {fileID: 674599701}
   - component: {fileID: 674599700}
   - component: {fileID: 674599702}
-  - component: {fileID: 674599703}
   m_Layer: 5
   m_Name: PlayerHand
   m_TagString: Untagged
@@ -381,33 +377,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 41e8718e5325241f8929fe607815d4cd, type: 2}
   - {fileID: 11400000, guid: e4e0c53b5695447349f02f77f7155558, type: 2}
   - {fileID: 11400000, guid: 57787b4bc1c37413b9e24c0fd5728f15, type: 2}
+  - {fileID: 11400000, guid: 4a1054f07ce564470b112da857ec832a, type: 2}
+  - {fileID: 11400000, guid: f11f9f1bcd066409bbb525453a5ac8ef, type: 2}
+  - {fileID: 11400000, guid: 969143d9902524c41853c1038123d5ea, type: 2}
+  - {fileID: 11400000, guid: 7441ee072f0754664bf41afba150a549, type: 2}
+  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
+  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
+  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
+  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
+  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
   deckSizeText: {fileID: 0}
---- !u!114 &674599703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674599698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 6
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!1 &694829548
 GameObject:
   m_ObjectHideFlags: 0
