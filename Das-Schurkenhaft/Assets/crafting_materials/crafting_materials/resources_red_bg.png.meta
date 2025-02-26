@@ -1,0 +1,2742 @@
+fileFormatVersion: 2
+guid: c36d68f450a15ce488372f1636f39143
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8213757199687287196
+    second: resources_red_bg_0
+  - first:
+      213: -7835062897100010401
+    second: resources_red_bg_1
+  - first:
+      213: -2000641966227629278
+    second: resources_red_bg_2
+  - first:
+      213: 87909753346060275
+    second: resources_red_bg_3
+  - first:
+      213: -3037555988307843715
+    second: resources_red_bg_4
+  - first:
+      213: 1788167321695489771
+    second: resources_red_bg_5
+  - first:
+      213: -3939767193906748321
+    second: resources_red_bg_6
+  - first:
+      213: -3480286192915481910
+    second: resources_red_bg_7
+  - first:
+      213: -753010552082407545
+    second: resources_red_bg_8
+  - first:
+      213: -4247058902335475737
+    second: resources_red_bg_9
+  - first:
+      213: -6648908233174032043
+    second: resources_red_bg_10
+  - first:
+      213: -6607944994913182249
+    second: resources_red_bg_11
+  - first:
+      213: -9018614164240523242
+    second: resources_red_bg_12
+  - first:
+      213: 1792910932052476397
+    second: resources_red_bg_13
+  - first:
+      213: 3328550957106374152
+    second: resources_red_bg_14
+  - first:
+      213: -6463229137440643848
+    second: resources_red_bg_15
+  - first:
+      213: 6162144597911081058
+    second: resources_red_bg_16
+  - first:
+      213: -7948791802227382392
+    second: resources_red_bg_17
+  - first:
+      213: 7527341906686841516
+    second: resources_red_bg_18
+  - first:
+      213: -5451659632443241796
+    second: resources_red_bg_19
+  - first:
+      213: -153389937212351299
+    second: resources_red_bg_20
+  - first:
+      213: -789371652091973242
+    second: resources_red_bg_21
+  - first:
+      213: -4405301422763479045
+    second: resources_red_bg_22
+  - first:
+      213: -560583027463772462
+    second: resources_red_bg_23
+  - first:
+      213: 4485415380461821316
+    second: resources_red_bg_24
+  - first:
+      213: -4480082218637597895
+    second: resources_red_bg_25
+  - first:
+      213: -2201798286998853393
+    second: resources_red_bg_26
+  - first:
+      213: 96842168635449416
+    second: resources_red_bg_27
+  - first:
+      213: 5184549929474831511
+    second: resources_red_bg_28
+  - first:
+      213: 4722077174977513808
+    second: resources_red_bg_29
+  - first:
+      213: 816193239376101476
+    second: resources_red_bg_30
+  - first:
+      213: -2878687986564260490
+    second: resources_red_bg_31
+  - first:
+      213: 2477837685866854605
+    second: resources_red_bg_32
+  - first:
+      213: 1861798308779720782
+    second: resources_red_bg_33
+  - first:
+      213: -6364619386188527898
+    second: resources_red_bg_34
+  - first:
+      213: -8973708563097629558
+    second: resources_red_bg_35
+  - first:
+      213: -332946189070786691
+    second: resources_red_bg_36
+  - first:
+      213: -2296207494935678864
+    second: resources_red_bg_37
+  - first:
+      213: 167201888881184210
+    second: resources_red_bg_38
+  - first:
+      213: -5486255427197980015
+    second: resources_red_bg_39
+  - first:
+      213: -7488838133452025939
+    second: resources_red_bg_40
+  - first:
+      213: -2847943023400003143
+    second: resources_red_bg_41
+  - first:
+      213: 3805786387244491745
+    second: resources_red_bg_42
+  - first:
+      213: 4054800368197907275
+    second: resources_red_bg_43
+  - first:
+      213: -947969985944818681
+    second: resources_red_bg_44
+  - first:
+      213: -8234662557165717926
+    second: resources_red_bg_45
+  - first:
+      213: 1535389332780462179
+    second: resources_red_bg_46
+  - first:
+      213: 3534434531379408144
+    second: resources_red_bg_47
+  - first:
+      213: 3191727534594305438
+    second: resources_red_bg_48
+  - first:
+      213: 5762109493817568833
+    second: resources_red_bg_49
+  - first:
+      213: -1742823601528052526
+    second: resources_red_bg_50
+  - first:
+      213: 746228236631550252
+    second: resources_red_bg_51
+  - first:
+      213: 4368452849296412345
+    second: resources_red_bg_52
+  - first:
+      213: -5501735730561571283
+    second: resources_red_bg_53
+  - first:
+      213: -5972474309841098415
+    second: resources_red_bg_54
+  - first:
+      213: 4398448625399982283
+    second: resources_red_bg_55
+  - first:
+      213: 6363448434194182548
+    second: resources_red_bg_56
+  - first:
+      213: -8305244076184226791
+    second: resources_red_bg_57
+  - first:
+      213: 373792809744908035
+    second: resources_red_bg_58
+  - first:
+      213: 7125153968788556803
+    second: resources_red_bg_59
+  - first:
+      213: -2792519832547719360
+    second: resources_red_bg_60
+  - first:
+      213: -5364296954694645061
+    second: resources_red_bg_61
+  - first:
+      213: -656469124751161745
+    second: resources_red_bg_62
+  - first:
+      213: 1498263163792413078
+    second: resources_red_bg_63
+  - first:
+      213: 5969542610841499952
+    second: resources_red_bg_64
+  - first:
+      213: -8952023927632103591
+    second: resources_red_bg_65
+  - first:
+      213: -4664469636307617760
+    second: resources_red_bg_66
+  - first:
+      213: 1892284533297938277
+    second: resources_red_bg_67
+  - first:
+      213: -6854032595596826564
+    second: resources_red_bg_68
+  - first:
+      213: -4173994132182546667
+    second: resources_red_bg_69
+  - first:
+      213: 6909235727367857498
+    second: resources_red_bg_70
+  - first:
+      213: 6079636534558174085
+    second: resources_red_bg_71
+  - first:
+      213: -803959112669465267
+    second: resources_red_bg_72
+  - first:
+      213: -7313525472104525082
+    second: resources_red_bg_73
+  - first:
+      213: -2574151536989269182
+    second: resources_red_bg_74
+  - first:
+      213: 7646410681603630078
+    second: resources_red_bg_75
+  - first:
+      213: -4370840533767987693
+    second: resources_red_bg_76
+  - first:
+      213: 3359921128690412974
+    second: resources_red_bg_77
+  - first:
+      213: -810927389208758502
+    second: resources_red_bg_78
+  - first:
+      213: -7645922937121879835
+    second: resources_red_bg_79
+  - first:
+      213: 6395456346246037576
+    second: resources_red_bg_80
+  - first:
+      213: -6037039765485021729
+    second: resources_red_bg_81
+  - first:
+      213: 3479247827744778303
+    second: resources_red_bg_82
+  - first:
+      213: -9131016980076467916
+    second: resources_red_bg_83
+  - first:
+      213: -5736125343310264005
+    second: resources_red_bg_84
+  - first:
+      213: -8363036678286224057
+    second: resources_red_bg_85
+  - first:
+      213: -2487543642336587788
+    second: resources_red_bg_86
+  - first:
+      213: 3601636783117220392
+    second: resources_red_bg_87
+  - first:
+      213: 6446542967714360159
+    second: resources_red_bg_88
+  - first:
+      213: -1079499390962450411
+    second: resources_red_bg_89
+  - first:
+      213: -2379844332319407055
+    second: resources_red_bg_90
+  - first:
+      213: 1934389021464384221
+    second: resources_red_bg_91
+  - first:
+      213: -8453548947483401133
+    second: resources_red_bg_92
+  - first:
+      213: 3979130825057778467
+    second: resources_red_bg_93
+  - first:
+      213: -8779067124395879852
+    second: resources_red_bg_94
+  - first:
+      213: -944107619698330151
+    second: resources_red_bg_95
+  - first:
+      213: -6319527904345142070
+    second: resources_red_bg_96
+  - first:
+      213: 2578370653705557879
+    second: resources_red_bg_97
+  - first:
+      213: -4070801973950538298
+    second: resources_red_bg_98
+  - first:
+      213: -4226000092410330315
+    second: resources_red_bg_99
+  - first:
+      213: -3055275866823088852
+    second: resources_red_bg_100
+  - first:
+      213: -6799200694478317719
+    second: resources_red_bg_101
+  - first:
+      213: -6110077660594243509
+    second: resources_red_bg_102
+  - first:
+      213: 7859648121462377469
+    second: resources_red_bg_103
+  - first:
+      213: 8708288789187128124
+    second: resources_red_bg_104
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: resources_red_bg_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 241
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ef451685fd20e80800000000000000
+      internalID: -8213757199687287196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 241
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5cc2899ec3444390800000000000000
+      internalID: -7835062897100010401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 240
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b53484bba4c34e0800000000000000
+      internalID: -2000641966227629278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 240
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ffeb747471583100800000000000000
+      internalID: 87909753346060275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_4
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 241
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d75ec8b1cee68d5d0800000000000000
+      internalID: -3037555988307843715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_5
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 241
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee0f9874b8d0d810800000000000000
+      internalID: 1788167321695489771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_6
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 241
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5463756c922359c0800000000000000
+      internalID: -3939767193906748321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_7
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 241
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca739a952a83bfc0800000000000000
+      internalID: -3480286192915481910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_8
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 241
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78fd10b74e4cc85f0800000000000000
+      internalID: -753010552082407545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_9
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 241
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ef22222e6a6f05c0800000000000000
+      internalID: -4247058902335475737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 217
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 551ed7970355ab3a0800000000000000
+      internalID: -6648908233174032043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_11
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 217
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dd11ea990ddb44a0800000000000000
+      internalID: -6607944994913182249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_12
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 217
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6102326433277d280800000000000000
+      internalID: -9018614164240523242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_13
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 217
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de107e25ef2b1e810800000000000000
+      internalID: 1792910932052476397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_14
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 217
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 806ac17c573613e20800000000000000
+      internalID: 3328550957106374152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_15
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 217
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f465e8d75ffd46a0800000000000000
+      internalID: -6463229137440643848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_16
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 217
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26015150dd5548550800000000000000
+      internalID: 6162144597911081058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_17
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 217
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88723ba68f730b190800000000000000
+      internalID: -7948791802227382392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_18
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 217
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca21bf2259d767860800000000000000
+      internalID: 7527341906686841516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_19
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 193
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba42ebc270d754b0800000000000000
+      internalID: -5451659632443241796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_20
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 193
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbc96503aac0fddf0800000000000000
+      internalID: -153389937212351299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_21
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 193
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6817b492aa69b05f0800000000000000
+      internalID: -789371652091973242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_22
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 193
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bffe8af32b93dd2c0800000000000000
+      internalID: -4405301422763479045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_23
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 193
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d6a8e4e4b86838f0800000000000000
+      internalID: -560583027463772462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_24
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 193
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48d108616856f3e30800000000000000
+      internalID: 4485415380461821316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_25
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 193
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933ef8965fc83d1c0800000000000000
+      internalID: -4480082218637597895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_26
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 193
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe8ae54af14a171e0800000000000000
+      internalID: -2201798286998853393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 193
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8406bc4707d085100800000000000000
+      internalID: 96842168635449416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_28
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 169
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 794bf9221b833f740800000000000000
+      internalID: 5184549929474831511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_29
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 169
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 059c3880c20388140800000000000000
+      internalID: 4722077174977513808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_30
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 169
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46086154d63b35b00800000000000000
+      internalID: 816193239376101476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_31
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 169
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67d17a53788dc08d0800000000000000
+      internalID: -2878687986564260490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_32
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 169
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc87b254f3c036220800000000000000
+      internalID: 2477837685866854605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_33
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 169
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e400d3692bf66d910800000000000000
+      internalID: 1861798308779720782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_34
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 169
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e60ba3b3645ca7a0800000000000000
+      internalID: -6364619386188527898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_35
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 169
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c4faa4b9bf67380800000000000000
+      internalID: -8973708563097629558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_36
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 169
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7f9d1f7433216bf0800000000000000
+      internalID: -332946189070786691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_37
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 169
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 070f4cdf27b3220e0800000000000000
+      internalID: -2296207494935678864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_38
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 145
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dd89886b35025200800000000000000
+      internalID: 167201888881184210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_39
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 145
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1923ec2a1c7ecd3b0800000000000000
+      internalID: -5486255427197980015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_40
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 145
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daf413b256d421890800000000000000
+      internalID: -7488838133452025939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_41
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 145
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b9d0b5c8e21a78d0800000000000000
+      internalID: -2847943023400003143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_42
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 145
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e3a9b62e8ed0d430800000000000000
+      internalID: 3805786387244491745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_43
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 145
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b433f8d937b854830800000000000000
+      internalID: 4054800368197907275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_44
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 145
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70ce602025228d2f0800000000000000
+      internalID: -947969985944818681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_45
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 145
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a567dea880a98bd80800000000000000
+      internalID: -8234662557165717926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_46
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 145
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 360bd4c967cce4510800000000000000
+      internalID: 1535389332780462179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_47
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 145
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01d6eb4ea75dc0130800000000000000
+      internalID: 3534434531379408144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_48
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 121
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9da35f384b4b4c20800000000000000
+      internalID: 3191727534594305438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_49
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 121
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14ee6ef3e0027ff40800000000000000
+      internalID: 5762109493817568833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_50
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 121
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4e0c41b2f30d7e0800000000000000
+      internalID: -1742823601528052526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_51
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 121
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c292ac5a0a22b5a00800000000000000
+      internalID: 746228236631550252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_52
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 121
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be0b5ca8bcdf9c30800000000000000
+      internalID: 4368452849296412345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_53
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 121
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d26adc3a088e5a3b0800000000000000
+      internalID: -5501735730561571283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_54
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 121
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15966cb32428d1da0800000000000000
+      internalID: -5972474309841098415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_55
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 121
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc865c788bd6a0d30800000000000000
+      internalID: 4398448625399982283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_56
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 121
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 491f8aac2a28f4850800000000000000
+      internalID: 6363448434194182548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_57
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 97
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9143f1a0488ddbc80800000000000000
+      internalID: -8305244076184226791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_58
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 121
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30fb07c749aff2500800000000000000
+      internalID: 373792809744908035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_59
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 97
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30c4b9fa8c1a1e260800000000000000
+      internalID: 7125153968788556803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_60
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 97
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04782c8f10afe39d0800000000000000
+      internalID: -2792519832547719360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_61
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 97
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bba47b947503e85b0800000000000000
+      internalID: -5364296954694645061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_62
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 97
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6602352fc0c3e6f0800000000000000
+      internalID: -656469124751161745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_63
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 97
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69156e9c866eac410800000000000000
+      internalID: 1498263163792413078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_64
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 97
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 039f3c6606318d250800000000000000
+      internalID: 5969542610841499952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_65
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 97
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 957f0bceaa504c380800000000000000
+      internalID: -8952023927632103591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_66
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 97
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 028f9464499744fb0800000000000000
+      internalID: -4664469636307617760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_67
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 97
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f703dd1ceb24a10800000000000000
+      internalID: 1892284533297938277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_68
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 97
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c38a0842ba591e0a0800000000000000
+      internalID: -6854032595596826564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_69
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 73
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 517c1b8937ef216c0800000000000000
+      internalID: -4173994132182546667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_70
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 73
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a55e23f894982ef50800000000000000
+      internalID: 6909235727367857498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_71
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 73
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ba3d587353f5450800000000000000
+      internalID: 6079636534558174085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_72
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 73
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d45f5635273c7d4f0800000000000000
+      internalID: -803959112669465267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_73
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 73
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e25073f453218a90800000000000000
+      internalID: -7313525472104525082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_74
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 73
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2439ab7c0d6c64cd0800000000000000
+      internalID: -2574151536989269182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_75
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 73
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef3acb3a0028d1a60800000000000000
+      internalID: 7646410681603630078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_76
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 49
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e51e631b7a753c0800000000000000
+      internalID: -4370840533767987693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_77
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 25
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eadebe40776d0ae20800000000000000
+      internalID: 3359921128690412974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_78
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 49
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a17b39306d10fb4f0800000000000000
+      internalID: -810927389208758502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_79
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 49
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8c6d8399934e590800000000000000
+      internalID: -7645922937121879835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_80
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 49
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840438e89a931c850800000000000000
+      internalID: 6395456346246037576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_81
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 49
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd59b53a150283ca0800000000000000
+      internalID: -6037039765485021729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_82
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 49
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f38e64a2775c84030800000000000000
+      internalID: 3479247827744778303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_83
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 23
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4396b705f6c184180800000000000000
+      internalID: -9131016980076467916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_84
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 49
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3940ec34603560b0800000000000000
+      internalID: -5736125343310264005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_85
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 49
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 745df2b437680fb80800000000000000
+      internalID: -8363036678286224057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_86
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 49
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff0f33ac387a7dd0800000000000000
+      internalID: -2487543642336587788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_87
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 49
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82abeab62959bf130800000000000000
+      internalID: 3601636783117220392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_88
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 49
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b28e38ca8b67950800000000000000
+      internalID: 6446542967714360159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_89
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 510ce6af509d401f0800000000000000
+      internalID: -1079499390962450411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_90
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 25
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 134006f403819fed0800000000000000
+      internalID: -2379844332319407055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_91
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 24
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd2dcc1f09458da10800000000000000
+      internalID: 1934389021464384221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_92
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 354efd56506feaa80800000000000000
+      internalID: -8453548947483401133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_93
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 24
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32b306e2766b83730800000000000000
+      internalID: 3979130825057778467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_94
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 25
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 452d21fb6fc7a2680800000000000000
+      internalID: -8779067124395879852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_95
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d5342a3f1bd5e2f0800000000000000
+      internalID: -944107619698330151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_96
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 24
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: accc6517ad68c48a0800000000000000
+      internalID: -6319527904345142070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_97
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7775961e27638c320800000000000000
+      internalID: 2578370653705557879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_98
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cd18b73c2b9187c0800000000000000
+      internalID: -4070801973950538298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_99
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 1
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5334d176e4b3a55c0800000000000000
+      internalID: -4226000092410330315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_100
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c25af2369ca7995d0800000000000000
+      internalID: -3055275866823088852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_101
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 1
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 967d709fdf264a1a0800000000000000
+      internalID: -6799200694478317719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_102
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 1
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b48fa328db4a43ba0800000000000000
+      internalID: -6110077660594243509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_103
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 1
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfbc4530354131d60800000000000000
+      internalID: 7859648121462377469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resources_red_bg_104
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3be309e38e0ad870800000000000000
+      internalID: 8708288789187128124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
