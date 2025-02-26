@@ -10,10 +10,16 @@ public class CardScript : MonoBehaviour, IPointerClickHandler
     public Text descriptionText;
     public Text costText;
 
+    private Vector2 originalPosition;
+    private Transform originalParent;
+
     void Start()
     {
         cardImage = GetComponent<Image>();  
         UpdateCardUI();
+
+        originalPosition = transform.position;
+        originalParent = transform.parent;
     }
 
     public void SetCard(Card newCard)
@@ -34,10 +40,35 @@ public class CardScript : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (cardData != null)
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
-            Debug.Log($"Played {cardData.cardName}!");
-            cardData.PlayCard();
+            if (cardData == null)
+            {
+                Debug.LogError("Card data is NULL when clicked! Check if SetCard() was called.");
+                return;
+            }
+
+            if (CardPreviewManager.instance == null)
+            {
+                Debug.LogError("CardPreviewManager instance is NULL! Make sure it's in the scene.");
+                return;
+            }
+
+            Debug.Log($"Card clicked: {cardData.cardName}");
+            CardPreviewManager.instance.ShowCard(this);
         }
+    }
+    
+    public void PlayCard() 
+    {
+        Debug.Log($"Played {cardData.cardName}!");
+        cardData.PlayCard();
+        Destroy(gameObject);
+    }
+
+    public void ResetCardPosition() 
+    {
+        transform.SetParent(originalParent, true);
+        transform.position = originalPosition;
     }
 }
