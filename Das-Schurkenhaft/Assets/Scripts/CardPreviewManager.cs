@@ -11,6 +11,13 @@ public class CardPreviewManager : MonoBehaviour, IPointerClickHandler
 
     void Awake()
     {
+        GameObject cardPreviewPanel = GameObject.Find("CardPreview");
+
+        if (cardPreviewPanel != null)
+        {
+            previewImage = cardPreviewPanel.GetComponent<Image>();
+        }
+
         if (instance == null)
         {
             instance = this;
@@ -28,6 +35,8 @@ public class CardPreviewManager : MonoBehaviour, IPointerClickHandler
     public void ShowCard(CardScript cardScript)
     {
         if (cardScript == null || cardScript.cardData == null) return;
+
+        currentCard = cardScript;
 
         previewImage.sprite = cardScript.cardData.artwork;
 
