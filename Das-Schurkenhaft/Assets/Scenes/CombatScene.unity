@@ -289,6 +289,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 41e8718e5325241f8929fe607815d4cd, type: 2}
   - {fileID: 11400000, guid: e4e0c53b5695447349f02f77f7155558, type: 2}
   - {fileID: 11400000, guid: 57787b4bc1c37413b9e24c0fd5728f15, type: 2}
+  - {fileID: 11400000, guid: 4a1054f07ce564470b112da857ec832a, type: 2}
+  - {fileID: 11400000, guid: f11f9f1bcd066409bbb525453a5ac8ef, type: 2}
+  - {fileID: 11400000, guid: 969143d9902524c41853c1038123d5ea, type: 2}
+  - {fileID: 11400000, guid: 7441ee072f0754664bf41afba150a549, type: 2}
+  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
+  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
+  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
+  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
+  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
   deckSizeText: {fileID: 0}
 --- !u!114 &674599703
 MonoBehaviour:
@@ -308,7 +317,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 6
-  m_Spacing: 0
+  m_Spacing: -100
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
