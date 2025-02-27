@@ -14,7 +14,7 @@ public class DeckManager : MonoBehaviour
         if (deckSizeText != null) deckSizeText.text = "DeckSize: " + deck.Length;
 
         ShuffleDeck();
-        for (int i = 0; i < 5; i++)  // Draw 5 cards initially
+        for (int i = 0; i < 11; i++)  // Draw 5 cards initially
         {
             DrawCard();
         }
@@ -75,12 +75,12 @@ public class DeckManager : MonoBehaviour
         return cardList.ToArray();
     }
 
-    void UpdateDeckSizeUI()
+    public void UpdateDeckSizeUI()
     {
         if (deckSizeText != null) deckSizeText.text = "Deck Size: " + deck.Length;
     }
 
-    void UpdateCardLayoutUI()
+    public void UpdateCardLayoutUI()
     {
         int cardCount = PlayerHand.childCount;
         if (cardCount == 0) return;
