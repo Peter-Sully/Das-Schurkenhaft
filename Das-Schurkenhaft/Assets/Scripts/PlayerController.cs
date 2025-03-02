@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     public float speed = 3.0f;
     public int strength = 1;
     public int defense = 1;
-
     
     void Start()
     {
