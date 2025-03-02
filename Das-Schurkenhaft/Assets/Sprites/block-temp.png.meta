@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c7fd2242261c24dd9af05071f66ed993
+guid: ef2df7f9d13fe417bacf8b4c66adb215
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2438356170935184457
-    second: fireball-temp_0
+      213: -1113201675638322521
+    second: block-temp_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fireball-temp_0
+      name: block-temp_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94c297cb408c6d120800000000000000
-      internalID: 2438356170935184457
+      spriteID: 7aa453859fc1d80f0800000000000000
+      internalID: -1113201675638322521
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      fireball-temp_0: 2438356170935184457
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
