@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9166f132a5b944c3288db74ff1c7d725, type: 3}
   m_Name: ShieldUp
   m_EditorClassIdentifier: 
-  cardName: Shield Up
+  cardName: ShieldUp
   description: Blocks 10 damage
   artwork: {fileID: -1113201675638322521, guid: ef2df7f9d13fe417bacf8b4c66adb215, type: 3}
   cost: 2
