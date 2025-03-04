@@ -24,10 +24,16 @@ public class DeckCardScript : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        DeckUI deckUI = Object.FindFirstObjectByType<DeckUI>();
+
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            DeckUI deckUI = Object.FindFirstObjectByType<DeckUI>();
             if (deckUI != null) deckUI.OnCardClicked(cardData, transform.parent);
+        }
+
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            if (deckUI != null) deckUI.OnCardRightClicked(cardData);
         }
     }
 

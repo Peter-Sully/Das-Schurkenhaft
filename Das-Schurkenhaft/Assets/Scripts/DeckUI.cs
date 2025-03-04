@@ -8,6 +8,7 @@ public class DeckUI : MonoBehaviour
     public GameObject cardPrefab;
     public Transform deckPanel;
     public Transform allCardsPanel;
+    public PreviewPanel previewPanel;
     public Dictionary<string, int> deck = new Dictionary<string, int>();
     public Dictionary<string, int> allCards = new Dictionary<string, int>();
 
@@ -168,6 +169,7 @@ public class DeckUI : MonoBehaviour
     public void OnCardClicked(Card card, Transform curPanel)
     {
         string cardName = card.cardName;
+        int totalCardsInDeck = deck.Values.Sum();
 
         if (curPanel == deckPanel) // Move from deck to allCards
         {
@@ -185,6 +187,11 @@ public class DeckUI : MonoBehaviour
         }
         else if (curPanel == allCardsPanel) // Move from allCards to deck
         {
+            if (totalCardsInDeck >= 20)
+            {
+                Debug.Log("Deck is full!");
+                return;
+            }
             if (allCards.ContainsKey(cardName))
             {
                 allCards[cardName]--;
@@ -194,18 +201,23 @@ public class DeckUI : MonoBehaviour
 
             if (deck.ContainsKey(cardName))
                 deck[cardName]++;
-            else if (deck.Count < 20)  // Enforce deck size limit
-                deck[cardName] = 1;
             else
             {
-                Debug.Log("Deck is full!");
-                return;
+                deck[cardName] = 1;
             }
         }
 
         SaveCardData();
         Invoke(nameof(RefreshUI), 0.05f);
         //UpdateCardLayoutUI();
+    }
+
+    public void OnCardRightClicked(Card card)
+    {
+        if (previewPanel != null)
+        {
+            previewPanel.ShowCard(card);
+        }
     }
 
     public void RefreshUI()
