@@ -24,6 +24,7 @@ public class DeckCardScript : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+<<<<<<< HEAD
         DeckUI deckUI = Object.FindFirstObjectByType<DeckUI>();
 
         if (eventData.button == PointerEventData.InputButton.Left)
@@ -35,6 +36,13 @@ public class DeckCardScript : MonoBehaviour, IPointerClickHandler
         {
             if (deckUI != null) deckUI.OnCardRightClicked(cardData);
         }
+=======
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            DeckUI deckUI = Object.FindFirstObjectByType<DeckUI>();
+            if (deckUI != null) deckUI.OnCardClicked(cardData, transform.parent);
+        }
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
     }
 
     private void UpdateCardUI() 

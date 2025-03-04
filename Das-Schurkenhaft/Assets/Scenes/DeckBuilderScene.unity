@@ -119,6 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &3134407
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +228,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3134407}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
 --- !u!1 &33242692
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +241,10 @@ GameObject:
   - component: {fileID: 33242693}
   - component: {fileID: 33242695}
   - component: {fileID: 33242694}
+<<<<<<< HEAD
   - component: {fileID: 33242696}
+=======
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
   m_Layer: 5
   m_Name: Card View
   m_TagString: Untagged
@@ -257,9 +263,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+<<<<<<< HEAD
   m_Children:
   - {fileID: 1656533086}
   - {fileID: 764236537}
+=======
+  m_Children: []
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
   m_Father: {fileID: 951608879}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -305,6 +315,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33242692}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!114 &33242696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,6 +666,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665473003}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
 --- !u!1 &735735370
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +747,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &764236536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1039,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796931296}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
 --- !u!1 &951608875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1119,11 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+<<<<<<< HEAD
   m_AdditionalShaderChannelsFlag: 25
+=======
+  m_AdditionalShaderChannelsFlag: 0
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1121,8 +1141,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 33242693}
+<<<<<<< HEAD
   - {fileID: 3134408}
   - {fileID: 1062908414}
+=======
+  - {fileID: 962978558}
+  - {fileID: 1368331893}
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1145,7 +1170,10 @@ MonoBehaviour:
   cardPrefab: {fileID: 7150780243129240036, guid: 9d84b1fb8637b4592a1a2a05efe58d07, type: 3}
   deckPanel: {fileID: 962978558}
   allCardsPanel: {fileID: 1368331893}
+<<<<<<< HEAD
   previewPanel: {fileID: 33242696}
+=======
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
 --- !u!1 &962978557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1185,10 @@ GameObject:
   - component: {fileID: 962978558}
   - component: {fileID: 962978560}
   - component: {fileID: 962978559}
+<<<<<<< HEAD
   - component: {fileID: 962978563}
+=======
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
   m_Layer: 5
   m_Name: Deck
   m_TagString: Untagged
@@ -1172,17 +1203,30 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962978557}
+<<<<<<< HEAD
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 796931297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -79, y: 23.750013}
   m_SizeDelta: {x: 471.5, y: 47.5}
+=======
+  m_Father: {fileID: 951608879}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -87.5, y: 100}
+  m_SizeDelta: {x: -175, y: -200}
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &962978559
 MonoBehaviour:
@@ -1222,6 +1266,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962978557}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!114 &962978563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1706,6 +1751,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306208560}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
 --- !u!1 &1368331892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,7 +1764,10 @@ GameObject:
   - component: {fileID: 1368331893}
   - component: {fileID: 1368331895}
   - component: {fileID: 1368331894}
+<<<<<<< HEAD
   - component: {fileID: 1368331898}
+=======
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
   m_Layer: 5
   m_Name: All Cards
   m_TagString: Untagged
@@ -1732,17 +1782,30 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368331892}
+<<<<<<< HEAD
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 1006896500}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -79, y: -23.75}
   m_SizeDelta: {x: 471.5, y: 47.5}
+=======
+  m_Father: {fileID: 951608879}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -87.5, y: -100}
+  m_SizeDelta: {x: -175, y: -200}
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1368331894
 MonoBehaviour:
@@ -1782,6 +1845,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368331892}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!114 &1368331898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2024,6 +2088,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785542155}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> 55ee72da2acb38afcba78e00e31633f24bdb229b
 --- !u!1 &1960159227
 GameObject:
   m_ObjectHideFlags: 0
