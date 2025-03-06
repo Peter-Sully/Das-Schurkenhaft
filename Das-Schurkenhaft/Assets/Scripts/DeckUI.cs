@@ -15,18 +15,9 @@ public class DeckUI : MonoBehaviour
     void Start()
     {
         LoadCardData();
-        //deck.Clear();
-        //allCards.Clear();
-        //InitializeTestCards();
         SaveCardData();
         SpawnCards();
         UpdateCardLayoutUI();
-    }
-
-    void InitializeTestCards() {
-        AddCardsToDict(allCards, "Fireball", 5);
-        AddCardsToDict(allCards, "Mend", 3);
-        AddCardsToDict(allCards, "ShieldUp", 4);
     }
 
     public void AddCardsToDict(Dictionary<string, int> cardDict, string cardName, int count)
@@ -90,6 +81,22 @@ public class DeckUI : MonoBehaviour
                 }
             }
         }
+
+        if (allCards.Count == 0)
+        {
+            AddCardsToDict(allCards, "Fireball", 10);
+            AddCardsToDict(allCards, "Mend", 10);
+            AddCardsToDict(allCards, "ShieldUp", 10);
+        }
+
+        if (deck.Count == 0)
+        {
+            AddCardsToDict(allCards, "Fireball", 3);
+            AddCardsToDict(allCards, "Mend", 3);
+            AddCardsToDict(allCards, "ShieldUp", 3);
+        }
+
+        SaveCardData();
     }
 
     public Card FindCardByName(string cardName)

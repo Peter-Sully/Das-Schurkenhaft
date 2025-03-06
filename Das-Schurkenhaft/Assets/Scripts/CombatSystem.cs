@@ -40,6 +40,40 @@ public class CombatSystem : MonoBehaviour
         deckManager = Object.FindFirstObjectByType<DeckManager>();
 
         endTurnButton.onClick.AddListener(EndTurn);
+
+        if (playerSpawnPoint == null)
+        {
+            GameObject foundPlayerSpawn = GameObject.FindWithTag("PlayerSpawn");
+            if (foundPlayerSpawn != null)
+            {
+                playerSpawnPoint = foundPlayerSpawn.transform;
+            }
+            else Debug.LogError("Gameobject PlayerSpawn not found");
+        }
+
+        if (enemySpawnPoints == null || enemySpawnPoints.Length == 0)
+        {
+            GameObject[] foundEnemies = GameObject.FindGameObjectsWithTag("EnemySpawn");
+            Debug.Log("Searching for enemy spawns");
+            if (foundEnemies.Length > 0)
+            {
+                enemySpawnPoints = new Transform[foundEnemies.Length];
+                for (int i = 0; i < foundEnemies.Length; i++)
+                {
+                    enemySpawnPoints[i] = foundEnemies[i].transform;
+                    Debug.Log($"Spawn point {i} assigned");
+                }
+            }
+            else Debug.LogError("GameObjects EnemySpawn not found");
+        }
+
+        playerPrefab = Resources.Load<GameObject>("Prefabs/PlayerPrefab");
+        if (playerPrefab == null) Debug.LogError("Failed to load PlayerPrefab");
+
+        enemyPrefabs = new GameObject[1];
+        enemyPrefabs[0] = Resources.Load<GameObject>("Prefabs/EnemyPrefab"); //this needs to change when you add more enemies
+        if (enemyPrefabs == null) Debug.LogError("Failed to load EnemyPrefabs");
+
         startCombat();
     }
 
