@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 3557370942750289239}
   - component: {fileID: 6423741893882706648}
   - component: {fileID: 8596078042469153231}
+  - component: {fileID: 6270499489624086550}
   m_Layer: 5
   m_Name: ItemSlot
   m_TagString: Untagged
@@ -391,3 +392,15 @@ MonoBehaviour:
   ItemDescriptionText: {fileID: 0}
   selectedShader: {fileID: 1306550258542414927}
   thisItemSelected: 0
+--- !u!225 &6270499489624086550
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6856016590631760641}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

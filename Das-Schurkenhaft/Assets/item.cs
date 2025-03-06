@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Item : MonoBehaviour {
+public class item : MonoBehaviour {
 [SerializeField]
 private string itemName;
 
@@ -19,7 +19,7 @@ private string itemDescription;
 private InventoryManager inventoryManager;
 
 void Start() {
-    inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+    // inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
 }
 
 private void OnCollisionEnter2D(Collision2D collision)
