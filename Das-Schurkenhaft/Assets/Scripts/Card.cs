@@ -9,12 +9,13 @@ public class Card : ScriptableObject
     public int cost;
     public CardType type; // Attack, Defense, Buff, Debuff, Heal
     public int value;  // General value for damage, healing, or buffs
+    public bool isMultiTarget;
 
     public void PlayCard()
     {
         switch (type)
         {
-            case CardType.Attack:
+            case CardType.Attack://change to check mult
                 Debug.Log($"Played {cardName}: Deals {value} damage.");
                 // Implement attack logic
                 break;

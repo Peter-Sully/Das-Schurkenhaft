@@ -1,14 +1,30 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class EnemyCombat : MonoBehaviour
 {
     public string enemyName = "Dummy_Enemy";
     public int maxHealth = 100;
     public int currentHealth;
+    private Image healthBar;
+    private TMP_Text healthtext;
 
-    void Start()
+    public void SetHealthBar(Image healthBar)
     {
+        this.healthBar = healthBar;
+    }
+
+    public void SetHealthText(TMP_Text healthtext)
+    {
+        this.healthtext = healthtext;
         currentHealth = maxHealth;
+        UpdateHealthText();
+    }
+
+    public void UpdateHealthText()
+    {
+        if (healthtext != null) healthtext.text = $"HP: {currentHealth}/{maxHealth}";
     }
 
     public void TakeDamage(int amount)

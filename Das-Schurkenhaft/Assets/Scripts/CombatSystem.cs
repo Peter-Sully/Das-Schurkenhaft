@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class CombatSystem : MonoBehaviour
 {
@@ -15,16 +16,20 @@ public class CombatSystem : MonoBehaviour
 
     private int turnCount = 0;
 
-    public Text playerShieldText;
-    public Text enemyHealthText;
-    public Text energyText;
     public Button endTurnButton;
-
     private DeckManager deckManager;
     public GameObject playerPrefab;
     public GameObject[] enemyPrefabs;
     public Transform playerSpawnPoint;
     public Transform[] enemySpawnPoints;
+    public Image playerHealthBar;
+    public Image playerShieldBar;
+    public TMP_Text playerHealthText;
+    public TMP_Text playerShieldText;
+    public Image playerEnergyBar;
+    public TMP_Text playerEnergyBarText;
+    public Image[] enemyHealthBars;
+    public TMP_Text[] enemyHealthBarsText;
 
     private GameObject player;
     private List<EnemyCombat> enemies = new List<EnemyCombat>();
@@ -67,6 +72,26 @@ public class CombatSystem : MonoBehaviour
             else Debug.LogError("GameObjects EnemySpawn not found");
         }
 
+        playerHealthBar = GameObject.Find("HealthBar")?.GetComponent<Image>();
+        playerShieldBar = GameObject.Find("ShieldBar")?.GetComponent<Image>();
+        playerHealthText = GameObject.Find("HealthBarText")?. GetComponent<TMP_Text>();
+        playerShieldText = GameObject.Find("ShieldBarText")?.GetComponent<TMP_Text>();
+        playerEnergyBar = GameObject.Find("EnergyBar")?.GetComponent<Image>();
+        playerEnergyBarText = GameObject.Find("EnergyBarText")?.GetComponent<TMP_Text>();
+
+        enemyHealthBars = new Image[enemySpawnPoints.Length];
+        enemyHealthBarsText = new TMP_Text[enemySpawnPoints.Length];
+
+        for (int i = 0; i < enemyHealthBars.Length; i++)
+        {
+            enemyHealthBars[i] = GameObject.Find($"EnemyHealth{i+1}")?.GetComponent<Image>();
+        }
+
+        for (int i = 0; i < enemyHealthBarsText.Length; i++)
+        {
+            enemyHealthBarsText[i] = GameObject.Find($"EnemyHealth{i+1}Text")?.GetComponent<TMP_Text>();
+        }
+
         playerPrefab = Resources.Load<GameObject>("Prefabs/PlayerPrefab");
         if (playerPrefab == null) Debug.LogError("Failed to load PlayerPrefab");
 
@@ -103,7 +128,15 @@ public class CombatSystem : MonoBehaviour
         {
             int randomEnemyIndex = Random.Range(0, enemyPrefabs.Length);
             GameObject enemyInstance = Instantiate(enemyPrefabs[randomEnemyIndex], enemySpawnPoints[i].position, Quaternion.identity);
-            enemies.Add(enemyInstance.GetComponent<EnemyCombat>());
+            EnemyCombat enemyCombat = enemyInstance.GetComponent<EnemyCombat>();
+            enemies.Add(enemyCombat);
+
+            if (i <  enemyHealthBars.Length)
+            {
+                enemyCombat.SetHealthBar(enemyHealthBars[i]);
+                enemyCombat.SetHealthText(enemyHealthBarsText[i]);
+            }
+
             Debug.Log($"Enemy {i+1} spawned!");
         }
     }
@@ -161,6 +194,11 @@ public class CombatSystem : MonoBehaviour
 
     public void UpdateUI()
     {
-        //empty for now
+        if (playerHealthBar != null) playerHealthBar.fillAmount = (float)playerHealth / maxHealth;
+        if (playerHealthText != null) playerHealthText.text = $"HP: {playerHealth}/{maxHealth}";
+        if (playerShieldBar != null) playerShieldBar.fillAmount = (float)playerShield / maxHealth;
+        if (playerShieldText != null) playerShieldText.text = $"Shield: {playerShield}";
+        if (playerEnergyBar != null) playerEnergyBar.fillAmount = (float)playerEnergy / maxEnergy;
+        if (playerEnergyBarText != null) playerEnergyBarText.text = $"Energy: {playerEnergy}/{maxEnergy}";
     }
 }
