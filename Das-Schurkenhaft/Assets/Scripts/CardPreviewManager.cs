@@ -61,8 +61,13 @@ public class CardPreviewManager : MonoBehaviour, IPointerClickHandler
 
     private void PlayCard()
     {
-        Debug.Log($"Playing card: {currentCard.cardData.cardName}");
-        currentCard.PlayCard(); // Use the PlayCard method from CardScript
+        if (currentCard == null || CombatSystem.instance == null) return;
+
+        if (CombatSystem.instance.SpendEnergy(currentCard.cardData.cost))
+        {
+            currentCard.PlayCard();
+            CombatSystem.instance.UpdateUI();
+        }
         ClosePreview();
     }
 

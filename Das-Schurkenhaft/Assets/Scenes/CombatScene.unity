@@ -373,19 +373,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardPrefab: {fileID: 7150780243129240036, guid: 1a9cbbbc0d56d402cafb25453ead4598, type: 3}
   PlayerHand: {fileID: 674599699}
-  deck:
-  - {fileID: 11400000, guid: 41e8718e5325241f8929fe607815d4cd, type: 2}
-  - {fileID: 11400000, guid: e4e0c53b5695447349f02f77f7155558, type: 2}
-  - {fileID: 11400000, guid: 57787b4bc1c37413b9e24c0fd5728f15, type: 2}
-  - {fileID: 11400000, guid: 4a1054f07ce564470b112da857ec832a, type: 2}
-  - {fileID: 11400000, guid: f11f9f1bcd066409bbb525453a5ac8ef, type: 2}
-  - {fileID: 11400000, guid: 969143d9902524c41853c1038123d5ea, type: 2}
-  - {fileID: 11400000, guid: 7441ee072f0754664bf41afba150a549, type: 2}
-  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
-  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
-  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
-  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
-  - {fileID: 11400000, guid: 492602b0d83d949cb982059e40a9d454, type: 2}
   deckSizeText: {fileID: 0}
 --- !u!1 &694829548
 GameObject:
@@ -581,16 +568,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
-  m_sharedMaterial: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4281479730
   m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -603,7 +590,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -630,13 +617,13 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
   m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
-  m_isOrthographic: 0
+  m_isOrthographic: 1
   m_isCullingEnabled: 0
   m_horizontalMapping: 0
   m_verticalMapping: 0
@@ -841,8 +828,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968727667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 794025810}
@@ -872,9 +859,9 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.7830189, g: 0.18836774, b: 0.18836774, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -896,7 +883,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1968727670}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: a710c87d37bf74c9c9f6088440d9c415, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1968727670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,8 +916,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 3136550281646277714, guid: a0d3fbbc155eb404a87f827b40a48dfe, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -947,6 +946,7 @@ GameObject:
   - component: {fileID: 1983717298}
   - component: {fileID: 1983717297}
   - component: {fileID: 1983717296}
+  - component: {fileID: 1983717300}
   m_Layer: 5
   m_Name: CombatUI
   m_TagString: Untagged
@@ -1012,7 +1012,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1041,6 +1041,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1983717300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983717295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a710c87d37bf74c9c9f6088440d9c415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  playerHealth: 0
+  playerShield: 0
+  playerEnergy: 0
+  maxEnergy: 10
+  enemyHealth: 0
+  playerShieldText: {fileID: 0}
+  enemyHealthText: {fileID: 0}
+  energyText: {fileID: 0}
+  endTurnButton: {fileID: 1968727669}
+  playerPrefab: {fileID: 0}
+  enemyPrefabs: []
+  playerSpawnPoint: {fileID: 0}
+  enemySpawnPoints: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
