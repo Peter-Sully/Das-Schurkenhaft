@@ -372,6 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebed2f8ac69559b4ba5362ef2178d927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2062002006}
   sceneSwitchAction:
     m_Name: Scene Switch
     m_Type: 0
