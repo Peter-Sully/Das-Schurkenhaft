@@ -42,4 +42,14 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
     }
+    
+    public Vector2 GetPosition()
+    {
+        return rigidbody2d.position;
+    }
+
+    public int GetHealth()
+    {
+        return currentHealth;
+    }
 }
