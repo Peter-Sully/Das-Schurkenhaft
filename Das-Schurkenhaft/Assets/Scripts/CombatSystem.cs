@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class CombatSystem : MonoBehaviour
 {
@@ -20,6 +21,13 @@ public class CombatSystem : MonoBehaviour
     public Button endTurnButton;
 
     private DeckManager deckManager;
+    public GameObject playerPrefab;
+    public GameObject[] enemyPrefabs;
+    public Transform playerSpawnPoint;
+    public Transform[] enemySpawnPoints;
+
+    private GameObject player;
+    private List<EnemyCombat> enemies = new List<EnemyCombat>();
 
     void Awake() 
     {
@@ -38,11 +46,41 @@ public class CombatSystem : MonoBehaviour
     void startCombat()
     {
         turnCount = 0;
+        SpawnPlayer();
+        SpawnEnemies();
         deckManager.LoadDeck();
         deckManager.ShuffleDeck();
         for (int i = 0; i < 5; i++) deckManager.DrawCard();
         UpdateUI();
         StartTurn();
+    }
+
+    void SpawnPlayer()
+    {
+        player = Instantiate(playerPrefab, playerSpawnPoint.position, Quaternion.identity);
+        playerHealth = maxHealth;
+        playerEnergy = 5;
+        playerShield = 0;
+    }
+
+    void SpawnEnemies()
+    {
+        for (int i=0; i < enemySpawnPoints.Length; i++)
+        {
+            int randomEnemyIndex = Random.Range(0, enemyPrefabs.Length);
+            GameObject enemyInstance = Instantiate(enemyPrefabs[randomEnemyIndex], enemySpawnPoints[i].position, Quaternion.identity);
+            enemies.Add(enemyInstance.GetComponent<EnemyCombat>());
+            Debug.Log($"Enemy {i+1} spawned!");
+        }
+    }
+
+    public void RemoveEnemyFromList(EnemyCombat enemy)
+    {
+        if (enemies.Contains(enemy))
+        {
+            enemies.Remove(enemy);
+            Debug.Log($"Enemy {enemy.enemyName} removed from combat.");
+        }
     }
 
     public void StartTurn()
@@ -51,10 +89,7 @@ public class CombatSystem : MonoBehaviour
 
         if (turnCount == 1)
         {
-            playerHealth = maxHealth;
-            enemyHealth = 100;
-            playerShield = 0;
-            playerEnergy = 5;
+            Debug.Log("Combat started!");
         }
         else
         {
@@ -81,6 +116,12 @@ public class CombatSystem : MonoBehaviour
     public void EndTurn()
     {
         Debug.Log("Turn ended.");
+
+        foreach (EnemyCombat enemy in enemies)
+        {
+            enemy.TakeTurn();
+        }
+
         StartTurn();
     }
 

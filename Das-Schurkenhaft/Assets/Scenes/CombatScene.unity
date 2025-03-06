@@ -568,7 +568,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -829,7 +829,7 @@ RectTransform:
   m_GameObject: {fileID: 1968727667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 1, y: 1, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 794025810}
@@ -859,7 +859,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 0.7830189, g: 0.18836774, b: 0.18836774, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1063,6 +1063,10 @@ MonoBehaviour:
   enemyHealthText: {fileID: 0}
   energyText: {fileID: 0}
   endTurnButton: {fileID: 1968727669}
+  playerPrefab: {fileID: 0}
+  enemyPrefabs: []
+  playerSpawnPoint: {fileID: 0}
+  enemySpawnPoints: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
