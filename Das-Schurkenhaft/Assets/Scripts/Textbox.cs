@@ -1,37 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Textbox : MonoBehaviour {
-
+public class Textbox : MonoBehaviour
+{
     public GameObject dialogBox;
     public Text dialogText;
-    public string dialog;
+   
+    public string[] dialogs;
+    
+    private int currentDialogIndex = 0;
     public bool playerInRange;
 
-    // Use this for initialization
-    void Start () { }
+    void Start() { }
 
-    // Change Update to protected virtual so it can be overridden
-    protected virtual void Update () {
-        if(Input.GetKeyDown(KeyCode.E) && playerInRange)
+    
+    protected virtual void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
-            if(dialogBox.activeInHierarchy)
+            if (dialogBox.activeInHierarchy)
             {
-                dialogBox.SetActive(false);
+                currentDialogIndex++;
+                if (currentDialogIndex < dialogs.Length)
+                {
+                    dialogText.text = dialogs[currentDialogIndex];
+                }
+                else
+                {
+                    dialogBox.SetActive(false);
+                    currentDialogIndex = 0;
+                }
             }
             else
             {
                 dialogBox.SetActive(true);
-                dialogText.text = dialog;
+                currentDialogIndex = 0;
+                if(dialogs.Length > 0)
+                {
+                    dialogText.text = dialogs[currentDialogIndex];
+                }
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             playerInRange = true;
         }
@@ -39,10 +53,11 @@ public class Textbox : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             playerInRange = false;
             dialogBox.SetActive(false);
+            currentDialogIndex = 0;
         }
     }
 }

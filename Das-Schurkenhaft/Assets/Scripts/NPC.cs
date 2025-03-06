@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NPC : Textbox
@@ -18,29 +16,28 @@ public class NPC : Textbox
     public float maxWaitTime;
     private float waitTimeSeconds;
 
-    // Start is called before the first frame update
     void Start()
     {
         moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
-        waitTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
+        waitTimeSeconds = Random.Range(minWaitTime, maxWaitTime);
         anim = GetComponent<Animator>();
         myTransform = GetComponent<Transform>();
         myRigidbody = GetComponent<Rigidbody2D>();
         ChangeDirection();
     }
-
-    // Update is called once per frame
     protected override void Update()
     {
-        base.Update();
-        if(isMoving)
+        base.Update(); 
+        
+        if (isMoving)
         {
             moveTimeSeconds -= Time.deltaTime;
-            if(moveTimeSeconds<= 0)
+            if (moveTimeSeconds <= 0)
             {
                 moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
                 isMoving = false;
             }
+            
             if (!playerInRange)
             {
                 Move();
@@ -49,7 +46,7 @@ public class NPC : Textbox
         else
         {
             waitTimeSeconds -= Time.deltaTime;
-            if(waitTimeSeconds <= 0)
+            if (waitTimeSeconds <= 0)
             {
                 ChooseDifferentDirection();
                 isMoving = true;
@@ -86,22 +83,22 @@ public class NPC : Textbox
     void ChangeDirection()
     {
         int direction = Random.Range(0, 4);
-        switch(direction)
+        switch (direction)
         {
             case 0:
-                // Walking to the right
+               
                 directionVector = Vector3.right;
                 break;
             case 1:
-                // Walking up
+                
                 directionVector = Vector3.up;
                 break;
             case 2:
-                // Walking Left
+                
                 directionVector = Vector3.left;
                 break;
             case 3:
-                // Walking down
+               
                 directionVector = Vector3.down;
                 break;
             default:
@@ -120,5 +117,5 @@ public class NPC : Textbox
     {
         ChooseDifferentDirection();
     }
-
 }
+    
