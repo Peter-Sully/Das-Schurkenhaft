@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public class ItemImage : MonoBehaviour
 {
     public string itemName;
+    public GameObject itemPrefab;
 }

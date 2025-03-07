@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 public class CraftingManager : MonoBehaviour
 {
-    private Item currentItem;
+    private ItemImage currentItem;
     public Image customCursor;
     public Slot[] craftingSlots;
     public Canvas canvas;
-    public List<Item> itemList;
+    public List<ItemImage> itemList;
     public string[] recipes;
-    public Item[] recipeResults;
+    public ItemImage[] recipeResults;
     public Slot resultSlot;
 
     private void Update() {
@@ -45,7 +45,7 @@ public class CraftingManager : MonoBehaviour
         resultSlot.gameObject.SetActive(false);
         resultSlot.item = null;
         string currentRecipeString = "";
-        foreach(Item item in itemList) {
+        foreach(ItemImage item in itemList) {
             if (item != null) {
                 currentRecipeString += item.itemName;
             }
@@ -64,13 +64,13 @@ public class CraftingManager : MonoBehaviour
     }
 
     public void OnClickSlot(Slot slot) {
-        slot.item = null;
+        Slot item = null;
         itemList[slot.index] = null;
         slot.gameObject.SetActive(false);
         CheckForCompletedRecipes();
     }
 
-    public void OnMouseDownItem(Item item) {
+    public void OnMouseDownItem(ItemImage item) {
         if (currentItem == null) {
             currentItem = item;
             customCursor.gameObject.SetActive(true);

@@ -2,6 +2,6 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-    public Item item;
+    public ItemImage item;
     public int index;
 }

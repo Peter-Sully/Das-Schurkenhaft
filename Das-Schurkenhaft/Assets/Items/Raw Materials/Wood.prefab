@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8971314769892970868}
   - component: {fileID: 8031677765851226780}
   - component: {fileID: 3392654872217526534}
+  - component: {fileID: -5041249559450447467}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Untagged
@@ -134,3 +135,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.23, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &-5041249559450447467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4004401536956276459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20039c4adbdc05c46ab8d0fbd17339e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: wood
+  quantity: 1
+  sprite: {fileID: 4825523737926984454, guid: de9b065ed1c717449ae68eb4fba40112, type: 3}
+  itemDescription: Big Lunk Wood

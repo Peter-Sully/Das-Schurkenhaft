@@ -19,7 +19,7 @@ private string itemDescription;
 private InventoryManager inventoryManager;
 
 void Start() {
-    // inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+    inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
 }
 
 private void OnCollisionEnter2D(Collision2D collision)
@@ -33,6 +33,18 @@ private void OnCollisionEnter2D(Collision2D collision)
             quantity = leftOverItems;
         }
     }
+}
+public string GetName() {
+    return itemName;
+}
+public int GetQuantity() {
+    return quantity;
+}
+public Sprite GetSprite() {
+    return sprite;
+}
+public string GetDescription() {
+    return itemDescription;
 }
 
 }

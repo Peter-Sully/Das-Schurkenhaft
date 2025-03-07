@@ -4,7 +4,9 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
    public GameObject InventoryMenu;
+   public GameObject CraftingMenu;
    private bool menuActivated;
+   private bool canvasActivated;
    public ItemSlot[] itemSlot;
    void Start() {
 
@@ -20,6 +22,16 @@ public class InventoryManager : MonoBehaviour
         Time.timeScale = 0;
         InventoryMenu.SetActive(true); // Activates
         menuActivated = true;
+    }
+    if (Input.GetKeyDown(KeyCode.R) && canvasActivated) {
+        Time.timeScale = 1;
+        CraftingMenu.SetActive(false); // Deactivates
+        canvasActivated = false;
+    }
+    else if (Input.GetKeyDown(KeyCode.R) && !canvasActivated) {
+        Time.timeScale = 0;
+        CraftingMenu.SetActive(true); // Activates
+        canvasActivated = true;
     }
    }
 

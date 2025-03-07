@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5172578122388686987}
   - component: {fileID: 5167111819808670120}
   - component: {fileID: 6062628604551260551}
+  - component: {fileID: -392185797997600036}
   m_Layer: 0
   m_Name: Bronze
   m_TagString: Untagged
@@ -134,3 +135,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.25, y: 0.15}
   m_EdgeRadius: 0
+--- !u!114 &-392185797997600036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3332530627158172190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20039c4adbdc05c46ab8d0fbd17339e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  quantity: 0
+  sprite: {fileID: 0}
+  itemDescription: 
