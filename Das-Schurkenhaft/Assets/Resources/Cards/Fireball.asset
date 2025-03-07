@@ -18,3 +18,4 @@ MonoBehaviour:
   cost: 2
   type: 0
   value: 10
+  isMultiTarget: 0

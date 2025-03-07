@@ -13,11 +13,23 @@ public class Card : ScriptableObject
 
     public void PlayCard()
     {
+        if (CombatSystem.instance == null)
+        {
+            Debug.LogError("CombatSystem is missing!");
+            return;
+        }
+
         switch (type)
         {
             case CardType.Attack://change to check mult
-                Debug.Log($"Played {cardName}: Deals {value} damage.");
-                // Implement attack logic
+                if (isMultiTarget)
+                {
+                    CombatSystem.instance.AttackMultipleTargets(value);
+                }
+                else 
+                {
+                    CombatSystem.instance.AttackOneTarget(value);
+                }
                 break;
 
             case CardType.Defense:

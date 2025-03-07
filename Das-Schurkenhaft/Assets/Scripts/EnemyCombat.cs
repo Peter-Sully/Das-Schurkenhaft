@@ -9,6 +9,7 @@ public class EnemyCombat : MonoBehaviour
     public int currentHealth;
     private Image healthBar;
     private TMP_Text healthtext;
+    public bool isDead = false;
 
     public void SetHealthBar(Image healthBar)
     {
@@ -29,18 +30,38 @@ public class EnemyCombat : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        if (isDead) return;
+
         currentHealth -= amount;
         Debug.Log($"{enemyName} took {amount} damage! Current health: {currentHealth}");
 
-        if (currentHealth <= 0) Die();
+        if (currentHealth <= 0) 
+        {
+            currentHealth = 0;
+            Die();
+        }
     }
 
     private void Die()
     {
         Debug.Log($"{enemyName} has died!");
 
-        Destroy(gameObject, 1f);
+        if (isDead) return;
+
+        isDead = true;
+
+        if (healthBar != null)
+        {
+            healthBar.gameObject.SetActive(false);
+        }
+
+        if (healthtext != null)
+        {
+            healthtext.gameObject.SetActive(false);
+        }
+
         CombatSystem.instance.RemoveEnemyFromList(this);
+        Destroy(gameObject);
     }
 
     public void TakeTurn()

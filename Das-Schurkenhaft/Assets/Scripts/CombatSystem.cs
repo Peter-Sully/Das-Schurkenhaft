@@ -58,18 +58,10 @@ public class CombatSystem : MonoBehaviour
 
         if (enemySpawnPoints == null || enemySpawnPoints.Length == 0)
         {
-            GameObject[] foundEnemies = GameObject.FindGameObjectsWithTag("EnemySpawn");
-            Debug.Log("Searching for enemy spawns");
-            if (foundEnemies.Length > 0)
-            {
-                enemySpawnPoints = new Transform[foundEnemies.Length];
-                for (int i = 0; i < foundEnemies.Length; i++)
-                {
-                    enemySpawnPoints[i] = foundEnemies[i].transform;
-                    Debug.Log($"Spawn point {i} assigned");
-                }
-            }
-            else Debug.LogError("GameObjects EnemySpawn not found");
+            enemySpawnPoints = new Transform[3];
+            enemySpawnPoints[0] = GameObject.Find("EnemySpawn1")?.transform;
+            enemySpawnPoints[1] = GameObject.Find("EnemySpawn2")?.transform;
+            enemySpawnPoints[2] = GameObject.Find("EnemySpawn3")?.transform;
         }
 
         playerHealthBar = GameObject.Find("HealthBar")?.GetComponent<Image>();
@@ -124,9 +116,10 @@ public class CombatSystem : MonoBehaviour
 
     void SpawnEnemies()
     {
-        for (int i=0; i < enemySpawnPoints.Length; i++)
+        for (int i = 0; i < enemySpawnPoints.Length; i++)
         {
             int randomEnemyIndex = Random.Range(0, enemyPrefabs.Length);
+
             GameObject enemyInstance = Instantiate(enemyPrefabs[randomEnemyIndex], enemySpawnPoints[i].position, Quaternion.identity);
             EnemyCombat enemyCombat = enemyInstance.GetComponent<EnemyCombat>();
             enemies.Add(enemyCombat);
@@ -137,7 +130,7 @@ public class CombatSystem : MonoBehaviour
                 enemyCombat.SetHealthText(enemyHealthBarsText[i]);
             }
 
-            Debug.Log($"Enemy {i+1} spawned!");
+            Debug.Log($"Enemy {i+1} spawned at {enemySpawnPoints[i].name}!");
         }
     }
 
@@ -178,6 +171,33 @@ public class CombatSystem : MonoBehaviour
         }
         Debug.Log("Not enough energy!");
         return false;
+    }
+
+    public void AttackOneTarget(int damage)
+    {
+        if (enemies.Count > 0)
+        {
+            EnemyCombat enemy = enemies[0].GetComponent<EnemyCombat>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+                enemy.UpdateHealthText();
+            }
+        }
+    }
+
+    public void AttackMultipleTargets(int damage)
+    {
+        List<EnemyCombat> enemiesCopy = new List<EnemyCombat>(enemies);
+
+        foreach (EnemyCombat enemy in enemiesCopy)
+        {
+            if (enemy != null && !enemy.isDead)
+            {
+                enemy.TakeDamage(damage);
+                enemy.UpdateHealthText();
+            }
+        }
     }
 
     public void EndTurn()
