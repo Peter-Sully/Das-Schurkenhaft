@@ -200,9 +200,32 @@ public class CombatSystem : MonoBehaviour
         }
     }
 
+    public void AddShield(int shield)
+    {
+        if (playerShield < maxHealth)
+        {
+            playerShield += shield;
+            if(playerShield >= maxHealth) playerShield = maxHealth;
+        }
+        else Debug.Log("Max Shield Reached!");
+        
+    }
+
+    public void HealPlayer(int heal)
+    {
+        if (playerHealth < maxHealth)
+        {
+            playerHealth += heal;
+            if (playerHealth >= maxHealth) playerHealth = maxHealth;
+        }
+        else Debug.Log("Max Health Reached!");
+    }
+
     public void EndTurn()
     {
         Debug.Log("Turn ended.");
+
+        playerHealth -= 10;
 
         foreach (EnemyCombat enemy in enemies)
         {

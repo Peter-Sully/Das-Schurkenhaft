@@ -33,8 +33,7 @@ public class Card : ScriptableObject
                 break;
 
             case CardType.Defense:
-                Debug.Log($"Played {cardName}: Gains {value} shield.");
-                // Implement shield logic
+                CombatSystem.instance.AddShield(value);
                 break;
 
             case CardType.Buff:
@@ -48,8 +47,7 @@ public class Card : ScriptableObject
                 break;
 
             case CardType.Heal:
-                Debug.Log($"Played {cardName}: Restores {value} HP.");
-                // Implement healing logic
+                CombatSystem.instance.HealPlayer(value);
                 break;
         }
     }
@@ -59,7 +57,7 @@ public enum CardType
 {
     Attack,
     Defense,
-    Buff,
-    Debuff,
+    Buff,//will be implemented in the future
+    Debuff,//will be implemented in the future
     Heal
 }
