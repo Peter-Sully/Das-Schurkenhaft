@@ -16,7 +16,7 @@ public class Textbox : MonoBehaviour
     
     protected virtual void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerInRange)
+        if (Input.GetKeyDown(KeyCode.L) && playerInRange)
         {
             if (dialogBox.activeInHierarchy)
             {
