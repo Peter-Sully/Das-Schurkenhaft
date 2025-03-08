@@ -225,8 +225,6 @@ public class CombatSystem : MonoBehaviour
     {
         Debug.Log("Turn ended.");
 
-        playerHealth -= 10;
-
         foreach (EnemyCombat enemy in enemies)
         {
             enemy.TakeTurn();
