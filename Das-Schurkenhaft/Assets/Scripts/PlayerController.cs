@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     //====Stats=====//
     //Health (Vitality?)
     public int maxHealth = 10;
-    int currentHealth;
+    int currentHealth = 5;
     //speed (Dexterity?)
     public float speed = 3.0f;
     public int strength = 1;
@@ -38,8 +38,28 @@ public class PlayerController : MonoBehaviour
         rigidbody2d.MovePosition(position);
     }
 
-    public void ChangeHealth(int amount)
-    {
-        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+    public void ChangeHealth(int amount) {
+    Debug.Log("Current Health: " + currentHealth);
+    currentHealth = Mathf.Clamp(currentHealth - 9, 0, maxHealth);
+    Debug.Log("Current Health: " + currentHealth);
+    currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+    Debug.Log("Current Health: " + currentHealth);
     }
+
+    // Add other stat modification methods if needed
+    public void ChangeSpeed(float amount) {
+        speed += amount; // Modify the player's speed
+        Debug.Log("New Speed: " + speed);
+    }
+
+    public void ChangeStrength(int amount) {
+        strength += amount; // Modify strength
+        Debug.Log("New Strength: " + strength);
+    }
+
+    public void ChangeDefense(int amount) {
+        defense += amount; // Modify defense
+        Debug.Log("New Defense: " + defense);
+    }
+
 }

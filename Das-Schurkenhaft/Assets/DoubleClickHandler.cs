@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class DoubleClickHandler : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class DoubleClickHandler : MonoBehaviour
         }
     }
 
-    void AddItemToInventorySlot()
+   void AddItemToInventorySlot()
 {
     // Ensure the result slot has an item to add
     if (slot == null || slot.item == null)
@@ -41,58 +42,169 @@ public class DoubleClickHandler : MonoBehaviour
         return;
     }
 
-    // Get the image's sprite name
+    // Get the image's sprite name and item name from the prefab
     Sprite itemSprite = slot.GetComponent<Image>().sprite;
-    Debug.Log(itemSprite.name);
     string itemName = itemSprite.name; // Use sprite name as the item name
-
-    // Load the prefab with the same name as the sprite from Resources
     GameObject itemPrefab = Resources.Load<GameObject>("Items/" + itemName);
+
     if (itemPrefab == null)
     {
         Debug.LogWarning("No prefab found with the name: " + itemName);
         return;
     }
 
-    // Get the item script from the prefab (assumes the prefab has an 'item' script attached)
+    // Get the item script from the prefab (assumes the prefab has an 'Item' script attached)
     item itemScript = itemPrefab.GetComponent<item>();
     if (itemScript == null)
     {
-        Debug.LogWarning("No 'item' script attached to the prefab!");
+        Debug.LogWarning("No 'Item' script attached to the prefab!");
         return;
     }
 
-    // Get the item details from the prefab
-    Sprite prefabSprite = itemScript.GetSprite();
     string itemDescription = itemScript.GetDescription();
 
-    // Now you have the prefab's details, and you can proceed to add it to the inventory
+    // Example: Assume you have predefined recipes that specify the required materials (e.g., "Wood")
+    Dictionary<string, int> recipeMaterials = GetRecipeMaterials(itemName);  // Get required materials for crafting
+
+    // 1️⃣ **Check if the player has enough materials**
+    bool hasEnoughMaterials = CheckMaterialsInInventory(recipeMaterials);
+    if (!hasEnoughMaterials)
+    {
+        Debug.LogWarning("Not enough materials to craft " + itemName);
+        return;
+    }
+
+    bool itemAdded = false;
+
+    // 2️⃣ **First, Check for an Existing Stack of the Same Item**
     foreach (Transform child in inventoryParent)
     {
-        ItemSlot itemSlot = child.GetComponent<ItemSlot>();
-        if (itemSlot != null && !itemSlot.isFull)
+        ItemSlot existingSlot = child.GetComponent<ItemSlot>();
+        if (existingSlot != null && existingSlot.itemName == itemName && !existingSlot.isFull)
         {
-            // Debug if an available slot is found
-            Debug.Log("Found available slot: " + itemSlot.gameObject.name);
+            // Add the item to the existing stack
+            int leftoverItems = existingSlot.AddItem(itemName, 1, itemSprite, itemDescription);
 
-            // Add the item to the found slot (adding 1 quantity)
-            int leftoverItems = itemSlot.AddItem(itemName, 1, prefabSprite, itemDescription);
-            
-            // If there are leftover items, handle them (you can either discard them or find another slot)
             if (leftoverItems > 0)
             {
                 Debug.LogWarning("There are leftover items: " + leftoverItems);
-                // You can either add them to another available slot or handle them as needed.
             }
-            break; // Exit the loop once the item is added
+
+            itemAdded = true;
+            break;
         }
-        else
+    }
+
+    // 3️⃣ **If No Existing Stack is Found, Find an Empty Slot**
+    if (!itemAdded)
+    {
+        foreach (Transform child in inventoryParent)
         {
-            // Debug if the slot is full or not found
-            Debug.Log("Slot is full or invalid: " + child.name);
+            ItemSlot newSlot = child.GetComponent<ItemSlot>();
+            if (newSlot != null && (newSlot.isFull == false || newSlot.itemName == ""))
+            {
+                if (newSlot.itemName == "" || newSlot.itemName == itemName)
+                {
+                    Debug.Log("Found empty or matching slot: " + newSlot.gameObject.name);
+                    int leftoverItems = newSlot.AddItem(itemName, 1, itemSprite, itemDescription);
+
+                    if (leftoverItems > 0)
+                    {
+                        Debug.LogWarning("There are leftover items: " + leftoverItems);
+                    }
+
+                    itemAdded = true;
+                    break;
+                }
+            }
+        }
+    }
+
+    // 4️⃣ **If No Empty Slot or Stack is Found**
+    if (!itemAdded)
+    {
+        Debug.LogWarning("Inventory is full! Cannot add item: " + itemName);
+    }
+
+    // 5️⃣ **Remove the materials from inventory after crafting**
+    RemoveMaterialsFromInventory(recipeMaterials);
+}
+
+// Function to get the materials required for a specific recipe (could be fetched from a recipe manager or hardcoded)
+Dictionary<string, int> GetRecipeMaterials(string itemName)
+{
+    Dictionary<string, int> recipeMaterials = new Dictionary<string, int>();
+
+    // Example: Hardcoded recipes for Paper (requires 2 wood) and Card (requires 1 paper, 1 ink, and 2 gold)
+    if (itemName == "paper")
+    {
+        recipeMaterials.Add("wood", 2);  // 2 Wood required
+    }
+    else if (itemName == "Card")
+    {
+        recipeMaterials.Add("paper", 1);  // 1 Paper required
+        recipeMaterials.Add("ink", 1);    // 1 Ink required
+        recipeMaterials.Add("gold", 2);   // 2 Gold required
+    }
+
+    return recipeMaterials;
+}
+
+// Function to check if the player has enough materials in their inventory
+bool CheckMaterialsInInventory(Dictionary<string, int> requiredMaterials)
+{
+    foreach (var material in requiredMaterials)
+    {
+        int totalMaterialCount = 0;
+
+        // Check the inventory for the required material and count how many we have
+        foreach (Transform child in inventoryParent)
+        {
+            ItemSlot existingSlot = child.GetComponent<ItemSlot>();
+            if (existingSlot != null && existingSlot.itemName == material.Key)
+            {
+                totalMaterialCount += existingSlot.quantity;
+            }
+        }
+
+        // If we don't have enough of the material, return false
+        if (totalMaterialCount < material.Value)
+        {
+            return false;
+        }
+    }
+
+    return true;  // If all materials are available
+}
+
+// Function to remove materials from inventory after crafting
+void RemoveMaterialsFromInventory(Dictionary<string, int> requiredMaterials)
+{
+    foreach (var material in requiredMaterials)
+    {
+        int materialCountToRemove = material.Value;
+
+        foreach (Transform child in inventoryParent)
+        {
+            ItemSlot existingSlot = child.GetComponent<ItemSlot>();
+            if (existingSlot != null && existingSlot.itemName == material.Key)
+            {
+                if (existingSlot.quantity >= materialCountToRemove)
+                {
+                    existingSlot.RemoveItem(materialCountToRemove); // This function would need to be implemented in your ItemSlot script
+                    materialCountToRemove = 0; // We've removed enough material, exit loop
+                    break;
+                }
+                else
+                {
+                    materialCountToRemove -= existingSlot.quantity;  // Decrease the remaining amount to be removed
+                    existingSlot.RemoveItem(existingSlot.quantity); // Remove all items in this slot
+                }
+            }
         }
     }
 }
+
 
 
     // Check if mouse is over the UI element (result image)

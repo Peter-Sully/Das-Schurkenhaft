@@ -27,7 +27,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public TMP_Text ItemDescriptionNameText;
     public TMP_Text ItemDescriptionText;
 
-
     public GameObject selectedShader;
     public bool thisItemSelected;
 
@@ -36,12 +35,44 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     private void Start() {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
     }
-    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription) {
-        // Check to see if slot is already full
-        if (isFull) {
-            return quantity;
+
+    // AddItem to next available slot method
+    public int AddItemToNextAvailableSlot(string itemName, int quantity, Sprite itemSprite, string itemDescription) {
+        int leftovers = quantity;
+
+        // Check through all slots in the inventory to find a suitable slot for overflow
+        foreach (var slot in inventoryManager.itemSlot) {
+            if (slot.itemName == itemName && !slot.isFull) {
+                // Try adding to this slot
+                leftovers = slot.AddItem(itemName, leftovers, itemSprite, itemDescription);
+
+                // If there are no leftovers, break the loop
+                if (leftovers == 0) break;
+            }
         }
-        // Update attributes
+
+        // If there are still leftovers, place them in the first available empty slot
+        if (leftovers > 0) {
+            foreach (var slot in inventoryManager.itemSlot) {
+                if (slot.itemName == "" || !slot.isFull) {
+                    leftovers = slot.AddItem(itemName, leftovers, itemSprite, itemDescription);
+                    if (leftovers == 0) break;
+                }
+            }
+        }
+
+        return leftovers;
+    }
+
+    // AddItem Method
+    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription) {
+        // Try to add items to the current slot
+        if (isFull) {
+            // Slot is full, check next available slot
+            return quantity;  // Return leftover quantity
+        }
+
+        // If current slot has space, add items here
         this.itemName = itemName;
         this.itemSprite = itemSprite;
         itemImage.enabled = true;
@@ -49,27 +80,64 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         this.itemDescription = itemDescription;
 
         this.quantity += quantity;
+
+        // Check if the quantity exceeds the maximum and overflow
         if (this.quantity >= maxNumberOfItems) {
             quantityText.text = maxNumberOfItems.ToString();
             quantityText.enabled = true;
             isFull = true;
-        // Return Leftovers
+
+            // Overflow logic: Calculate extra items
             int extraItems = this.quantity - maxNumberOfItems;
             this.quantity = maxNumberOfItems;
             return extraItems;
         }
+
+        
+        // Normal case: update the quantity text
         quantityText.text = this.quantity.ToString();
         quantityText.enabled = true;
         return 0;
     }
+
+    public void RemoveItem(int quantityToRemove)
+{
+    // Check if the current slot has enough quantity to remove
+    if (quantityToRemove > quantity)
+    {
+        Debug.LogWarning("Trying to remove more items than are available in the slot!");
+        return;
+    }
+
+    // Subtract the quantity of items in this slot
+    quantity -= quantityToRemove;
+
+    // Update the quantity text
+    quantityText.text = quantity.ToString();
+
+    // If the quantity reaches 0, clear the slot
+    if (quantity == 0)
+    {
+        // Reset item data
+        itemName = "";
+        itemSprite = null;
+        itemDescription = "";
+        itemImage.enabled = false; // Hide the image
+        quantityText.enabled = false; // Hide the quantity text
+        isFull = false; // Mark as not full
+        selectedShader.SetActive(false); // Deselect the slot
+    }
+}
+
     public void OnPointerClick(PointerEventData eventData) {
-        if(eventData.button == PointerEventData.InputButton.Left) {
+        if (eventData.button == PointerEventData.InputButton.Left) {
             OnLeftClick();
         }
-        if(eventData.button == PointerEventData.InputButton.Right) {
+        if (eventData.button == PointerEventData.InputButton.Right) {
             OnRightClick();
         }
     }
+
     public void OnLeftClick () {
         inventoryManager.DeselectAllSlots();
         selectedShader.SetActive(true);
@@ -77,11 +145,16 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         ItemDescriptionNameText.text = itemName;
         ItemDescriptionText.text = itemDescription;
         itemDescriptionImage.sprite = itemSprite;
-        if(itemDescriptionImage.sprite == null) {
+        if (itemDescriptionImage.sprite == null) {
             itemDescriptionImage.sprite = emptySprite;
         }
     }
-    public void OnRightClick (){
-        
+
+    public void OnRightClick () {
+        // Add right-click functionality if needed
+        if(thisItemSelected) {
+            inventoryManager.UseItem(itemName);
+            RemoveItem(1);
+        }
     }
 }
