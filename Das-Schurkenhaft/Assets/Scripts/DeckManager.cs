@@ -6,45 +6,91 @@ public class DeckManager : MonoBehaviour
 {
     public GameObject cardPrefab;  // Assign your card prefab in the Inspector
     public Transform PlayerHand;  // Assign a UI panel or area where the card should appear
-    public Card[] deck;
     public Text deckSizeText;
+    Dictionary<string, int> deck = new Dictionary<string, int>();
 
-    void Start()
+    public void LoadDeck()
     {
-        if (deckSizeText != null) deckSizeText.text = "DeckSize: " + deck.Length;
+        deck.Clear();
 
-        ShuffleDeck();
-        for (int i = 0; i < 11; i++)  // Draw 5 cards initially
+        string savedDeckData = PlayerPrefs.GetString("SavedDeck", "");
+        Debug.Log("Loaded Deck Data: " + savedDeckData);
+
+        if (!string.IsNullOrEmpty(savedDeckData))
         {
-            DrawCard();
+            foreach (string entry in savedDeckData.Split(','))
+            {
+                string[] parts = entry.Split(':');
+                if (parts.Length == 2)
+                {
+                    string cardName = parts[0];
+                    int count = int.Parse(parts[1]);
+                    deck[cardName] = count;
+                }
+            }
         }
     }
 
-    void ShuffleDeck()
+    public void ShuffleDeck()
     {
-        for (int i = 0; i < deck.Length; i++)
+        List<string> deckList = new List<string>();
+        foreach (var card in deck)
         {
-            Card temp = deck[i];
-            int randIndex = Random.Range(i, deck.Length);
-            deck[i] = deck[randIndex];
-            deck[randIndex] = temp;
+            for (int i = 0; i < card.Value; i++)
+            {
+                deckList.Add(card.Key);
+            }
+        }
+
+        for (int i = 0; i < deckList.Count; i++)
+        {
+            string temp = deckList[i];
+            int randIndex = Random.Range(i, deckList.Count);
+            deckList[i] = deckList[randIndex];
+            deckList[randIndex] = temp;
         }
     }
 
     public void DrawCard()
     {
-        if (deck.Length > 0)
+        if (deck.Count == 0)
         {
-            Card drawnCard = deck[0];
-            deck = RemoveCardFromDeck(deck, 0);
+            Debug.Log("Deck is empty!");
+            return;
+        }
+
+        // Pick a random card type from the dictionary
+        List<string> cardNames = new List<string>(deck.Keys);
+        string randomCardName = cardNames[Random.Range(0, cardNames.Count)];
+
+        // Find the corresponding Card object (assuming you have a way to map names to actual Card objects)
+        Card drawnCard = FindCardByName(randomCardName);
+
+        if (drawnCard != null)
+        {
             SpawnCard(drawnCard);
+            deck[randomCardName]--;
+
+            // Remove from dictionary if count reaches 0
+            if (deck[randomCardName] <= 0)
+            {
+                deck.Remove(randomCardName);
+            }
+
             UpdateDeckSizeUI();
             UpdateCardLayoutUI();
         }
         else
         {
-            Debug.Log("Deck is empty!");
+            Debug.LogError("Card not found: " + randomCardName);
         }
+    }
+
+    public Card FindCardByName(string cardName)
+    {
+        Card card = Resources.Load<Card>("Cards/" + cardName);
+        if (card == null) Debug.LogError("Card not found: " + cardName);
+        return card;
     }
 
     public void SpawnCard(Card cardData)
@@ -60,7 +106,7 @@ public class DeckManager : MonoBehaviour
 
         if (cardScript != null)
         {
-            cardScript.SetCard(cardData);  // Correct method call
+            cardScript.SetCard(cardData); 
         }
         else
         {
@@ -68,16 +114,9 @@ public class DeckManager : MonoBehaviour
         }
     }
 
-    Card[] RemoveCardFromDeck(Card[] deckArray, int index)
-    {
-        List<Card> cardList = new List<Card>(deckArray);
-        cardList.RemoveAt(index);
-        return cardList.ToArray();
-    }
-
     public void UpdateDeckSizeUI()
     {
-        if (deckSizeText != null) deckSizeText.text = "Deck Size: " + deck.Length;
+        if (deckSizeText != null) deckSizeText.text = "Deck Size: " + deck.Count;
     }
 
     public void UpdateCardLayoutUI()
