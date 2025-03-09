@@ -144,10 +144,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7454442481669991175}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20039c4adbdc05c46ab8d0fbd17339e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ba1fb2019aea9e4e9ada9e5aa60e861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: card
   quantity: 1
   sprite: {fileID: 2438356170935184457, guid: c7fd2242261c24dd9af05071f66ed993, type: 3}
-  itemDescription: Card can be used to deal damage to enemies in battle.
+  itemDescription: Card can be used to boost player's strength. (+1 strength)

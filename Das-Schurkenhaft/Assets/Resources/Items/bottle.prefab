@@ -144,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8810777968339363407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20039c4adbdc05c46ab8d0fbd17339e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ba1fb2019aea9e4e9ada9e5aa60e861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: bottle

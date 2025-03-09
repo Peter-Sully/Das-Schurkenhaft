@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 218203553a4e64a47940b2e10158c9a8, type: 3}
-  m_Name: paper
+  m_Name: goldshield
   m_EditorClassIdentifier: 
-  itemName: paper
-  statToChange: 1
-  amountToChangeStat: 3
-  attributeToChange: 0
-  amountToChangeAttribute: 0
+  itemName: goldshield
+  isUsable: 1
+  statToChange: 3
+  amountToChangeStat: 5

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 411689279219591146}
   - component: {fileID: 7232529409994231362}
   - component: {fileID: 8587217256011940512}
-  - component: {fileID: 6862371765429049749}
+  - component: {fileID: 367064408412160953}
   m_Layer: 0
   m_Name: dye
   m_TagString: Untagged
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.25, y: 0.17}
   m_EdgeRadius: 0
---- !u!114 &6862371765429049749
+--- !u!114 &367064408412160953
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,11 +144,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1933294698713450949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20039c4adbdc05c46ab8d0fbd17339e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ba1fb2019aea9e4e9ada9e5aa60e861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: dye
   quantity: 1
   sprite: {fileID: 5053667787462998861, guid: de9b065ed1c717449ae68eb4fba40112, type: 3}
   itemDescription: Dye is a colored substance used to change the appearance of items
-    or fabrics
+    or fabrics.

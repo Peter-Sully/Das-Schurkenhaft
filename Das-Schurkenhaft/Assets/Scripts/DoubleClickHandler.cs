@@ -5,37 +5,34 @@ using System.Collections.Generic;
 public class DoubleClickHandler : MonoBehaviour
 {
     // References
-    public Transform inventoryParent; // The parent that holds all inventory slots (the 20 slots container)
-    private Slot slot; // The current slot that is clicked (result slot)
+    public Transform inventoryParent; // Parent hold all 20 slots
+    private Slot slot; // The current slot that is clicked
 
-    public float doubleClickThreshold = 0.3f; // Time between two clicks to be considered a double-click
-    private float lastClickTime = 0f; // The last time the slot was clicked
+    public float doubleClickThreshold = 0.3f;
+    private float lastClickTime = 0f;
 
     void Start()
     {
-        slot = GetComponent<Slot>(); // Get the Slot script attached to this GameObject (result slot)
+        slot = GetComponent<Slot>();
     }
 
     void Update()
     {
-        // Detect mouse click (left click)
-        if (Input.GetMouseButtonDown(0)) // Left click
+        if (Input.GetMouseButtonDown(0))
         {
-            if (IsMouseOverUI()) // Check if we are clicking on the UI element
+            if (IsMouseOverUI())
             {
-                // Check if the click is within the double-click threshold time
                 if (Time.time - lastClickTime < doubleClickThreshold)
                 {
                     AddItemToInventorySlot(); // Add the item to the inventory slot on double-click
                 }
-                lastClickTime = Time.time; // Update the last click time
+                lastClickTime = Time.time;
             }
         }
     }
 
    void AddItemToInventorySlot()
 {
-    // Ensure the result slot has an item to add
     if (slot == null || slot.item == null)
     {
         Debug.LogWarning("No item in this result slot!");
@@ -53,7 +50,6 @@ public class DoubleClickHandler : MonoBehaviour
         return;
     }
 
-    // Get the item script from the prefab (assumes the prefab has an 'Item' script attached)
     item itemScript = itemPrefab.GetComponent<item>();
     if (itemScript == null)
     {
@@ -63,10 +59,9 @@ public class DoubleClickHandler : MonoBehaviour
 
     string itemDescription = itemScript.GetDescription();
 
-    // Example: Assume you have predefined recipes that specify the required materials (e.g., "Wood")
-    Dictionary<string, int> recipeMaterials = GetRecipeMaterials(itemName);  // Get required materials for crafting
+    Dictionary<string, int> recipeMaterials = GetRecipeMaterials(itemName);
 
-    // 1️⃣ **Check if the player has enough materials**
+    // Check if user has enough material
     bool hasEnoughMaterials = CheckMaterialsInInventory(recipeMaterials);
     if (!hasEnoughMaterials)
     {
@@ -76,7 +71,7 @@ public class DoubleClickHandler : MonoBehaviour
 
     bool itemAdded = false;
 
-    // 2️⃣ **First, Check for an Existing Stack of the Same Item**
+    // Check for existing slack
     foreach (Transform child in inventoryParent)
     {
         ItemSlot existingSlot = child.GetComponent<ItemSlot>();
@@ -95,7 +90,7 @@ public class DoubleClickHandler : MonoBehaviour
         }
     }
 
-    // 3️⃣ **If No Existing Stack is Found, Find an Empty Slot**
+    // if no existing stack, find empty slot
     if (!itemAdded)
     {
         foreach (Transform child in inventoryParent)
@@ -120,44 +115,60 @@ public class DoubleClickHandler : MonoBehaviour
         }
     }
 
-    // 4️⃣ **If No Empty Slot or Stack is Found**
+    // if not empty slot or the stack is full
     if (!itemAdded)
     {
         Debug.LogWarning("Inventory is full! Cannot add item: " + itemName);
     }
 
-    // 5️⃣ **Remove the materials from inventory after crafting**
+    // Remove material after crafting
     RemoveMaterialsFromInventory(recipeMaterials);
 }
 
-// Function to get the materials required for a specific recipe (could be fetched from a recipe manager or hardcoded)
 Dictionary<string, int> GetRecipeMaterials(string itemName)
 {
     Dictionary<string, int> recipeMaterials = new Dictionary<string, int>();
 
-    // Example: Hardcoded recipes for Paper (requires 2 wood) and Card (requires 1 paper, 1 ink, and 2 gold)
     if (itemName == "paper")
     {
-        recipeMaterials.Add("wood", 2);  // 2 Wood required
+        recipeMaterials.Add("wood", 2);
     }
-    else if (itemName == "Card")
+    else if (itemName =="ink") {
+        recipeMaterials.Add("dye",1);
+        recipeMaterials.Add("flower",1);
+        recipeMaterials.Add("bottle",1);
+
+    }
+    else if (itemName == "bronzeshield") {
+        recipeMaterials.Add("bronze",3);
+    }
+    else if (itemName == "silvershield") {
+        recipeMaterials.Add("silver",3);
+    }
+    else if (itemName == "goldshield") {
+        recipeMaterials.Add("gold",3);
+    }
+    else if (itemName == "potion") {
+        recipeMaterials.Add("water",1);
+        recipeMaterials.Add("flower",1);
+
+    }
+    else if (itemName == "card")
     {
-        recipeMaterials.Add("paper", 1);  // 1 Paper required
-        recipeMaterials.Add("ink", 1);    // 1 Ink required
-        recipeMaterials.Add("gold", 2);   // 2 Gold required
+        recipeMaterials.Add("paper", 1);
+        recipeMaterials.Add("ink", 1);
+        recipeMaterials.Add("gold", 2);
     }
 
     return recipeMaterials;
 }
 
-// Function to check if the player has enough materials in their inventory
 bool CheckMaterialsInInventory(Dictionary<string, int> requiredMaterials)
 {
     foreach (var material in requiredMaterials)
     {
         int totalMaterialCount = 0;
 
-        // Check the inventory for the required material and count how many we have
         foreach (Transform child in inventoryParent)
         {
             ItemSlot existingSlot = child.GetComponent<ItemSlot>();
@@ -177,7 +188,6 @@ bool CheckMaterialsInInventory(Dictionary<string, int> requiredMaterials)
     return true;  // If all materials are available
 }
 
-// Function to remove materials from inventory after crafting
 void RemoveMaterialsFromInventory(Dictionary<string, int> requiredMaterials)
 {
     foreach (var material in requiredMaterials)
@@ -191,7 +201,7 @@ void RemoveMaterialsFromInventory(Dictionary<string, int> requiredMaterials)
             {
                 if (existingSlot.quantity >= materialCountToRemove)
                 {
-                    existingSlot.RemoveItem(materialCountToRemove); // This function would need to be implemented in your ItemSlot script
+                    existingSlot.RemoveItem(materialCountToRemove);
                     materialCountToRemove = 0; // We've removed enough material, exit loop
                     break;
                 }
@@ -205,9 +215,6 @@ void RemoveMaterialsFromInventory(Dictionary<string, int> requiredMaterials)
     }
 }
 
-
-
-    // Check if mouse is over the UI element (result image)
     bool IsMouseOverUI()
     {
         // Check if the current mouse position is inside the RectTransform bounds of the GameObject

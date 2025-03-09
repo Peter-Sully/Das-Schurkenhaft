@@ -144,11 +144,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 772436403948944168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20039c4adbdc05c46ab8d0fbd17339e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ba1fb2019aea9e4e9ada9e5aa60e861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: bronzeshield
   quantity: 1
   sprite: {fileID: -916548203921428212, guid: 8a0e67dc038e4a34dac47281bbdc7c97, type: 3}
-  itemDescription: Bronze Shield provides +2 defense, offering extra protection in
-    combat
+  itemDescription: Bronze Shield provides +1 defense, offering extra protection in
+    combat.

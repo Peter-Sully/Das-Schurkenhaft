@@ -4,35 +4,40 @@ using UnityEngine;
 public class ItemSO : ScriptableObject
 {
     public string itemName;
-    public StatToChange statToChange = new StatToChange();
+    public bool isUsable; // Determines if the item can be used
+    public StatToChange statToChange = StatToChange.none;
     public int amountToChangeStat;
-    public AttributeToChange attributeToChange = new AttributeToChange();
-    public int amountToChangeAttribute;
 
     // Using the PlayerController to modify stats
-    public void UseItem()
+    public void UseItem(PlayerController playerController) // Accepts player instance
     {
-        // Find the player object and get the PlayerController component
-        PlayerController playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        // Prevent using the item if it's not usable
+        if (!isUsable)
+        {
+            Debug.Log(itemName + " cannot be used.");
+            return;
+        }
 
-        // If the player exists and we want to change health
+        // If the player exists, modify stats
         if (playerController != null)
         {
-            if (statToChange == StatToChange.health)
+            switch (statToChange)
             {
-                playerController.ChangeHealth(amountToChangeStat);
-            }
-            else if (statToChange == StatToChange.speed)
-            {
-                playerController.ChangeSpeed(amountToChangeStat);  // If you also want to modify speed
-            }
-            else if (statToChange == StatToChange.strength)
-            {
-                playerController.ChangeStrength(amountToChangeStat);  // Modify strength if needed
-            }
-            else if (statToChange == StatToChange.defense)
-            {
-                playerController.ChangeDefense(amountToChangeStat);  // Modify defense if needed
+                case StatToChange.health:
+                    playerController.ChangeHealth(amountToChangeStat);
+                    break;
+                case StatToChange.speed:
+                    playerController.ChangeSpeed(amountToChangeStat);
+                    break;
+                case StatToChange.strength:
+                    playerController.ChangeStrength(amountToChangeStat);
+                    break;
+                case StatToChange.defense:
+                    playerController.ChangeDefense(amountToChangeStat);
+                    break;
+                default:
+                    Debug.Log(itemName + " has no effect.");
+                    break;
             }
         }
     }
@@ -44,12 +49,5 @@ public class ItemSO : ScriptableObject
         speed,
         defense,
         strength
-    };
-
-    public enum AttributeToChange
-    {
-        none,
-        strength,
-        defense
     };
 }

@@ -375,7 +375,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6856016590631760641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f30092d7a553c124d87c3badabdc3753, type: 3}
+  m_Script: {fileID: 11500000, guid: fd6a822eb5d8ce944add5fb7eeabcfd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
@@ -383,7 +383,7 @@ MonoBehaviour:
   itemSprite: {fileID: 0}
   isFull: 0
   itemDescription: 
-  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  emptySprite: {fileID: 0}
   maxNumberOfItems: 9
   quantityText: {fileID: 6373477647036626504}
   itemImage: {fileID: 4343417981024403376}

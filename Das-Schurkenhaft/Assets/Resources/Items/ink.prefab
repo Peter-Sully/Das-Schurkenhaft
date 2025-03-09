@@ -144,10 +144,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3154979894960741867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20039c4adbdc05c46ab8d0fbd17339e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ba1fb2019aea9e4e9ada9e5aa60e861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: ink
   quantity: 1
   sprite: {fileID: 1456165600075679821, guid: de9b065ed1c717449ae68eb4fba40112, type: 3}
-  itemDescription: Ink is a liquid used in crafting, essential for creating cards
+  itemDescription: Ink is a liquid used in crafting, essential for creating cards.

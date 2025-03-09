@@ -144,11 +144,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1084320326074109529}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20039c4adbdc05c46ab8d0fbd17339e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ba1fb2019aea9e4e9ada9e5aa60e861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: silvershield
   quantity: 1
   sprite: {fileID: 3822326179150461244, guid: 8a0e67dc038e4a34dac47281bbdc7c97, type: 3}
   itemDescription: Silver Shield provides +3 defense, offering extra protection in
-    combat
+    combat.

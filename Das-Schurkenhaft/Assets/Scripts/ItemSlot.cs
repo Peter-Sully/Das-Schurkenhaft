@@ -150,11 +150,27 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void OnRightClick () {
-        // Add right-click functionality if needed
-        if(thisItemSelected) {
-            inventoryManager.UseItem(itemName);
-            RemoveItem(1);
-        }
+   public void OnRightClick() 
+{
+    // Check if there is an item in this slot
+    if (itemName == "") return;
+
+    // Fetch the corresponding ItemSO from InventoryManager
+    ItemSO itemData = inventoryManager.GetItemData(itemName);
+    
+    // If itemData is found and is usable, apply the effect
+    if (itemData != null && itemData.isUsable) 
+    {
+        PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
+        itemData.UseItem(player);
+
+        // Remove one item after use
+        RemoveItem(1);
     }
+    else 
+    {
+        Debug.Log(itemName + " cannot be used.");
+    }
+}
+
 }

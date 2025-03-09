@@ -144,13 +144,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4600017933633209009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20039c4adbdc05c46ab8d0fbd17339e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ba1fb2019aea9e4e9ada9e5aa60e861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: silver
   quantity: 1
   sprite: {fileID: 8866387471356650358, guid: de9b065ed1c717449ae68eb4fba40112, type: 3}
-  itemDescription: 'Silver is a shiny, white metal known for its value and used for
-    crafting tools and weapons
-
-'
+  itemDescription: Silver is a shiny, white metal known for its value and use in
+    crafting jewelry, coins, and refined items.
