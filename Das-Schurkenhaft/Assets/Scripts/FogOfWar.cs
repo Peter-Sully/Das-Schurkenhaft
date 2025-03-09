@@ -11,15 +11,11 @@ public class FogOfWar : MonoBehaviour
 
     private BoundsInt mapBounds;
 
-    void Start()
+    public void Start()
     {
-        if (wallsTilemap == null)
-        {
-            Debug.LogError("Walls tilemap not assigned!");
-            return;
-        }
         // Use the walls tilemap bounds to determine the fog area.
         mapBounds = wallsTilemap.cellBounds;
+        fogTilemap.ClearAllTiles();
         Debug.Log("Using walls tilemap bounds: " + mapBounds);
 
         // Fill the fogTilemap with fog tiles based on the walls tilemap bounds.
