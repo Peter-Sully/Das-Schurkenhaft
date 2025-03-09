@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9166f132a5b944c3288db74ff1c7d725, type: 3}
   m_Name: ManaBlast
   m_EditorClassIdentifier: 
-  cardName: Mana Blast
+  cardName: ManaBlast
   description: Deals 10 magic damage
-  artwork: {fileID: 0}
+  artwork: {fileID: 8052341053868065285, guid: 73054b7fa03d4435f8a8c2b97eb94e73, type: 3}
   cost: 2
   type: 0
   value: 10
+  isMultiTarget: 0

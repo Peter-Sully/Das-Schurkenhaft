@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9166f132a5b944c3288db74ff1c7d725, type: 3}
   m_Name: ManaBurst
   m_EditorClassIdentifier: 
-  cardName: Mana Burst
+  cardName: ManaBurst
   description: Deals 10 magic damage to all enemies
-  artwork: {fileID: 0}
+  artwork: {fileID: -4338096612197886339, guid: c77ee96707255404c88ad32a56c1f2fa, type: 3}
   cost: 3
   type: 0
   value: 10

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Regenerate
   description: Quickly regenarate 25 health
-  artwork: {fileID: 0}
+  artwork: {fileID: 5702951637426693383, guid: e426b27e7cbe24581af9b78280db6035, type: 3}
   cost: 4
   type: 4
   value: 25

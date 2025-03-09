@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Fireball
   description: Deal 10 fire damage
-  artwork: {fileID: 2438356170935184457, guid: c7fd2242261c24dd9af05071f66ed993, type: 3}
+  artwork: {fileID: -8961647520342813052, guid: f4e5dd025350f4cf9881486ebba7df65, type: 3}
   cost: 2
   type: 0
   value: 10

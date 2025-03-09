@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9166f132a5b944c3288db74ff1c7d725, type: 3}
   m_Name: PiercingArrow
   m_EditorClassIdentifier: 
-  cardName: Piercing Arrow
+  cardName: PiercingArrow
   description: Deals 5 physical damage to all enemies
-  artwork: {fileID: 0}
+  artwork: {fileID: 8707672298301436510, guid: 2e33c8bec0bac47d18c02b55a03583bd, type: 3}
   cost: 2
   type: 0
   value: 5

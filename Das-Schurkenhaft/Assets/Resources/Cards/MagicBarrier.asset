@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9166f132a5b944c3288db74ff1c7d725, type: 3}
   m_Name: MagicBarrier
   m_EditorClassIdentifier: 
-  cardName: Magic Barrier
+  cardName: MagicBarrier
   description: Summons a magic wall to block 15 damage
-  artwork: {fileID: 0}
+  artwork: {fileID: 8538780628949510076, guid: 8a4f2e77c1bfc47dd998b7ca0253e627, type: 3}
   cost: 3
   type: 1
   value: 15

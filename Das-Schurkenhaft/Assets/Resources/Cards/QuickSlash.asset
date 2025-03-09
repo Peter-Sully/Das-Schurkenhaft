@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9166f132a5b944c3288db74ff1c7d725, type: 3}
   m_Name: QuickSlash
   m_EditorClassIdentifier: 
-  cardName: Quick Slash
+  cardName: QuickSlash
   description: Deals 5 physical damage
-  artwork: {fileID: 0}
+  artwork: {fileID: 1223196226737707839, guid: c4395c2dfc2c844deb314d2489654b26, type: 3}
   cost: 1
   type: 0
   value: 5
+  isMultiTarget: 0

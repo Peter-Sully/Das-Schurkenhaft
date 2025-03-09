@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Fortify
   description: A powerful techinque that stops 40 incoming damage
-  artwork: {fileID: 0}
+  artwork: {fileID: 4870125245114056259, guid: 9644b2342945e4a859749b1f8b075132, type: 3}
   cost: 5
   type: 1
   value: 40

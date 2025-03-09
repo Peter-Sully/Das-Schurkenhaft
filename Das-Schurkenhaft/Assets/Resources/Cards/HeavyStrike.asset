@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9166f132a5b944c3288db74ff1c7d725, type: 3}
   m_Name: HeavyStrike
   m_EditorClassIdentifier: 
-  cardName: Heavy Strike
+  cardName: HeavyStrike
   description: Deals 15 physical damage
-  artwork: {fileID: 0}
+  artwork: {fileID: 819851439158909787, guid: 92ffea4a7b5464da58f9d79543c4fb35, type: 3}
   cost: 3
   type: 0
   value: 15
+  isMultiTarget: 0

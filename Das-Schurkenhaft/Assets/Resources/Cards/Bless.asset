@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Bless
   description: Bless the user with 15 health
-  artwork: {fileID: 0}
+  artwork: {fileID: 466889574451336338, guid: 2e1224d4a859e43b49f14bda7c012380, type: 3}
   cost: 3
   type: 4
   value: 15

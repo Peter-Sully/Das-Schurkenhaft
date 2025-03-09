@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Reinforce
   description: A quick reinforcement of 5 shield
-  artwork: {fileID: 0}
+  artwork: {fileID: -999497439796674853, guid: 024d563219338403aabf3b9fe3c7a388, type: 3}
   cost: 1
   type: 1
   value: 5

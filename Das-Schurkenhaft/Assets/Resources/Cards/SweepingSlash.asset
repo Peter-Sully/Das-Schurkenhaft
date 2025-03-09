@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9166f132a5b944c3288db74ff1c7d725, type: 3}
   m_Name: SweepingSlash
   m_EditorClassIdentifier: 
-  cardName: Sweeping Slash
+  cardName: SweepingSlash
   description: Deals 5 physical damage to all enemies
-  artwork: {fileID: 0}
+  artwork: {fileID: 4176362632249098406, guid: 00cf19bb37e374aa38b1026d26a9949b, type: 3}
   cost: 2
   type: 0
   value: 5
