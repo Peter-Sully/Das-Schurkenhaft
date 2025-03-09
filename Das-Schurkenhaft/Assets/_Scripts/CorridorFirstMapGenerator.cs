@@ -10,10 +10,20 @@ public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
     [SerializeField]
     [Range(0.1f, 1)]
     private float roomPercent = 0.8f;
+    private HashSet<Vector2Int> roomPositions = new HashSet<Vector2Int>();
+    public Transform player;
 
     protected override void RunProceduralGeneration()
     {
         CorridorFirstGeneration();
+        Debug.Log("Spawn Position: " + GetSpawnPosition());
+        Debug.Log("Exit Position: " + GetExitPosition());
+        if (player != null)
+        {
+            player.position = (Vector3Int)GetSpawnPosition();
+        }
+        FogOfWar fogOfWar = FindAnyObjectByType<FogOfWar>();
+        fogOfWar.Start();
     }
 
     private void CorridorFirstGeneration()
@@ -23,7 +33,7 @@ public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
 
         List<List<Vector2Int>> corridors = CreateCorridors(floorPositions, potentialRoomPositions);
 
-        HashSet<Vector2Int> roomPositions = CreateRooms(potentialRoomPositions);
+        roomPositions = CreateRooms(potentialRoomPositions);
 
         List<Vector2Int> deadEnds = FindAllDeadEnds(floorPositions);
 
@@ -39,6 +49,38 @@ public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
 
         tilemapVisualizer.PaintFloorTiles(floorPositions);
         WallGenerator.CreateWalls(floorPositions, tilemapVisualizer);
+    }
+
+    public Vector2Int GetSpawnPosition()
+    {
+        Vector2Int spawnPosition = Vector2Int.zero;
+        int minDistance = int.MaxValue;
+        foreach (var position in roomPositions)
+        {
+            int distance = Mathf.Abs(position.x) + Mathf.Abs(position.y);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                spawnPosition = position;
+            }
+        }
+        return spawnPosition;
+    }
+
+    public Vector2Int GetExitPosition()
+    {
+        Vector2Int exitPosition = Vector2Int.zero;
+        int maxDistance = int.MinValue;
+        foreach (var position in roomPositions)
+        {
+            int distance = Mathf.Abs(position.x) + Mathf.Abs(position.y);
+            if (distance > maxDistance)
+            {
+                maxDistance = distance;
+                exitPosition = position;
+            }
+        }
+        return exitPosition;
     }
 
     private List<Vector2Int> IncreaseCorridorBrush3by3(List<Vector2Int> corridor)
