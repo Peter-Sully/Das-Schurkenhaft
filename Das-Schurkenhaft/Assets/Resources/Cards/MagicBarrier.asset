@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9166f132a5b944c3288db74ff1c7d725, type: 3}
-  m_Name: Fireball
+  m_Name: MagicBarrier
   m_EditorClassIdentifier: 
-  cardName: Fireball
-  description: A ball of fire thrown by the user
-  damage: 10
-  artwork: {fileID: 2438356170935184457, guid: c7fd2242261c24dd9af05071f66ed993, type: 3}
+  cardName: MagicBarrier
+  description: Summons a magic wall to block 15 damage
+  artwork: {fileID: 8538780628949510076, guid: 8a4f2e77c1bfc47dd998b7ca0253e627, type: 3}
   cost: 3
-  type: 0
+  type: 1
+  value: 15
+  isMultiTarget: 0
