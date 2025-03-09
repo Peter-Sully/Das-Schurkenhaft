@@ -5,7 +5,7 @@ using System.Collections;
 
 public class InputManager : MonoBehaviour
 {
-
+    private PlayerController playerController;
     public InputAction sceneSwitchAction;
     private bool isSceneSwitching = false;
     private float lastSwitchTime = 0f;
@@ -53,6 +53,12 @@ public class InputManager : MonoBehaviour
             // Determine which scene you're in, and switch accordingly
             if (SceneManager.GetActiveScene().name == "MainScene")
             {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if (player != null)
+                {
+                    playerController = player.GetComponent<PlayerController>();
+                    GameData.playerPosition = playerController.GetPosition();
+                }
                 // Switch to Scene2 (without player controller)
                 SceneManager.LoadScene("DeckBuilderScene");
             }

@@ -21,6 +21,12 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 originalScale;
 
+    void Awake()
+    {
+        if (GameData.playerPosition != Vector2.zero) {
+            transform.position = GameData.playerPosition;
+        }
+    }
     void Start()
     {
         if (_prefabs == null)
