@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Volley_0: -2653389875504111953
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
