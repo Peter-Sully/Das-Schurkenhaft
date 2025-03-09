@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 37d026c7b49eafb4e8dac0807eb78cce
+guid: f9d283b8753a34b459cd03fcc6e3c3fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -705954630074312013
-    second: tropical-beach-pictures_0
+      213: 6268369970943465097
+    second: menuart_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tropical-beach-pictures_0
+      name: menuart_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1200
-        height: 799
+        width: 612
+        height: 334
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3bad0e61102f336f0800000000000000
-      internalID: -705954630074312013
+      spriteID: 9869fcef649bdf650800000000000000
+      internalID: 6268369970943465097
       vertices: []
       indices: 
       edges: []
