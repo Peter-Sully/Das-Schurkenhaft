@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -41,6 +42,16 @@ public class EnemyController : MonoBehaviour
         if (timer < 0) {
             direction = -direction;
             timer = changeTime;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Trigger Entered with: " + other.name);
+        if(other.name == "Player")
+        {
+            Debug.Log("Loading Combat Scene...");
+            SceneManager.LoadScene("CombatScene");
         }
     }
 }

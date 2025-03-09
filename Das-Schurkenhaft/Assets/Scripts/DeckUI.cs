@@ -84,16 +84,30 @@ public class DeckUI : MonoBehaviour
 
         if (allCards.Count == 0)
         {
-            AddCardsToDict(allCards, "Fireball", 10);
-            AddCardsToDict(allCards, "Mend", 10);
-            AddCardsToDict(allCards, "ShieldUp", 10);
+            AddCardsToDict(allCards, "Fireball", 5);
+            AddCardsToDict(allCards, "Mend", 5);
+            AddCardsToDict(allCards, "ShieldUp", 5);
+            AddCardsToDict(allCards, "Bless", 2);
+            AddCardsToDict(allCards, "ChainLightning", 3);
+            AddCardsToDict(allCards, "Fortify", 2);
+            //AddCardsToDict(allCards, "HeavyStrike", 5);
+            AddCardsToDict(allCards, "MagicBarrier", 3);
+            //AddCardsToDict(allCards, "ManaBlast", 5);
+            AddCardsToDict(allCards, "ManaBurst", 3);
+            //AddCardsToDict(allCards, "PiercingArrow", 5);
+            AddCardsToDict(allCards, "QuickSlash", 3);
+            AddCardsToDict(allCards, "Regenerate", 3);
+            AddCardsToDict(allCards, "Reinforce", 5);
+            AddCardsToDict(allCards, "Smite", 3);
+            AddCardsToDict(allCards, "SweepingSlash", 5);
+            AddCardsToDict(allCards, "VolleyBarrage", 2);
         }
 
         if (deck.Count == 0)
         {
-            AddCardsToDict(allCards, "Fireball", 3);
-            AddCardsToDict(allCards, "Mend", 3);
-            AddCardsToDict(allCards, "ShieldUp", 3);
+            AddCardsToDict(deck, "Fireball", 3);
+            AddCardsToDict(deck, "Mend", 3);
+            AddCardsToDict(deck, "ShieldUp", 3);
         }
 
         SaveCardData();
@@ -325,4 +339,5 @@ public class DeckUI : MonoBehaviour
             
         }
     }
+    
 }
