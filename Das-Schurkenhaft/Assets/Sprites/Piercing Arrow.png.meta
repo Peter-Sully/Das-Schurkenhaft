@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Piercing Arrow_0: 8707672298301436510
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
