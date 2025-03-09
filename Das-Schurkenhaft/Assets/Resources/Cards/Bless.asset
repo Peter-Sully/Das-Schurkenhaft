@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9166f132a5b944c3288db74ff1c7d725, type: 3}
-  m_Name: Smite
+  m_Name: Bless
   m_EditorClassIdentifier: 
-  cardName: Smite
-  description: Deals 15 lightning damage
-  artwork: {fileID: 6756093008028955788, guid: caebb325d5ea5495e99a3bdf74d6772b, type: 3}
+  cardName: Bless
+  description: Bless the user with 15 health
+  artwork: {fileID: 466889574451336338, guid: 2e1224d4a859e43b49f14bda7c012380, type: 3}
   cost: 3
-  type: 0
+  type: 4
   value: 15
   isMultiTarget: 0

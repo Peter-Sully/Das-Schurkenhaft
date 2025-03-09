@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Mend
   description: Heals 10 damage
-  artwork: {fileID: -6883991616458237475, guid: 45a6eba6528644c90a78095d73c47d8e, type: 3}
+  artwork: {fileID: 2923721309231953668, guid: e365defc476364724a11de6d556be98d, type: 3}
   cost: 2
   type: 4
   value: 10
+  isMultiTarget: 0
