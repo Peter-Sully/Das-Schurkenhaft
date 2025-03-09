@@ -63,6 +63,18 @@ public class CardPreviewManager : MonoBehaviour, IPointerClickHandler
     {
         if (currentCard == null || CombatSystem.instance == null) return;
 
+        if (currentCard.cardData.type == CardType.Defense && CombatSystem.instance.playerShield >= CombatSystem.instance.maxHealth)
+        {
+            Debug.Log("Max Shield Reached! Cannot Play!");
+            return;
+        }
+
+        if (currentCard.cardData.type == CardType.Heal && CombatSystem.instance.playerHealth >= CombatSystem.instance.maxHealth)
+        {
+            Debug.Log("Max Health Reached! Cannot Play!");
+            return;
+        }
+
         if (CombatSystem.instance.SpendEnergy(currentCard.cardData.cost))
         {
             currentCard.PlayCard();
