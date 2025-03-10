@@ -6,12 +6,11 @@ using UnityEngine.SceneManagement;
 public class EnemyController : MonoBehaviour
 {
     //stats
-    public int maxHealth;
-    int currentHealth;
-    public int strength;
-    public int defense;
+    
     public float speed;
 
+    public SPUM_Prefabs _prefabs;
+    private Vector3 originalScale;
     Rigidbody2D rigidbody2d;
     float timer;
     int direction = 1;
@@ -22,6 +21,16 @@ public class EnemyController : MonoBehaviour
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         timer = changeTime;
+        if (_prefabs == null)
+        {
+            
+            _prefabs = transform.GetComponent<SPUM_Prefabs>();
+            if (!_prefabs.allListsHaveItemsExist())
+            {
+                _prefabs.PopulateAnimationLists();
+            }
+        }
+        originalScale = _prefabs.transform.localScale;
     }
 
     void FixedUpdate() {
@@ -38,9 +47,16 @@ public class EnemyController : MonoBehaviour
     void Update() 
     {
         timer  -= Time.deltaTime;
+        if (direction == 1) {
+            _prefabs.transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
+        } else {
+            _prefabs.transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
+        }
 
+        //Debug.Log("Timer: " + timer);
         if (timer < 0) {
             direction = -direction;
+            vertical = !vertical;
             timer = changeTime;
         }
     }

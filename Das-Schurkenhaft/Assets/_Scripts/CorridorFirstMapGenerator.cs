@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using Random = UnityEngine.Random;
 public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
 {
     [SerializeField]
@@ -12,6 +12,7 @@ public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
     private float roomPercent = 0.8f;
     private HashSet<Vector2Int> roomPositions = new HashSet<Vector2Int>();
     public Transform player;
+    HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
 
     protected override void RunProceduralGeneration()
     {
@@ -24,11 +25,27 @@ public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
         }
         FogOfWar fogOfWar = FindAnyObjectByType<FogOfWar>();
         fogOfWar.Start();
+
+        List<Vector2Int> EnemySpawnPoints = GetEnemySpawnPoints();
+    }
+
+    public List<Vector2Int> GetEnemySpawnPoints()
+    {
+        List<Vector2Int> enemySpawnPoints = new List<Vector2Int>();
+        foreach (var position in floorPositions)
+        {
+            var spawnPoint = Random.Range(1, 200);
+            if (spawnPoint == 1)
+            {
+                enemySpawnPoints.Add(position);
+            }
+        }
+        return enemySpawnPoints;
     }
 
     private void CorridorFirstGeneration()
     {
-        HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
+        
         HashSet<Vector2Int> potentialRoomPositions = new HashSet<Vector2Int>();
 
         List<List<Vector2Int>> corridors = CreateCorridors(floorPositions, potentialRoomPositions);
