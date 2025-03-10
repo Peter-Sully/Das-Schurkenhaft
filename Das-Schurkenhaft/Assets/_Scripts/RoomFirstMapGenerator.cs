@@ -19,22 +19,39 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
     List<Vector2Int> roomCenters = new List<Vector2Int>();
     public Transform player;
 
+    [SerializeField]
+    private float npcHolderOffsetDistance = 1f;
+
     protected override void RunProceduralGeneration()
     {
         CreateRooms();
         Debug.Log("Spawn Position: " + GetSpawnPosition());
         Debug.Log("Exit Position: " + GetExitPosition());
+        
         if (player != null)
         {
-            player.position = (Vector3Int)GetSpawnPosition();
+            Vector3 spawnPos = (Vector3Int)GetSpawnPosition();
+            player.position = spawnPos;
+            
+            GameObject npcHolder = GameObject.Find("NPC holder");
+            if (npcHolder == null)
+            {
+                npcHolder = new GameObject("NPC holder");
+            }
+            
+            npcHolder.transform.position = player.position + player.right * npcHolderOffsetDistance;
         }
+        
         FogOfWar fogOfWar = FindAnyObjectByType<FogOfWar>();
         fogOfWar.Start();
     }
 
     private void CreateRooms()
     {
-        var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt((Vector3Int)startPosition, new Vector3Int(mapWidth, mapHeight, 0)), minRoomWidth, minRoomHeight);
+        var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(
+            new BoundsInt((Vector3Int)startPosition, new Vector3Int(mapWidth, mapHeight, 0)), 
+            minRoomWidth, 
+            minRoomHeight);
         HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
         List<Vector2Int> roomCentersConnect = new List<Vector2Int>();
 
@@ -127,7 +144,10 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
             var roomFloor = RunRandomWalk(randomWalkParameters, roomCenter);
             foreach (var position in roomFloor)
             {
-                if (position.x >= (roomBounds.xMin + offset) && position.x <= (roomBounds.xMax - offset) && position.y >= (roomBounds.yMin + offset) && position.y <= (roomBounds.yMax - offset))
+                if (position.x >= (roomBounds.xMin + offset) && 
+                    position.x <= (roomBounds.xMax - offset) && 
+                    position.y >= (roomBounds.yMin + offset) && 
+                    position.y <= (roomBounds.yMax - offset))
                 {
                     floor.Add(position);
                 }
