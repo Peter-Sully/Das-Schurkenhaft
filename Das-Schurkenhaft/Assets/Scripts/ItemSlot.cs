@@ -161,7 +161,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     // If itemData is found and is usable, apply the effect
     if (itemData != null && itemData.isUsable) 
     {
-        PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
+        PlayerController player = GameObject.Find("SPUM_20240911215638389").GetComponent<PlayerController>();
         itemData.UseItem(player);
 
         // Remove one item after use
