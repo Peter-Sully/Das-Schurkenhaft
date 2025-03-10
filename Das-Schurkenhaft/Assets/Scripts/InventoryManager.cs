@@ -9,9 +9,14 @@ public class InventoryManager : MonoBehaviour
    private bool canvasActivated;
    public ItemSlot[] itemSlot;
    public ItemSO[] itemSOs;
-
+   public GameObject woodPrefab;
+   public GameObject potionPrefab;
+   public GameObject goldPrefab;
+   
    void Start() {
-
+        AddItemFromPrefab(woodPrefab);
+        AddItemFromPrefab(potionPrefab);
+        AddItemFromPrefab(goldPrefab);
    }
 
    void Update() {
@@ -106,4 +111,13 @@ public class InventoryManager : MonoBehaviour
     return null; // Return null if item data is not found
 }
 
+public void AddItemFromPrefab(GameObject prefab) {
+        item itemData = prefab.GetComponent<item>();
+
+        if (itemData != null) {
+            AddItem(itemData.GetName(), 5, itemData.GetSprite(), itemData.GetDescription());
+        } else {
+            Debug.LogError("Item prefab is missing the item script!");
+        }
+    }
 }
