@@ -163,4 +163,14 @@ public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
         }
         return corridors;
     }
+
+    void Start()
+    {
+        if (GameManager.Instance != null && GameManager.Instance.executeOnLoad == 1)
+        {
+            tilemapVisualizer.Clear();
+            RunProceduralGeneration();
+            GameManager.Instance.executeOnLoad = 2;
+        }
+    }
 }
