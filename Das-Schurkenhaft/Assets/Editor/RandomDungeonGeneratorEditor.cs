@@ -14,9 +14,9 @@ public class NewMonoBehaviourScript : Editor
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        if(GUILayout.Button("Create Dungeon"))
+        if(GUILayout.Button("Create Map"))
         {
-            generator.GenerateDungeon();
+            generator.GenerateMap();
         }
     }
 }
