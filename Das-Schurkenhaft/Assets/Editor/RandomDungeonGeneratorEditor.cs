@@ -16,7 +16,7 @@ public class NewMonoBehaviourScript : Editor
         base.OnInspectorGUI();
         if(GUILayout.Button("Create Map"))
         {
-            generator.GenerateDungeon();
+            generator.GenerateMap();
         }
     }
 }
