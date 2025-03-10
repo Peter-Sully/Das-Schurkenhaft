@@ -21,7 +21,6 @@ public class EnemyDeck : MonoBehaviour
         {
             GenerateVampireDeck();
         }
-        cards.Add(new EnemyCard { cardValue = 10, cardType = "Heal" });
 
 
     }   

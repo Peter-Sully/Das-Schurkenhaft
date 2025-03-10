@@ -7,6 +7,8 @@ using Random = UnityEngine.Random;
 
 public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
 {
+    public static RoomFirstMapGenerator instance { get; private set; }
+    
     [SerializeField]
     private int minRoomWidth = 4, minRoomHeight = 4;
     [SerializeField]
@@ -19,8 +21,12 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
     List<Vector2Int> roomCenters = new List<Vector2Int>();
     public Transform player;
 
+<<<<<<< HEAD
+    HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
+=======
     [SerializeField]
     private float npcHolderOffsetDistance = 1f;
+>>>>>>> main
 
     protected override void RunProceduralGeneration()
     {
@@ -44,15 +50,36 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
         
         FogOfWar fogOfWar = FindAnyObjectByType<FogOfWar>();
         fogOfWar.Start();
-    }
 
+        List<Vector2Int> EnemySpawnPoints = GetEnemySpawnPoints();
+    }
+    
+
+    public List<Vector2Int> GetEnemySpawnPoints()
+    {
+        List<Vector2Int> enemySpawnPoints = new List<Vector2Int>();
+        foreach (var position in floor)
+        {
+            var spawnPoint = Random.Range(1, 200);
+            if (spawnPoint == 1)
+            {
+                enemySpawnPoints.Add(position);
+            }
+        }
+        return enemySpawnPoints;
+    }
     private void CreateRooms()
     {
+<<<<<<< HEAD
+        var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt((Vector3Int)startPosition, new Vector3Int(mapWidth, mapHeight, 0)), minRoomWidth, minRoomHeight);
+       
+=======
         var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(
             new BoundsInt((Vector3Int)startPosition, new Vector3Int(mapWidth, mapHeight, 0)), 
             minRoomWidth, 
             minRoomHeight);
         HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
+>>>>>>> main
         List<Vector2Int> roomCentersConnect = new List<Vector2Int>();
 
         if (randomWalkRooms)

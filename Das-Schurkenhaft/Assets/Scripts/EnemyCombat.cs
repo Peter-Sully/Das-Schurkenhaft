@@ -64,7 +64,7 @@ public class EnemyCombat : MonoBehaviour
     public void Heal(int amount) {
         CombatSystem.instance.enemyHealth += amount;
         currentHealth += amount;
-        Debug.Log($"{enemyName} healed {amount}, Current healt: {currentHealth}");
+        Debug.Log($"{enemyName} healed {amount}, Current health: {currentHealth}");
     }
 
     private void Die()
@@ -104,6 +104,7 @@ public class EnemyCombat : MonoBehaviour
             }
         }
         Debug.Log("Enemy turn ends.");
+
     }
 }
 
