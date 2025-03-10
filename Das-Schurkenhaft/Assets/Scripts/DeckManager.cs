@@ -7,7 +7,7 @@ public class DeckManager : MonoBehaviour
     public GameObject cardPrefab;  // Assign your card prefab in the Inspector
     public Transform PlayerHand;  // Assign a UI panel or area where the card should appear
     public Text deckSizeText;
-    Dictionary<string, int> deck = new Dictionary<string, int>();
+    public Dictionary<string, int> deck = new Dictionary<string, int>();
 
     public void LoadDeck()
     {
