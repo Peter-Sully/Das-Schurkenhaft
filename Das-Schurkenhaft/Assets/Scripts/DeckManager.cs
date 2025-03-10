@@ -29,6 +29,26 @@ public class DeckManager : MonoBehaviour
                 }
             }
         }
+
+        if (deck.Count == 0)
+        {
+            AddCardsToDict(deck, "Fireball", 3);
+            AddCardsToDict(deck, "Mend", 3);
+            AddCardsToDict(deck, "ShieldUp", 3);
+
+        }
+    }
+
+    public void AddCardsToDict(Dictionary<string, int> cardDict, string cardName, int count)
+    {
+        if (cardDict.ContainsKey(cardName))
+        {
+            cardDict[cardName] += count;
+        }
+        else
+        {
+            cardDict.Add(cardName, count);
+        }
     }
 
     public void ShuffleDeck()
