@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Regenerate
   m_EditorClassIdentifier: 
   cardName: Regenerate
-  description: Heals 5 damage for 4 turns
-  artwork: {fileID: 0}
-  cost: 3
+  description: Quickly regenarate 25 health
+  artwork: {fileID: 5702951637426693383, guid: e426b27e7cbe24581af9b78280db6035, type: 3}
+  cost: 4
   type: 4
-  value: 5
+  value: 25
+  isMultiTarget: 0
