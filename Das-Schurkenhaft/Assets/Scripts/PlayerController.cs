@@ -21,8 +21,6 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 originalScale;
 
-    public AbstractMapGenerator mapGenerator;
-
     void Awake()
     {
         if (GameData.playerPosition != Vector2.zero) {

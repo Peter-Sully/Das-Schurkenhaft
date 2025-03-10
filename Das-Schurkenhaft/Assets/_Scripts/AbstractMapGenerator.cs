@@ -7,7 +7,7 @@ public abstract class AbstractMapGenerator : MonoBehaviour
     [SerializeField]
     protected Vector2Int startPosition = Vector2Int.zero;
 
-    public void GenerateDungeon()
+    public void GenerateMap()
     {
         tilemapVisualizer.Clear();
         RunProceduralGeneration();

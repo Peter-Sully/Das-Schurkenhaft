@@ -217,4 +217,14 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
         }
         return floor;
     }
+
+    void Start()
+    {
+        if (GameManager.Instance != null && GameManager.Instance.executeOnLoad == 0)
+        {
+            tilemapVisualizer.Clear();
+            RunProceduralGeneration();
+            GameManager.Instance.executeOnLoad = 2;
+        }
+    }
 }
