@@ -21,12 +21,10 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
     List<Vector2Int> roomCenters = new List<Vector2Int>();
     public Transform player;
 
-<<<<<<< HEAD
     HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
-=======
+
     [SerializeField]
     private float npcHolderOffsetDistance = 1f;
->>>>>>> main
 
     protected override void RunProceduralGeneration()
     {
@@ -70,16 +68,8 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
     }
     private void CreateRooms()
     {
-<<<<<<< HEAD
         var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt((Vector3Int)startPosition, new Vector3Int(mapWidth, mapHeight, 0)), minRoomWidth, minRoomHeight);
-       
-=======
-        var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(
-            new BoundsInt((Vector3Int)startPosition, new Vector3Int(mapWidth, mapHeight, 0)), 
-            minRoomWidth, 
-            minRoomHeight);
         HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
->>>>>>> main
         List<Vector2Int> roomCentersConnect = new List<Vector2Int>();
 
         if (randomWalkRooms)
