@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using Random = UnityEngine.Random;
 public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
 {
     [SerializeField]
@@ -12,6 +12,9 @@ public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
     private float roomPercent = 0.8f;
     private HashSet<Vector2Int> roomPositions = new HashSet<Vector2Int>();
     public Transform player;
+    HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
+
+    public GameObject item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11;
 
     protected override void RunProceduralGeneration()
     {
@@ -24,11 +27,92 @@ public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
         }
         FogOfWar fogOfWar = FindAnyObjectByType<FogOfWar>();
         fogOfWar.Start();
+
+        List<Vector2Int> EnemySpawnPoints = GetEnemySpawnPoints();
+
+        List<Vector2Int> itemSpawnPoints = GetItemSpawnPoints();
+        foreach (var position in itemSpawnPoints)
+        {
+            var spawnPoint = Random.Range(1, 12);
+            var position_ = (Vector3Int)position;
+            if (spawnPoint == 1)
+            {
+                Instantiate(item1, position_, Quaternion.identity);
+            }
+            else if (spawnPoint == 2)
+            {
+                Instantiate(item2, position_, Quaternion.identity);
+            }
+            else if (spawnPoint == 3)
+            {
+                Instantiate(item3, position_, Quaternion.identity);
+            }
+            else if (spawnPoint == 4)
+            {
+                Instantiate(item4, position_, Quaternion.identity);
+            }
+            else if (spawnPoint == 5)
+            {
+                Instantiate(item5, position_, Quaternion.identity);
+            }
+            else if (spawnPoint == 6)
+            {
+                Instantiate(item6, position_, Quaternion.identity);
+            }
+            else if (spawnPoint == 7)
+            {
+                Instantiate(item7, position_, Quaternion.identity);
+            }
+            else if (spawnPoint == 8)
+            {
+                Instantiate(item8, position_, Quaternion.identity);
+            }
+            else if (spawnPoint == 9)
+            {
+                Instantiate(item9, position_, Quaternion.identity);
+            }
+            else if (spawnPoint == 10)
+            {
+                Instantiate(item10, position_, Quaternion.identity);
+            }
+            else if (spawnPoint == 11)
+            {
+                Instantiate(item11, position_, Quaternion.identity);
+            }
+        }
+    }
+
+    private List<Vector2Int> GetItemSpawnPoints()
+    {
+        List<Vector2Int> itemSpawnPoints = new List<Vector2Int>();
+        foreach (var position in floorPositions)
+        {
+            var spawnPoint = Random.Range(1, 500);
+            if (spawnPoint == 1)
+            {
+                itemSpawnPoints.Add(position);
+            }
+        }
+        return itemSpawnPoints;
+    }
+
+    public List<Vector2Int> GetEnemySpawnPoints()
+    {
+        List<Vector2Int> enemySpawnPoints = new List<Vector2Int>();
+        foreach (var position in floorPositions)
+        {
+            var spawnPoint = Random.Range(1, 200);
+            if (spawnPoint == 1)
+            {
+                enemySpawnPoints.Add(position);
+            }
+        }
+        return enemySpawnPoints;
     }
 
     private void CorridorFirstGeneration()
     {
-        HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
+        
         HashSet<Vector2Int> potentialRoomPositions = new HashSet<Vector2Int>();
 
         List<List<Vector2Int>> corridors = CreateCorridors(floorPositions, potentialRoomPositions);

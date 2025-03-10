@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/CraftingSystemScene.unity
     guid: db87db737a639be47b25b50edcb2a83e
   - enabled: 1
     path: Assets/Scenes/CombatScene.unity
