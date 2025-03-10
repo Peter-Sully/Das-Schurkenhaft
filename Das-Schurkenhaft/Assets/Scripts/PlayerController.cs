@@ -21,6 +21,14 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 originalScale;
 
+    public AbstractMapGenerator mapGenerator;
+
+    void Awake()
+    {
+        if (GameData.playerPosition != Vector2.zero) {
+            transform.position = GameData.playerPosition;
+        }
+    }
     void Start()
     {
         if (_prefabs == null)
@@ -126,5 +134,15 @@ public class PlayerController : MonoBehaviour
     {
         defense += amount;
         Debug.Log("New Defense: " + defense);
+    }
+    
+    public Vector2 GetPosition()
+    {
+        return rigidbody2d.position;
+    }
+
+    public int GetHealth()
+    {
+        return currentHealth;
     }
 }

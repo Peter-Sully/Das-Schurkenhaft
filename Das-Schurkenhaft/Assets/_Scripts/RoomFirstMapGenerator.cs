@@ -16,16 +16,27 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
     private int offset = 1;
     [SerializeField]
     private bool randomWalkRooms = false;
+    List<Vector2Int> roomCenters = new List<Vector2Int>();
+    public Transform player;
 
     protected override void RunProceduralGeneration()
     {
         CreateRooms();
+        Debug.Log("Spawn Position: " + GetSpawnPosition());
+        Debug.Log("Exit Position: " + GetExitPosition());
+        if (player != null)
+        {
+            player.position = (Vector3Int)GetSpawnPosition();
+        }
+        FogOfWar fogOfWar = FindAnyObjectByType<FogOfWar>();
+        fogOfWar.Start();
     }
 
     private void CreateRooms()
     {
         var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt((Vector3Int)startPosition, new Vector3Int(mapWidth, mapHeight, 0)), minRoomWidth, minRoomHeight);
         HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
+        List<Vector2Int> roomCentersConnect = new List<Vector2Int>();
 
         if (randomWalkRooms)
         {
@@ -36,13 +47,13 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
             floor = CreateSimpleRooms(roomsList);
         }
 
-        List<Vector2Int> roomCenters = new List<Vector2Int>();
         foreach (var room in roomsList)
         {
+            roomCentersConnect.Add((Vector2Int)Vector3Int.RoundToInt(room.center));
             roomCenters.Add((Vector2Int)Vector3Int.RoundToInt(room.center));
         }
 
-        List<List<Vector2Int>> corridors = ConnectRooms(roomCenters);
+        List<List<Vector2Int>> corridors = ConnectRooms(roomCentersConnect);
         foreach (var corridor in corridors)
         {
             floor.UnionWith(corridor);
@@ -56,6 +67,38 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
 
         tilemapVisualizer.PaintFloorTiles(floor);
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
+    }
+
+    public Vector2Int GetSpawnPosition()
+    {
+        Vector2Int spawnPosition = Vector2Int.zero;
+        int minDistance = int.MaxValue;
+        foreach (var position in roomCenters)
+        {
+            int distance = Mathf.Abs(position.x) + Mathf.Abs(position.y);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                spawnPosition = position;
+            }
+        }
+        return spawnPosition;
+    }
+
+    public Vector2Int GetExitPosition()
+    {
+        Vector2Int exitPosition = Vector2Int.zero;
+        int maxDistance = 0;
+        foreach (var position in roomCenters)
+        {
+            int distance = Mathf.Abs(position.x) + Mathf.Abs(position.y);
+            if (distance > maxDistance)
+            {
+                maxDistance = distance;
+                exitPosition = position;
+            }
+        }
+        return exitPosition;
     }
 
     private List<Vector2Int> IncreaseCorridorBrush3by3(List<Vector2Int> corridor)
@@ -93,16 +136,16 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
         return floor;
     }
 
-    private List<List<Vector2Int>> ConnectRooms(List<Vector2Int> roomCenters)
+    private List<List<Vector2Int>> ConnectRooms(List<Vector2Int> roomCentersConnect)
     {
         List<List<Vector2Int>> corridors = new List<List<Vector2Int>>();
-        var currentRoomCenter = roomCenters[Random.Range(0, roomCenters.Count)];
-        roomCenters.Remove(currentRoomCenter);
+        var currentRoomCenter = roomCentersConnect[Random.Range(0, roomCentersConnect.Count)];
+        roomCentersConnect.Remove(currentRoomCenter);
 
-        while (roomCenters.Count > 0)
+        while (roomCentersConnect.Count > 0)
         {
-            Vector2Int closest = FindClosestPointTo(currentRoomCenter, roomCenters);
-            roomCenters.Remove(closest);
+            Vector2Int closest = FindClosestPointTo(currentRoomCenter, roomCentersConnect);
+            roomCentersConnect.Remove(closest);
             List<Vector2Int> newCorridor = CreateCorridor(currentRoomCenter, closest);
             currentRoomCenter = closest;
             corridors.Add(newCorridor);
