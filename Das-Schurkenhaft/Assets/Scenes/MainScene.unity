@@ -20181,6 +20181,18 @@ PrefabInstance:
       value: OnMouseDownItem
       objectReference: {fileID: 0}
     - target: {fileID: 1449171307080354233, guid: eb4e322369e137744b4dd14a5a26379d, type: 3}
+      propertyPath: goldPrefab
+      value: 
+      objectReference: {fileID: 938278481879350437, guid: 9e8c7affa33c9024288c16a8805ff869, type: 3}
+    - target: {fileID: 1449171307080354233, guid: eb4e322369e137744b4dd14a5a26379d, type: 3}
+      propertyPath: woodPrefab
+      value: 
+      objectReference: {fileID: 4004401536956276459, guid: bd732cdaa713bc7479b0b513f6faec26, type: 3}
+    - target: {fileID: 1449171307080354233, guid: eb4e322369e137744b4dd14a5a26379d, type: 3}
+      propertyPath: potionPrefab
+      value: 
+      objectReference: {fileID: 7883484744240414709, guid: 3152f6218478d8841b1aa3afac847db1, type: 3}
+    - target: {fileID: 1449171307080354233, guid: eb4e322369e137744b4dd14a5a26379d, type: 3}
       propertyPath: InventoryMenu
       value: 
       objectReference: {fileID: 2063521304}
@@ -129859,9 +129871,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4461455844733025321, guid: 7320f96043e0038449b11ac138cc9997, type: 3}
+      propertyPath: goldPrefab
+      value: 
+      objectReference: {fileID: 938278481879350437, guid: 9e8c7affa33c9024288c16a8805ff869, type: 3}
+    - target: {fileID: 4461455844733025321, guid: 7320f96043e0038449b11ac138cc9997, type: 3}
+      propertyPath: woodPrefab
+      value: 
+      objectReference: {fileID: 4004401536956276459, guid: bd732cdaa713bc7479b0b513f6faec26, type: 3}
+    - target: {fileID: 4461455844733025321, guid: 7320f96043e0038449b11ac138cc9997, type: 3}
       propertyPath: CraftingMenu
       value: 
       objectReference: {fileID: 601933885}
+    - target: {fileID: 4461455844733025321, guid: 7320f96043e0038449b11ac138cc9997, type: 3}
+      propertyPath: potionPrefab
+      value: 
+      objectReference: {fileID: 7883484744240414709, guid: 3152f6218478d8841b1aa3afac847db1, type: 3}
     - target: {fileID: 7709409565279208422, guid: 7320f96043e0038449b11ac138cc9997, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas
