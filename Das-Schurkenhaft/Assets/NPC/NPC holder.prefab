@@ -156,10 +156,8 @@ MonoBehaviour:
   dialogBox: {fileID: 0}
   dialogText: {fileID: 0}
   dialogs:
-  - 1
-  - 2
-  - 3
-  - 4
+  - 'Welcome to Das-Schurkenhaft! '
+  - Walk around the map to fight enemies using your cards
   playerInRange: 0
   speed: 5
   bounds: {fileID: 4131574223192198788}
