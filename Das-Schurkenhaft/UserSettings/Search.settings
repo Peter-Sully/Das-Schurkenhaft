@@ -10,6 +10,7 @@ showPackageIndexes = false
 showStatusBar = false
 scopes = {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 	"picker_window_position_offset.075BCD15" = "76.66663;324;320;550"
 
@@ -17,6 +18,9 @@ scopes = {
 
 	"picker_window_position_offset.075BCD15" = "-50;186.6667;320;550"
 
+=======
+	"picker_window_position_offset.075BCD15" = "-50;186.6667;320;550"
+>>>>>>> Stashed changes
 =======
 	"picker_window_position_offset.075BCD15" = "-50;186.6667;320;550"
 >>>>>>> Stashed changes
