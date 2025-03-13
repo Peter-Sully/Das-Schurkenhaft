@@ -404,6 +404,17 @@ MonoBehaviour:
   corridorCount: 50
   roomPercent: 0.8
   player: {fileID: 672525359}
+  item1: {fileID: 8810777968339363407, guid: 6324d32ccbe192f4e8218b21630ce34d, type: 3}
+  item2: {fileID: 3332530627158172190, guid: 0f1bfc7429765ef43b52bebf87e5914e, type: 3}
+  item3: {fileID: 1933294698713450949, guid: c31e5b32113f9fc4bb728576daf43506, type: 3}
+  item4: {fileID: 5805538901562996582, guid: f7888e926d2ff9144bd716d2c1bd27f3, type: 3}
+  item5: {fileID: 938278481879350437, guid: 9e8c7affa33c9024288c16a8805ff869, type: 3}
+  item6: {fileID: 3154979894960741867, guid: 9c1b64791f38cf7488fdbcad9e5745e3, type: 3}
+  item7: {fileID: 3137152858725839790, guid: 771922dd88b7c1243bf12a479a17c7d2, type: 3}
+  item8: {fileID: 7883484744240414709, guid: 3152f6218478d8841b1aa3afac847db1, type: 3}
+  item9: {fileID: 4600017933633209009, guid: 3c9adbeb2d5278c4b9e7b399127bdc08, type: 3}
+  item10: {fileID: 3864973942423317380, guid: 9f7289015824d3f4d9d3ad45161bab1d, type: 3}
+  item11: {fileID: 4004401536956276459, guid: bd732cdaa713bc7479b0b513f6faec26, type: 3}
 --- !u!4 &480266608
 Transform:
   m_ObjectHideFlags: 0
@@ -586,7 +597,7 @@ GameObject:
   - component: {fileID: 547758127}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19114,7 +19125,7 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -933383581
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -20411,6 +20422,26 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1354752909}
+    - target: {fileID: 4373235187857913512, guid: 25cab3262d1114ddabb672793ae520de, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460228215823463261, guid: 25cab3262d1114ddabb672793ae520de, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460228215823463261, guid: 25cab3262d1114ddabb672793ae520de, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460228215823463261, guid: 25cab3262d1114ddabb672793ae520de, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460228215823463261, guid: 25cab3262d1114ddabb672793ae520de, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c5a65547d1edf4a9d882bd6cff83eda8, type: 2}
     - target: {fileID: 5792679236541752076, guid: 25cab3262d1114ddabb672793ae520de, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -20463,9 +20494,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6374390505168620272, guid: 25cab3262d1114ddabb672793ae520de, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6703986959556896597, guid: 25cab3262d1114ddabb672793ae520de, type: 3}
       propertyPath: m_Name
       value: NPC holder
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548971769899692301, guid: 25cab3262d1114ddabb672793ae520de, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20509,7 +20548,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 0000000063b25dc8
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -20648,9 +20687,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -933383581
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -21007,7 +21046,7 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -933383581
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -129565,6 +129604,17 @@ MonoBehaviour:
   randomWalkRooms: 0
   player: {fileID: 672525359}
   npcHolderOffsetDistance: 1
+  item1: {fileID: 8810777968339363407, guid: 6324d32ccbe192f4e8218b21630ce34d, type: 3}
+  item2: {fileID: 3332530627158172190, guid: 0f1bfc7429765ef43b52bebf87e5914e, type: 3}
+  item3: {fileID: 1933294698713450949, guid: c31e5b32113f9fc4bb728576daf43506, type: 3}
+  item4: {fileID: 5805538901562996582, guid: f7888e926d2ff9144bd716d2c1bd27f3, type: 3}
+  item5: {fileID: 938278481879350437, guid: 9e8c7affa33c9024288c16a8805ff869, type: 3}
+  item6: {fileID: 3154979894960741867, guid: 9c1b64791f38cf7488fdbcad9e5745e3, type: 3}
+  item7: {fileID: 3137152858725839790, guid: 771922dd88b7c1243bf12a479a17c7d2, type: 3}
+  item8: {fileID: 7883484744240414709, guid: 3152f6218478d8841b1aa3afac847db1, type: 3}
+  item9: {fileID: 4600017933633209009, guid: 3c9adbeb2d5278c4b9e7b399127bdc08, type: 3}
+  item10: {fileID: 3864973942423317380, guid: 9f7289015824d3f4d9d3ad45161bab1d, type: 3}
+  item11: {fileID: 4004401536956276459, guid: bd732cdaa713bc7479b0b513f6faec26, type: 3}
 --- !u!4 &1267316344
 Transform:
   m_ObjectHideFlags: 0
