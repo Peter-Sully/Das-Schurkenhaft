@@ -33,9 +33,22 @@ public class PlayerController : MonoBehaviour
     }
 
     void FixedUpdate()
+<<<<<<< Updated upstream
     {
         Vector2 position = (Vector2)rigidbody2d.position + move * speed * Time.deltaTime;
         rigidbody2d.MovePosition(position);
+=======
+    { 
+        if (_currentState == PlayerState.MOVE)
+        {
+            Vector2 velocity = move * speed;
+            rigidbody2d.linearVelocity = velocity;
+        }
+        else
+        {
+            rigidbody2d.linearVelocity = Vector2.zero;
+        }
+>>>>>>> Stashed changes
     }
 
     void ChangeHealth(int amount)
