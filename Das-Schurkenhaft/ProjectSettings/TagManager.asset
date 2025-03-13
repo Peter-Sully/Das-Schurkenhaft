@@ -5,12 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
-<<<<<<< Updated upstream
-=======
   - PlayerSpawn
   - EnemySpawn
   - Wall
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

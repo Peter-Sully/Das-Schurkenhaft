@@ -2,52 +2,10 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-<<<<<<< Updated upstream
 using UnityEngine;
-
-public class EnemyController : MonoBehaviour
-{
-    //stats
-    public int maxHealth;
-    int currentHealth;
-    public int strength;
-    public int defense;
-    public float speed;
-
-    Rigidbody2D rigidbody2d;
-    float timer;
-    int direction = 1;
-    bool vertical = true;
-    public float changeTime = 3.0f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        rigidbody2d = getComponent<Rigidbody2D>();
-        timer = changeTime;
-    }
-
-    void FixedUpdate() {
-        Vector2 position = rigidbody2d.position;
-        
-        if (vertical) {
-           position.y = position.y + speed * Time.deltaTime;
-        } else {
-           position.x = position.x + speed * Time.deltaTime;
-        }
-        rigidbody2d.MovePosition(position);
-    }
-    // Update is called once per frame
-    void Update() 
-    {
-        timer  -= Time.deltaTime;
-
-        if (timer < 0) {
-            direction = -direction;
-            timer = changeTime;
-        }
-    }
-=======
+    
 using Random = UnityEngine.Random;
+
 public class EnemyController : MonoBehaviour
 {
     public SPUM_Prefabs _prefabs;
@@ -98,6 +56,7 @@ public class EnemyController : MonoBehaviour
         foreach (PlayerState state in Enum.GetValues(typeof(PlayerState)))
         {
             IndexPair[state] = 0;
+
         }
 
         rb = GetComponent<Rigidbody2D>();
@@ -337,6 +296,6 @@ public class EnemyController : MonoBehaviour
     {
         _prefabs.PlayAnimation(state, IndexPair[state]);
     }
->>>>>>> Stashed changes
+    
 }
 
