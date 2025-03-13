@@ -1234,7 +1234,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3124702939913315684}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28ac21711b0ec40a0812d33a586eb7ec, type: 3}
   m_Name: 
@@ -4234,9 +4234,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8de2b7afb77818428ccf4896c6cdb99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  _prefabs: {fileID: 0}
-  changeTime: 3
+  _prefabs: {fileID: 549980286228706429}
+  moveSpeed: 3
+  minLength: 3
+  maxLength: 8
+  minWidth: 3
+  maxWidth: 8
+  minPauseTime: 1
+  maxPauseTime: 3
+  stuckTimeLimit: 3
+  patrolPointTolerance: 0.1
+  raycastDistance: 2
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  detectionRadius: 4
 --- !u!50 &4069145585246653431
 Rigidbody2D:
   serializedVersion: 5
@@ -4245,7 +4257,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3124702939913315684}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -4294,7 +4306,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

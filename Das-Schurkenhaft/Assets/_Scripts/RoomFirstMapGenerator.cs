@@ -20,7 +20,7 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
     private bool randomWalkRooms = false;
     List<Vector2Int> roomCenters = new List<Vector2Int>();
     public Transform player;
-
+    public GameObject enemyPrefab;
     HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
 
     [SerializeField]
@@ -53,6 +53,10 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
 
         List<Vector2Int> EnemySpawnPoints = GetEnemySpawnPoints();
 
+        foreach (var postion in EnemySpawnPoints) {
+            Instantiate(enemyPrefab, (Vector3Int)postion, Quaternion.identity);
+        }
+        
         List<Vector2Int> itemSpawnPoints = GetItemSpawnPoints();
         foreach (var position in itemSpawnPoints)
         {
