@@ -12,6 +12,7 @@ public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
     private float roomPercent = 0.8f;
     private HashSet<Vector2Int> roomPositions = new HashSet<Vector2Int>();
     public Transform player;
+    public GameObject enemyPrefab;
     HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
 
     public GameObject item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11;
@@ -29,7 +30,11 @@ public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
         fogOfWar.Start();
 
         List<Vector2Int> EnemySpawnPoints = GetEnemySpawnPoints();
-
+        foreach (var position in EnemySpawnPoints)
+        {
+            Instantiate(enemyPrefab, (Vector3Int)position, Quaternion.identity);
+        }
+        
         List<Vector2Int> itemSpawnPoints = GetItemSpawnPoints();
         foreach (var position in itemSpawnPoints)
         {
