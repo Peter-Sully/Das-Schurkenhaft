@@ -5,7 +5,7 @@ using TMPro;
 public class EnemyCombat : MonoBehaviour
 {
     public static EnemyCombat instance;
-    public string enemyName = "Dummy_Enemy";
+    public string enemyName;
     public int maxHealth = 25;
     public int currentHealth;
     private Image healthBar;

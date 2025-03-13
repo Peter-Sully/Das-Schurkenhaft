@@ -65,6 +65,7 @@ public class InputManager : MonoBehaviour
             else if (SceneManager.GetActiveScene().name == "DeckBuilderScene")
             {
                 // Switch to Scene1 (with player controller)
+                //GameManager.Instance.SpawnEnemiesInMainScene(enemyPrefabs);
                 SceneManager.LoadScene("MainScene");
             }
         }
@@ -73,6 +74,7 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
