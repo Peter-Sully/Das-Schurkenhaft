@@ -104,8 +104,10 @@ public class EnemyController : MonoBehaviour
             {
                 // Enemy is stuck, generate a new patrol path
                 Debug.Log("Enemy is stuck, generating a new patrol path!");
+                ApplyImpulseToUnstick();
+
                 GenerateNewPatrolPath();
-                stuckTimer = 0f;  // Reset the stuck timer
+                //stuckTimer = 0f;  // Reset the stuck timer
             }
         }
         else
@@ -281,6 +283,27 @@ public class EnemyController : MonoBehaviour
             // If there's no wall to the left, move left
             return !IsWallAhead(leftDirection);
         }
+    }
+
+    void ApplyImpulseToUnstick()
+    {
+        // Find the direction the enemy is facing (based on the local scale)
+        Vector2 pushDirection = Vector2.zero;
+
+        // If the enemy is facing right, push left; if facing left, push right
+        if (_prefabs.transform.localScale.x > 0) // Facing right
+        {
+            pushDirection = Vector2.left;
+        }
+        else // Facing left
+        {
+            pushDirection = Vector2.right;
+        }
+
+        // Apply a small impulse to push the enemy away from the wall
+        rb.AddForce(pushDirection * moveSpeed * 2f, ForceMode2D.Impulse); 
+
+        stuckTimer = 0f; 
     }
     public void SetStateAnimationIndex(PlayerState state, int index = 0)
     {
