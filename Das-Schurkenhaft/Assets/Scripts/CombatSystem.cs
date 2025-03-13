@@ -158,9 +158,9 @@ public class CombatSystem : MonoBehaviour
 
     public void StartTurn()
     {
-        if (currentHealth <= 0) 
+        if (playerHealth <= 0) 
         {
-            currentHealth = 0;
+            playerHealth = 0;
             //scene switch
         }
 
