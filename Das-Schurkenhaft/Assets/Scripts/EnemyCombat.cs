@@ -6,8 +6,8 @@ public class EnemyCombat : MonoBehaviour
 {
     public static EnemyCombat instance;
     public string enemyName;
-    public int maxHealth = 25;
-    public int currentHealth;
+    public int maxEnemyHealth = 25;
+    public int currentEnemyHealth;
     private Image healthBar;
     private TMP_Text healthtext;
     public bool isDead = false;
@@ -24,13 +24,13 @@ public class EnemyCombat : MonoBehaviour
     public void SetHealthText(TMP_Text healthtext)
     {
         this.healthtext = healthtext;
-        currentHealth = maxHealth;
+        currentEnemyHealth = maxEnemyHealth;
         UpdateHealthText();
     }
 
     public void UpdateHealthText()
     {
-        if (healthtext != null) healthtext.text = $"HP: {currentHealth}/{maxHealth}";
+        if (healthtext != null) healthtext.text = $"HP: {currentEnemyHealth}/{maxEnemyHealth}";
     }
 
     public void InitializeEnemy(string enemyType)
@@ -43,12 +43,12 @@ public class EnemyCombat : MonoBehaviour
     {
         if (isDead) return;
 
-        currentHealth -= amount;
-        Debug.Log($"{enemyName} took {amount} damage! Current health: {currentHealth}");
+        currentEnemyHealth -= amount;
+        Debug.Log($"{enemyName} took {amount} damage! Current health: {currentEnemyHealth}");
 
-        if (currentHealth <= 0) 
+        if (currentEnemyHealth <= 0) 
         {
-            currentHealth = 0;
+            currentEnemyHealth = 0;
             Die();
         }
     }
@@ -63,8 +63,8 @@ public class EnemyCombat : MonoBehaviour
 
     public void Heal(int amount) {
         CombatSystem.instance.enemyHealth += amount;
-        currentHealth += amount;
-        Debug.Log($"{enemyName} healed {amount}, Current health: {currentHealth}");
+        currentEnemyHealth += amount;
+        Debug.Log($"{enemyName} healed {amount}, Current health: {currentEnemyHealth}");
     }
 
     private void Die()
@@ -93,7 +93,7 @@ public class EnemyCombat : MonoBehaviour
     {
         Debug.Log("Enemy Turn begins.");
         //Randomly draw the played card
-        EnemyCard drawnCard = enemyDeck.drawCard();
+        /*EnemyCard drawnCard = enemyDeck.drawCard();
         if (drawnCard != null) {
             Debug.Log("Enemy Draws: {drawnCard.name}");
             drawnCard.playCard();
@@ -102,7 +102,8 @@ public class EnemyCombat : MonoBehaviour
                 Debug.Log("Player has died!");
 
             }
-        }
+        }*/
+        CombatSystem.instance.playerHealth -= 10;
         Debug.Log("Enemy turn ends.");
 
     }

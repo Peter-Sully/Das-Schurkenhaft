@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using System.Collections;
 using TMPro;
 
 public class CombatSystem : MonoBehaviour
@@ -140,11 +142,28 @@ public class CombatSystem : MonoBehaviour
         {
             enemies.Remove(enemy);
             Debug.Log($"Enemy {enemy.enemyName} removed from combat.");
+
+            if (enemies.Count == 0) {
+                Debug.Log("All enemies defeated");
+                StartCoroutine(EndCombatAndSwitchScene());
+            }
         }
+    }
+    
+    private IEnumerator EndCombatAndSwitchScene()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("MainScene");
     }
 
     public void StartTurn()
     {
+        if (playerHealth <= 0) 
+        {
+            playerHealth = 0;
+            //scene switch
+        }
+
         turnCount++;
 
         if (turnCount == 1)
