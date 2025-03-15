@@ -15,6 +15,14 @@ public class EnemyCombat : MonoBehaviour
     public EnemyDeck enemyDeck;
     public GameObject enemyPrefab;
     
+    void Awake() {
+    // Make sure instance is set only once
+    if (instance == null) {
+        instance = this;
+    } else {
+        Debug.LogError("Multiple instances of EnemyCombat found!");
+    }
+}
     public void SetHealthBar(Image healthBar)
 
     {
@@ -36,6 +44,11 @@ public class EnemyCombat : MonoBehaviour
     public void InitializeEnemy(string enemyType)
     {
         enemyDeck = enemyPrefab.GetComponent<EnemyDeck>();
+        if (enemyDeck == null) {
+            Debug.LogError("EnemyDeck component is missing on enemyPrefab!");
+        } else {
+            enemyDeck.GenerateDeckByType(enemyType);
+        }
         enemyDeck.GenerateDeckByType(enemyType);
     }
 
@@ -56,8 +69,10 @@ public class EnemyCombat : MonoBehaviour
     public void AttackPlayer(int amount) {
         if (CombatSystem.instance.playerShield >= amount) {
             CombatSystem.instance.playerShield -= amount;
+            Debug.Log("Player shield took {amount} damage");
         } else {
             CombatSystem.instance.playerHealth -= amount;
+            Debug.Log($"{enemyName} attacked player for {amount} damage, Current health: {CombatSystem.instance.playerHealth}");
         }   
     }
 
@@ -93,16 +108,16 @@ public class EnemyCombat : MonoBehaviour
     {
         Debug.Log("Enemy Turn begins.");
         //Randomly draw the played card
-        /*EnemyCard drawnCard = enemyDeck.drawCard();
+        EnemyCard drawnCard = enemyDeck.drawCard();
         if (drawnCard != null) {
             Debug.Log("Enemy Draws: {drawnCard.name}");
             drawnCard.playCard();
             if (CombatSystem.instance.playerHealth <= 0) {
-
                 Debug.Log("Player has died!");
-
             }
-        }*/
+        } else {
+            Debug.Log("Enemy has no cards left!");
+        }
         CombatSystem.instance.playerHealth -= 10;
         Debug.Log("Enemy turn ends.");
 

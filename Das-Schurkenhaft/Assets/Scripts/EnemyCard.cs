@@ -1,18 +1,18 @@
 using UnityEngine;
 
-public class EnemyCard : MonoBehaviour
+[CreateAssetMenu(fileName = "NewEnemyCard", menuName = "Enemy Card", order = 0)]
+public class EnemyCard : ScriptableObject
 {
     public string cardType;
     public int cardValue;
 
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     public void playCard() {
+        if (EnemyCombat.instance == null) {
+        Debug.LogError("EnemyCombat.instance is null!");
+        return; // Early exit if instance is not set
+        }
         if (cardType == "Damage") {
             EnemyCombat.instance.AttackPlayer(cardValue);
         } else if (cardType == "Heal") {
