@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using TMPro;
+using UnityEngine.Tilemaps;
+using System.Linq;
 
 public class CombatSystem : MonoBehaviour
 {
@@ -95,8 +97,8 @@ public class CombatSystem : MonoBehaviour
         enemyPrefabs[0] = Resources.Load<GameObject>("Prefabs/EnemyPrefab"); //this needs to change when you add more enemies
         if (enemyPrefabs == null) Debug.LogError("Failed to load EnemyPrefabs");
 
-        floorTilemap = GameObject.Find("Floor");
-        wallTilemap = GameObject.Find("Walls");
+        floorTilemap = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(obj => obj.name == "Floor");
+        wallTilemap = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(obj => obj.name == "Walls");
 
         startCombat();
     }
@@ -161,6 +163,21 @@ public class CombatSystem : MonoBehaviour
         SceneManager.LoadScene("MainScene");
         floorTilemap.SetActive(true);
         wallTilemap.SetActive(true);
+        // find all inactive enemies and set them active
+        List<GameObject> inactiveEnemies = Resources.FindObjectsOfTypeAll<GameObject>()
+            .Where(obj => obj.CompareTag("Enemy") && !obj.activeSelf)
+            .ToList();
+        foreach (GameObject enemy in inactiveEnemies)
+        {
+            enemy.SetActive(true);
+        }
+
+        // get the closest enemy to the player and delete it
+        GameObject closestEnemy = inactiveEnemies.OrderBy(e => Vector2.Distance(player.transform.position, e.transform.position)).FirstOrDefault();
+        if (closestEnemy != null)
+        {
+            Destroy(closestEnemy);
+        }
     }
 
     public void StartTurn()
