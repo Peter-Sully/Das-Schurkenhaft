@@ -13,15 +13,16 @@ public class FogOfWar : MonoBehaviour
 
     public void Start()
     {
-        // Use the walls tilemap bounds to determine the fog area.
-        mapBounds = wallsTilemap.cellBounds;
-        fogTilemap.ClearAllTiles();
-        Debug.Log("Using walls tilemap bounds: " + mapBounds);
-
-        // Fill the fogTilemap with fog tiles based on the walls tilemap bounds.
-        foreach (Vector3Int pos in mapBounds.allPositionsWithin)
+        if (fogTilemap.GetUsedTilesCount() == 0)
         {
-            fogTilemap.SetTile(pos, fogTile);
+            mapBounds = wallsTilemap.cellBounds;
+            fogTilemap.ClearAllTiles();
+            Debug.Log("Using walls tilemap bounds: " + mapBounds);
+            // Fill the fogTilemap with fog tiles based on the walls tilemap bounds.
+            foreach (Vector3Int pos in mapBounds.allPositionsWithin)
+            {
+                fogTilemap.SetTile(pos, fogTile);
+            }
         }
     }
 

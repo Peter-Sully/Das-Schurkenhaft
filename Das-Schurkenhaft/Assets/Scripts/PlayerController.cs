@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public InputAction MoveAction;
 
     public int maxHealth = 10;
-    private int currentHealth;
+    private int currentHealth = 10;
     public int strength = 1;
     public int defense = 1;
 

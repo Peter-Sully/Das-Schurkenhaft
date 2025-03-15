@@ -1,10 +1,6 @@
 using UnityEngine;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-
-
-using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
 {
@@ -13,35 +9,31 @@ public class EnemyController : MonoBehaviour
     public Dictionary<PlayerState, int> IndexPair = new Dictionary<PlayerState, int>();
     private Vector3 originalScale;
 
-    public float moveSpeed = 3f; 
-    //public float patrolRadius = 5f; 
-    //public float changeDirectionTime = 4f; 
-    public float minLength = 3f;      // Minimum length of the rectangular patrol path
-    public float maxLength = 8f;      // Maximum length of the rectangular patrol path
-    public float minWidth = 3f;       // Minimum width of the rectangular patrol path
-    public float maxWidth = 8f;       // Maximum width of the rectangular patrol path
-    public float minPauseTime = 1f;   // Minimum pause time at corners
-    public float maxPauseTime = 3f;   // Maximum pause time at corners
+    [Header("Movement Settings")]
+    public float moveSpeed = 3f;
+    public float wanderRadius = 5f;              // How far from spawn to wander
+    public float minPauseTime = 1f;              // Min pause between wander moves
+    public float maxPauseTime = 3f;              // Max pause between wander moves
 
-    public float stuckTimeLimit = 3f;
-    private float stuckTimer = 0f; // Timer to detect if the enemy is stuck
+    [Header("Stuck Settings")]
+    public float stuckTimeLimit = 3f;            // Time before teleporting back
+    private float stuckTimer = 0f;
 
-    private Vector2[] patrolPoints = new Vector2[4]; //Four patrol points
-    private int currentPatrolIndex = 0;   // The current patrol point index
-    private Rigidbody2D rb;  // Rigidbody2D component for movement
-    private bool isPatrolling = true;   // Whether the enemy is currently patrolling
-    //private float timeToChangeDirection; 
-    public float patrolPointTolerance = 0.1f;
-    //public Dictionary<PlayerState, int> IndexPair = new Dictionary<PlayerState, int>();
-    public float raycastDistance = 2f; // How far the ray will check for obstacles
+    [Header("Detection Settings")]
+    public float detectionRadius = 4f;           // When the enemy will start chasing the player
+    public float raycastDistance = 2f;           // Distance for wall detection
     public LayerMask wallLayer;
 
-    private Transform player; // Reference to the player's transform
-    private bool playerInRange = false; // Flag to track if the player is in range 
-    public float detectionRadius = 4f;
+    private Transform player;
+    private Rigidbody2D rb;
+    private Vector2 spawnPoint;
 
-    void Start()
+    private Coroutine wanderCoroutine;
+    private bool isChasing = false;
+
+    void Awake()
     {
+        // Initialize _prefabs
         if (_prefabs == null)
         {
             _prefabs = transform.GetChild(0).GetComponent<SPUM_Prefabs>();
@@ -51,260 +43,208 @@ public class EnemyController : MonoBehaviour
             }
         }
         _prefabs.OverrideControllerInit();
-
         originalScale = _prefabs.transform.localScale;
-        foreach (PlayerState state in Enum.GetValues(typeof(PlayerState)))
+
+        // Initialize animation indices
+        foreach (PlayerState state in System.Enum.GetValues(typeof(PlayerState)))
         {
             IndexPair[state] = 0;
-
-
         }
 
         rb = GetComponent<Rigidbody2D>();
-
         if (rb == null)
         {
-        Debug.LogError("Rigidbody2D component is not assigned to the GameObject " + gameObject.name);
+            Debug.LogError("Rigidbody2D component is not assigned to " + gameObject.name);
         }
         else
         {
-           Debug.Log("Rigidbody2D successfully assigned to " + gameObject.name);
+            Debug.Log("Rigidbody2D successfully assigned to " + gameObject.name);
         }
         player = GameObject.FindGameObjectWithTag("Player").transform;
         wallLayer = LayerMask.GetMask("Wall");
+    }
 
-        GenerateNewPatrolPath();
-        StartCoroutine(Patrol());
+    void Start()
+    {
+        spawnPoint = transform.position; // Save the original spawn position
+        StartWandering();
+    }
+
+    // When re-enabled after being disabled, restart necessary routines and reset timers.
+    void OnEnable()
+    {
+        stuckTimer = 0f;
+        if (rb != null) rb.linearVelocity = Vector2.zero;
+        if (!isChasing)
+        {
+            StartWandering();
+        }
+    }
+
+    // Clean up coroutine when disabled.
+    void OnDisable()
+    {
+        if (wanderCoroutine != null)
+        {
+            StopCoroutine(wanderCoroutine);
+            wanderCoroutine = null;
+        }
     }
 
     void Update()
     {
-        // Detect the player within the detection radius
-        playerInRange = Physics2D.OverlapCircle(transform.position, detectionRadius, LayerMask.GetMask("Player"));
-
-        if (playerInRange)
+        // Check if the player is within the detection radius.
+        bool playerDetected = Physics2D.OverlapCircle(transform.position, detectionRadius, LayerMask.GetMask("Player"));
+        if (playerDetected)
         {
-            // If the player is in range, stop patrolling and move towards the player
-            isPatrolling = false;
+            if (!isChasing)
+            {
+                isChasing = true;
+                // Stop wandering when chasing the player.
+                if (wanderCoroutine != null)
+                {
+                    StopCoroutine(wanderCoroutine);
+                    wanderCoroutine = null;
+                }
+            }
             MoveTowardsPlayer();
         }
         else
         {
-            // If the player is not in range, continue patrolling
-            isPatrolling = true;
-        }
-
-        if (isPatrolling && rb.linearVelocity.magnitude < 0.1f)  // The enemy is moving very slowly or not at all
-        {
-            stuckTimer += Time.deltaTime;
-
-            _currentState = PlayerState.IDLE;
-            PlayStateAnimation(_currentState);
-            if (stuckTimer > stuckTimeLimit)
+            if (isChasing)
             {
-                // Enemy is stuck, generate a new patrol path
-                Debug.Log("Enemy is stuck, generating a new patrol path!");
-                ApplyImpulseToUnstick();
-
-                GenerateNewPatrolPath();
-                //stuckTimer = 0f;  // Reset the stuck timer
+                // Player has been lost; resume wandering.
+                isChasing = false;
+                StartWandering();
             }
         }
-        else
+
+        // Check if the enemy is stuck (only when not chasing)
+        if (!isChasing)
         {
-            stuckTimer = 0f;  // Reset stuck timer if moving
-
+            if (rb.linearVelocity.magnitude < 0.1f)
+            {
+                stuckTimer += Time.deltaTime;
+                _currentState = PlayerState.IDLE;
+                PlayStateAnimation(_currentState);
+                if (stuckTimer > stuckTimeLimit)
+                {
+                    // Teleport enemy back to spawn if stuck too long
+                    TeleportToSpawn();
+                    stuckTimer = 0f;
+                }
+            }
+            else
+            {
+                stuckTimer = 0f;
+            }
         }
-
     }
 
-    // Move towards the current patrol point
-    IEnumerator Patrol()
+    // Coroutine for random wandering near the original spawn point.
+    IEnumerator Wander()
     {
-        while (isPatrolling)
+        while (true)
         {
-            Vector2 targetPoint = patrolPoints[currentPatrolIndex];  // Get the target patrol point
-            Vector2 direction = (targetPoint - (Vector2)transform.position).normalized;
+            Vector2 currentPosition = transform.position;
+            Vector2 wanderTarget;
 
-            if (IsWallAhead(direction))
+            // If the enemy is outside the wander circle, force it back toward spawn.
+            if (Vector2.Distance(currentPosition, spawnPoint) > wanderRadius)
             {
-                // If wall detected, stop and switch to the next direction
-                Debug.Log("Wall detected! Changing direction.");
-                if (!TryMoveSideways())
+                Vector2 directionToSpawn = (spawnPoint - currentPosition).normalized;
+                wanderTarget = spawnPoint + directionToSpawn * (wanderRadius * 0.8f);
+            }
+            else
+            {
+                wanderTarget = spawnPoint + Random.insideUnitCircle * wanderRadius;
+            }
+
+            Vector2 direction = (wanderTarget - (Vector2)transform.position).normalized;
+
+            // Set facing direction.
+            if (direction.x > 0)
+            {
+                _prefabs.transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
+            }
+            else if (direction.x < 0)
+            {
+                _prefabs.transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
+            }
+
+            _currentState = PlayerState.MOVE;
+            PlayStateAnimation(_currentState);
+
+            // Move toward the wander target.
+            while (Vector2.Distance(transform.position, wanderTarget) > 0.1f && !isChasing)
+            {
+                if (IsWallAhead(direction))
                 {
-                // If no way to move, just switch the patrol point
-                currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
+                    Debug.Log("Wall detected during wander. Choosing new target.");
+                    break;
                 }
-                yield return new WaitForSeconds(Random.Range(minPauseTime, maxPauseTime)); // Pause before continuing
-                continue; // Skip the normal movement logic and move to the next patrol point
-            }
 
-            if (direction.x > 0) // Moving to the right
-            {
-                _prefabs.transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);  // Face right
-            }
-            else if (direction.x < 0) // Moving to the left
-            {
-                _prefabs.transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);  // Face left
-            }
-
-            // Move towards the target point
-            while (Vector2.Distance(transform.position, targetPoint) > 0.1f)
-            {
-                _currentState = PlayerState.MOVE;
-
-                rb.linearVelocity = direction * moveSpeed;  
-                PlayStateAnimation(_currentState);
-                //transform.position += (Vector3)(direction * moveSpeed * Time.deltaTime);
+                rb.linearVelocity = direction * moveSpeed;
                 yield return null;
             }
 
-            // Stop moving when the target is reached
-
-            rb.linearVelocity = Vector2.zero; 
+            // Stop movement and set idle state when target is reached.
+            rb.linearVelocity = Vector2.zero;
             _currentState = PlayerState.IDLE;
             PlayStateAnimation(_currentState);
-            // Wait for a random pause before moving to the next point
+
+            // Pause before selecting a new target.
             float pauseTime = Random.Range(minPauseTime, maxPauseTime);
             yield return new WaitForSeconds(pauseTime);
-
-            // Update the patrol index to the next corner
-            currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
         }
     }
 
-
-    bool IsWallAhead(Vector2 direction)
-    {
-        // Cast a ray from the enemy's position in the direction it's facing
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, raycastDistance, wallLayer);
-        Debug.DrawRay(transform.position, direction * raycastDistance, Color.red);
-        return hit.collider != null; // If the ray hits a wall, return true
-    }
-
-    void OnDrawGizmos()
-    {
-        if (patrolPoints != null && patrolPoints.Length == 4)
-        {
-            Gizmos.color = Color.green;
-
-            // Draw the rectangle patrol path
-            Gizmos.DrawLine(patrolPoints[0], patrolPoints[1]);
-            Gizmos.DrawLine(patrolPoints[1], patrolPoints[2]);
-            Gizmos.DrawLine(patrolPoints[2], patrolPoints[3]);
-            Gizmos.DrawLine(patrolPoints[3], patrolPoints[0]);
-        }
-
-        // Draw the detection radius
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, detectionRadius);
-    }
-
+    // Moves the enemy toward the player.
     void MoveTowardsPlayer()
     {
-        Vector2 direction = (player.position - transform.position).normalized;
+        if (player == null) return;
+        Vector2 direction = ((Vector2)player.position - (Vector2)transform.position).normalized;
         rb.linearVelocity = direction * moveSpeed;
 
-        if (direction.x > 0) // Moving to the right
+        if (direction.x > 0)
         {
-            _prefabs.transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);  // Face right
+            _prefabs.transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
         }
-        else if (direction.x < 0) // Moving to the left
+        else if (direction.x < 0)
         {
-            _prefabs.transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);  // Face left
+            _prefabs.transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
         }
 
         _currentState = PlayerState.MOVE;
         PlayStateAnimation(_currentState);
     }
 
-    void GenerateNewPatrolPath()
+    // Checks for obstacles in front of the enemy.
+    bool IsWallAhead(Vector2 direction)
     {
-        // Generate new random patrol path values
-        float length = Random.Range(minLength, maxLength);
-        float width = Random.Range(minWidth, maxWidth);
-
-        int randomDirection = Random.Range(0, 4);
-
-        switch (randomDirection)
-        {
-            case 0: // Right
-                patrolPoints[0] = new Vector2(transform.position.x, transform.position.y); // Start position (corner 1)
-                patrolPoints[1] = new Vector2(transform.position.x + length, transform.position.y); // Move right (corner 2)
-                patrolPoints[2] = new Vector2(transform.position.x + length, transform.position.y + width); // Move up (corner 3)
-                patrolPoints[3] = new Vector2(transform.position.x, transform.position.y + width); // Move left (corner 4)
-                break;
-            case 1: // Up
-                patrolPoints[0] = new Vector2(transform.position.x, transform.position.y); // Start position (corner 1)
-                patrolPoints[1] = new Vector2(transform.position.x, transform.position.y + length); // Move up (corner 2)
-                patrolPoints[2] = new Vector2(transform.position.x + width, transform.position.y + length); // Move right (corner 3)
-                patrolPoints[3] = new Vector2(transform.position.x + width, transform.position.y); // Move down (corner 4)
-                break;
-            case 2: // Left
-                patrolPoints[0] = new Vector2(transform.position.x, transform.position.y); // Start position (corner 1)
-                patrolPoints[1] = new Vector2(transform.position.x - length, transform.position.y); // Move left (corner 2)
-                patrolPoints[2] = new Vector2(transform.position.x - length, transform.position.y + width); // Move down (corner 3)
-                patrolPoints[3] = new Vector2(transform.position.x, transform.position.y + width); // Move up (corner 4)
-                break;
-            case 3: // Down
-                patrolPoints[0] = new Vector2(transform.position.x, transform.position.y); // Start position (corner 1)
-                patrolPoints[1] = new Vector2(transform.position.x, transform.position.y - length); // Move down (corner 2)
-                patrolPoints[2] = new Vector2(transform.position.x - width, transform.position.y - length); // Move left (corner 3)
-                patrolPoints[3] = new Vector2(transform.position.x - width, transform.position.y); // Move up (corner 4)
-                break;
-        }
-
-        /*for (int i = 0; i < patrolPoints.Length; i++)
-        {
-            if (IsWallAhead((patrolPoints[i] - (Vector2)transform.position).normalized))
-            {
-                Debug.Log("Wall detected while generating patrol path! Regenerating...");
-                GenerateNewPatrolPath();
-                return;
-            }
-        }*/
-        // Reset patrol index to the first corner
-        currentPatrolIndex = 0;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, raycastDistance, wallLayer);
+        Debug.DrawRay(transform.position, direction * raycastDistance, Color.red);
+        return hit.collider != null;
     }
 
-    bool TryMoveSideways()
+    // Teleports the enemy back to its original spawn position.
+    void TeleportToSpawn()
     {
-        // Try to move the enemy sideways to avoid getting stuck
-        Vector2 leftDirection = Vector2.left;
-        Vector2 rightDirection = Vector2.right;
-
-        if (IsWallAhead(leftDirection))
-        {
-            // If there's a wall to the left, try moving right
-            return !IsWallAhead(rightDirection);
-        }
-        else
-        {
-            // If there's no wall to the left, move left
-            return !IsWallAhead(leftDirection);
-        }
+        Debug.Log("Enemy is stuck; teleporting back to spawn.");
+        transform.position = spawnPoint;
+        rb.linearVelocity = Vector2.zero;
     }
 
-    void ApplyImpulseToUnstick()
+    // Starts the wandering coroutine.
+    void StartWandering()
     {
-        // Find the direction the enemy is facing (based on the local scale)
-        Vector2 pushDirection = Vector2.zero;
-
-        // If the enemy is facing right, push left; if facing left, push right
-        if (_prefabs.transform.localScale.x > 0) // Facing right
+        if (wanderCoroutine != null)
         {
-            pushDirection = Vector2.left;
+            StopCoroutine(wanderCoroutine);
         }
-        else // Facing left
-        {
-            pushDirection = Vector2.right;
-        }
-
-        // Apply a small impulse to push the enemy away from the wall
-        rb.AddForce(pushDirection * moveSpeed * 2f, ForceMode2D.Impulse); 
-
-        stuckTimer = 0f; 
+        wanderCoroutine = StartCoroutine(Wander());
     }
+
     public void SetStateAnimationIndex(PlayerState state, int index = 0)
     {
         IndexPair[state] = index;
@@ -314,4 +254,16 @@ public class EnemyController : MonoBehaviour
     {
         _prefabs.PlayAnimation(state, IndexPair[state]);
     }
-}    
+
+    // Visualize detection and wander radii in the editor.
+    void OnDrawGizmos()
+    {
+        // Draw detection radius.
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
+
+        // Draw wander radius (centered on spawn).
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(spawnPoint, wanderRadius);
+    }
+}
