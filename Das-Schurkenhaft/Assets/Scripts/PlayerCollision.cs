@@ -9,6 +9,7 @@ public class PlayerCollision : MonoBehaviour
     public int maxEnemiesInCombat = 3;
     public GameObject enemyPrefab;
     private GameObject floorTilemap, wallTilemap;
+    private PlayerController playerController;
 
     private void Start()
     {
@@ -28,6 +29,12 @@ public class PlayerCollision : MonoBehaviour
             }
             Debug.Log("Enemy hit!");
             // Now load the combat scene
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                playerController = player.GetComponent<PlayerController>();
+                GameData.playerPosition = playerController.GetPosition();
+            }
             CombatManager.Instance.SetEnemiesForCombat(enemiesHit);
             SceneManager.LoadScene("CombatScene");
             Debug.Log(floorTilemap.name + " " + wallTilemap.name);
