@@ -26,16 +26,20 @@ public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
         {
             player.position = (Vector3Int)GetSpawnPosition();
         }
-        FogOfWar fogOfWar = FindAnyObjectByType<FogOfWar>();
-        fogOfWar.Start();
+        //FogOfWar fogOfWar = FindAnyObjectByType<FogOfWar>();
+        //fogOfWar.Start();
+
+        DontDestroyOnLoad(tilemapVisualizer);
 
         List<Vector2Int> EnemySpawnPoints = GetEnemySpawnPoints();
         foreach (var position in EnemySpawnPoints)
         {
-            Instantiate(enemyPrefab, (Vector3Int)position, Quaternion.identity);
+            GameObject enemy = Instantiate(enemyPrefab, (Vector3Int)position, Quaternion.identity);
+            DontDestroyOnLoad(enemy);
         }
-        
+
         List<Vector2Int> itemSpawnPoints = GetItemSpawnPoints();
+        Debug.Log("Item Spawn Points: " + itemSpawnPoints.Count);
         foreach (var position in itemSpawnPoints)
         {
             var spawnPoint = Random.Range(1, 12);
@@ -92,7 +96,7 @@ public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
         List<Vector2Int> itemSpawnPoints = new List<Vector2Int>();
         foreach (var position in floorPositions)
         {
-            var spawnPoint = Random.Range(1, 500);
+            var spawnPoint = Random.Range(1, 400);
             if (spawnPoint == 1)
             {
                 itemSpawnPoints.Add(position);
@@ -112,6 +116,10 @@ public class CorridorFirstMapGenerator : SimpleRandomWalkMapGenerator
                 enemySpawnPoints.Add(position);
             }
         }
+
+        Vector2Int spawnPosition = GetSpawnPosition();
+        enemySpawnPoints = enemySpawnPoints.Where(pos => Vector2Int.Distance(pos, spawnPosition) > 5).ToList();
+
         return enemySpawnPoints;
     }
 

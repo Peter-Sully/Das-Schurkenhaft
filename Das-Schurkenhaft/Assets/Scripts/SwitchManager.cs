@@ -10,6 +10,8 @@ public class InputManager : MonoBehaviour
     private bool isSceneSwitching = false;
     private float lastSwitchTime = 0f;
     private float switchCooldown = 0.5f; // Cooldown period in seconds
+    public GameObject floorTilemap, wallTilemap;
+    private GameObject[] enemies;
 
     // Singleton instance
 
@@ -61,19 +63,35 @@ public class InputManager : MonoBehaviour
                 }
                 // Switch to Scene2 (without player controller)
                 SceneManager.LoadScene("DeckBuilderScene");
+                floorTilemap.SetActive(false);
+                wallTilemap.SetActive(false);
+                enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                Debug.Log("Enemies found: " + enemies.Length);
+                foreach (GameObject enemyObj in enemies)
+                {
+                    enemyObj.SetActive(false);
+                }
             }
             else if (SceneManager.GetActiveScene().name == "DeckBuilderScene")
             {
                 // Switch to Scene1 (with player controller)
                 //GameManager.Instance.SpawnEnemiesInMainScene(enemyPrefabs);
                 SceneManager.LoadScene("MainScene");
+                floorTilemap.SetActive(true);
+                wallTilemap.SetActive(true);
+                foreach (GameObject enemyObj in enemies)
+                {
+                    enemyObj.SetActive(true);
+                }
             }
         }
     }
 
-    void Start()
+    private void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        floorTilemap = GameObject.Find("Floor");
+        wallTilemap = GameObject.Find("Walls");
 
     }
 

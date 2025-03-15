@@ -36,6 +36,8 @@ public class CombatSystem : MonoBehaviour
     private GameObject player;
     private List<EnemyCombat> enemies = new List<EnemyCombat>();
 
+    private GameObject floorTilemap, wallTilemap;
+
     void Awake() 
     {
         if (instance == null) instance = this;
@@ -92,6 +94,9 @@ public class CombatSystem : MonoBehaviour
         enemyPrefabs = new GameObject[1];
         enemyPrefabs[0] = Resources.Load<GameObject>("Prefabs/EnemyPrefab"); //this needs to change when you add more enemies
         if (enemyPrefabs == null) Debug.LogError("Failed to load EnemyPrefabs");
+
+        floorTilemap = GameObject.Find("Floor");
+        wallTilemap = GameObject.Find("Walls");
 
         startCombat();
     }
@@ -154,6 +159,8 @@ public class CombatSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("MainScene");
+        floorTilemap.SetActive(true);
+        wallTilemap.SetActive(true);
     }
 
     public void StartTurn()
@@ -161,7 +168,8 @@ public class CombatSystem : MonoBehaviour
         if (playerHealth <= 0) 
         {
             playerHealth = 0;
-            //scene switch
+            SceneManager.LoadScene("Menu");
+            return;
         }
 
         turnCount++;

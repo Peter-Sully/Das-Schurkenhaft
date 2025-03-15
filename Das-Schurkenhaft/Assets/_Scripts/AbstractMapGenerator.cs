@@ -9,8 +9,8 @@ public abstract class AbstractMapGenerator : MonoBehaviour
 
     public void GenerateMap()
     {
-        tilemapVisualizer.Clear();
-        RunProceduralGeneration();
+        //tilemapVisualizer.Clear();
+        //RunProceduralGeneration();
     }
 
     protected abstract void RunProceduralGeneration();

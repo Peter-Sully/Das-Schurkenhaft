@@ -48,16 +48,20 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
             npcHolder.transform.position = player.position + player.right * npcHolderOffsetDistance;
         }
         
-        FogOfWar fogOfWar = FindAnyObjectByType<FogOfWar>();
-        fogOfWar.Start();
+        //FogOfWar fogOfWar = FindAnyObjectByType<FogOfWar>();
+        //fogOfWar.Start();
+
+        DontDestroyOnLoad(tilemapVisualizer);
 
         List<Vector2Int> EnemySpawnPoints = GetEnemySpawnPoints();
 
         foreach (var postion in EnemySpawnPoints) {
-            Instantiate(enemyPrefab, (Vector3Int)postion, Quaternion.identity);
+            GameObject enemy = Instantiate(enemyPrefab, (Vector3Int)postion, Quaternion.identity);
+            DontDestroyOnLoad(enemy);
         }
         
         List<Vector2Int> itemSpawnPoints = GetItemSpawnPoints();
+        Debug.Log("Item Spawn Points: " + itemSpawnPoints.Count);
         foreach (var position in itemSpawnPoints)
         {
             var spawnPoint = Random.Range(1, 12);
@@ -114,7 +118,7 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
         List<Vector2Int> itemSpawnPoints = new List<Vector2Int>();
         foreach (var position in floor)
         {
-            var spawnPoint = Random.Range(1, 500);
+            var spawnPoint = Random.Range(1, 400);
             if (spawnPoint == 1)
             {
                 itemSpawnPoints.Add(position);
@@ -134,6 +138,11 @@ public class RoomFirstMapGenerator : SimpleRandomWalkMapGenerator
                 enemySpawnPoints.Add(position);
             }
         }
+
+        // remove spawns if they are too close to GetSpawnPosition()
+        Vector2Int spawnPosition = GetSpawnPosition();
+        enemySpawnPoints = enemySpawnPoints.Where(pos => Vector2Int.Distance(pos, spawnPosition) > 5).ToList();
+
         return enemySpawnPoints;
     }
     private void CreateRooms()
