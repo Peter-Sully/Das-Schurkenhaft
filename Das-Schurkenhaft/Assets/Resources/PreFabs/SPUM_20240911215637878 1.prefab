@@ -1197,13 +1197,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4283014673761620811}
   - component: {fileID: 549980286228706429}
-  - component: {fileID: 3706945682250197211}
-  - component: {fileID: 4069145585246653431}
-  - component: {fileID: 363958012006391720}
   - component: {fileID: -8519012624643974879}
   - component: {fileID: 1630643400091985407}
   m_Layer: 5
-  m_Name: SPUM_20240911215637878
+  m_Name: SPUM_20240911215637878 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4224,97 +4221,6 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 4c70df3312bb83346a1bf065b30d3467, type: 2}
   - {fileID: 7400000, guid: 1ef525d53ae254f7d82ef364ced85490, type: 2}
   - {fileID: 7400000, guid: fabe4f140fdb9cb448bc941c7c93e8b6, type: 2}
---- !u!114 &3706945682250197211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3124702939913315684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8de2b7afb77818428ccf4896c6cdb99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefabs: {fileID: 549980286228706429}
-  moveSpeed: 3
-  minLength: 3
-  maxLength: 8
-  minWidth: 3
-  maxWidth: 8
-  minPauseTime: 1
-  maxPauseTime: 3
-  stuckTimeLimit: 3
-  patrolPointTolerance: 0.1
-  raycastDistance: 2
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  detectionRadius: 4
---- !u!50 &4069145585246653431
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3124702939913315684}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
---- !u!70 &363958012006391720
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3124702939913315684}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
-  m_Direction: 0
 --- !u!114 &-8519012624643974879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4346,6 +4252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cards: []
+  EnemyType: Soldier
 --- !u!1 &3158187757370390914
 GameObject:
   m_ObjectHideFlags: 0

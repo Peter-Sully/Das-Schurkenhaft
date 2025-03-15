@@ -4,8 +4,7 @@ public class CombatManager : MonoBehaviour
 {
     public static CombatManager Instance;
 
-    public List <GameObject> enemiesForCombat = new List<GameObject>();  // The current enemy prefab
-
+    public GameObject enemyPrefab; // The enemy prefab that the player collided with
     void Awake()
     {
         if (Instance == null)
@@ -18,13 +17,17 @@ public class CombatManager : MonoBehaviour
             Destroy(gameObject); // Destroy duplicate instance if it exists
         }
     }
-    public void SetEnemiesForCombat(List<GameObject> enemies)
+    private int hitCount = 0;  // Counter to track how many times this enemy hit the player
+
+    public void OnHitPlayer() // This method should be called when the enemy collides with the player
     {
-        if (enemies == null || enemies.Count == 0)
-        {
-            Debug.LogError("Enemies list is null or empty.");
-        } else {
-            enemiesForCombat = enemies;
-        }
+        hitCount++;
+        SaveHitCount(hitCount);  // Save the current number of hits
+    }
+
+    void SaveHitCount(int count)
+    {
+        PlayerPrefs.SetInt("EnemyHitCount", count);  // Save the hit count to PlayerPrefs
+        PlayerPrefs.Save();  // Save the PlayerPrefs data
     }
 }
