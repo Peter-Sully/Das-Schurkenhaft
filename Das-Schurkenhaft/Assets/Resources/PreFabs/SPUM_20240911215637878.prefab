@@ -1200,8 +1200,6 @@ GameObject:
   - component: {fileID: 3706945682250197211}
   - component: {fileID: 4069145585246653431}
   - component: {fileID: 363958012006391720}
-  - component: {fileID: -8519012624643974879}
-  - component: {fileID: 1630643400091985407}
   m_Layer: 5
   m_Name: SPUM_20240911215637878
   m_TagString: Enemy
@@ -4315,37 +4313,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.35}
   m_Size: {x: 0.5, y: 0.7}
   m_Direction: 0
---- !u!114 &-8519012624643974879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3124702939913315684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e41ae749d665a4866808381301db4949, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyName: Soldier
-  maxEnemyHealth: 25
-  currentEnemyHealth: 0
-  isDead: 0
-  enemyDeck: {fileID: 0}
-  enemyPrefab: {fileID: 3124702939913315684}
---- !u!114 &1630643400091985407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3124702939913315684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 853cb2453ae35884a962d55168682062, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cards: []
 --- !u!1 &3158187757370390914
 GameObject:
   m_ObjectHideFlags: 0

@@ -92,24 +92,12 @@ public class CombatSystem : MonoBehaviour
             enemyHealthBarsText[i] = GameObject.Find($"EnemyHealth{i+1}Text")?.GetComponent<TMP_Text>();
         }
 
-        playerPrefab = Resources.Load<GameObject>("Prefabs/SPUM_20240911215638389 1");
-        //playerPrefab.transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        playerPrefab = Resources.Load<GameObject>("Prefabs/PlayerPrefab");
         if (playerPrefab == null) Debug.LogError("Failed to load PlayerPrefab");
 
-        enemyCount = PlayerPrefs.GetInt("EnemyHitCount", 0);
-        if (enemyCount > 0)
-        {
-            enemyPrefabs = new GameObject[enemyCount];
-            enemyPrefab = Resources.Load<GameObject>("Prefabs/SPUM_20240911215637878 1");
-            for (int i = 0; i < enemyCount; i++)
-            {
-                enemyPrefabs[i] = enemyPrefab;
-                if (enemyPrefabs[i] == null) Debug.LogError("Failed to load EnemyPrefabs");
-            }
-        }
-        //enemyPrefabs = new GameObject[1];
-        //enemyPrefabs[0] = Resources.Load<GameObject>("Prefabs/EnemyPrefab"); //this needs to change when you add more enemies
-        
+        enemyPrefabs = new GameObject[1];
+        enemyPrefabs[0] = Resources.Load<GameObject>("Prefabs/EnemyPrefab"); //this needs to change when you add more enemies
+        if (enemyPrefabs == null) Debug.LogError("Failed to load EnemyPrefabs");
 
         floorTilemap = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(obj => obj.name == "Floor");
         wallTilemap = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(obj => obj.name == "Walls");
@@ -139,19 +127,12 @@ public class CombatSystem : MonoBehaviour
 
     void SpawnEnemies()
     {
-        for (int i = 0; i < enemyCount; i++)
+        for (int i = 0; i < enemySpawnPoints.Length; i++)
         {
             int randomEnemyIndex = Random.Range(0, enemyPrefabs.Length);
 
-            if (enemyPrefabs[randomEnemyIndex] == null)
-            {
-                Debug.LogError($"Enemy prefab at index {randomEnemyIndex} is null.");
-                continue;  // Skip this iteration if the prefab is missing
-            }
             GameObject enemyInstance = Instantiate(enemyPrefabs[randomEnemyIndex], enemySpawnPoints[i].position, Quaternion.identity);
             EnemyCombat enemyCombat = enemyInstance.GetComponent<EnemyCombat>();
-            enemyCombat.InitializeEnemy(enemyInstance.name);
-            Debug.Log("Enemy name: " + enemyInstance.name);
             enemies.Add(enemyCombat);
 
             if (i <  enemyHealthBars.Length)

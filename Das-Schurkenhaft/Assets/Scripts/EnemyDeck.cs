@@ -4,7 +4,6 @@ using System.Collections.Generic;
 public class EnemyDeck : MonoBehaviour
 {
     public List<EnemyCard> cards;
-    public string EnemyType;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,15 +13,13 @@ public class EnemyDeck : MonoBehaviour
     public void GenerateDeckByType(string type)
     {
         cards = new List<EnemyCard>();
-        if (type == "SPUM_20240911215637878 1(Clone)") 
+        if (type == "Soldier")
         {
             GenerateSoldierDeck();
         }
         else if (type == "Vampire")
         {
             GenerateVampireDeck();
-        } else {
-            Debug.Log("Invalid enemy type");
         }
 
 
@@ -30,12 +27,16 @@ public class EnemyDeck : MonoBehaviour
     
     private void GenerateSoldierDeck()
     {
-        cards.Add(Resources.Load<EnemyCard>("Cards/SoldierCard1"));
-        cards.Add(Resources.Load<EnemyCard>("Cards/SoldierCard2"));
-        cards.Add(Resources.Load<EnemyCard>("Cards/SoldierCard3"));
-        cards.Add(Resources.Load<EnemyCard>("Cards/SoldierCard4"));
-        cards.Add(Resources.Load<EnemyCard>("Cards/SoldierCard5"));
-        cards.Add(Resources.Load<EnemyCard>("Cards/SoldierCard6"));
+        cards.Add(new EnemyCard { cardValue = 10, cardType = "Damage" });
+        cards.Add(new EnemyCard { cardValue = 10, cardType = "Damage" });
+        cards.Add(new EnemyCard { cardValue = 10, cardType = "Damage" });
+        cards.Add(new EnemyCard { cardValue = 5, cardType = "Damage" });
+        cards.Add(new EnemyCard { cardValue = 5, cardType = "Damage" });
+        cards.Add(new EnemyCard { cardValue = 5, cardType = "Damage" });
+        cards.Add(new EnemyCard { cardValue = 5, cardType = "Damage" });
+        cards.Add(new EnemyCard { cardValue = 5, cardType = "Damage" });
+        cards.Add(new EnemyCard { cardValue = 5, cardType = "Damage" });
+        cards.Add(new EnemyCard { cardValue = 5, cardType = "Damage" });
     }
 
     public void GenerateVampireDeck() {

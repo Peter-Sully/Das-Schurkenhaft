@@ -16,6 +16,7 @@ public class InputManager : MonoBehaviour
     // Singleton instance
 
     public static InputManager Instance { get; private set; }
+
     private void Awake()
     {
         // Ensure only one instance exists

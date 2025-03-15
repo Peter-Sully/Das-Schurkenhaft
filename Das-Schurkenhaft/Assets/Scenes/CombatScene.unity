@@ -2271,7 +2271,7 @@ MonoBehaviour:
   maxEnergy: 10
   enemyHealth: 0
   endTurnButton: {fileID: 1968727669}
-  playerPrefab: {fileID: 3124702939913315684, guid: 72f2b9333d65d234b92136d0df4695d5, type: 3}
+  playerPrefab: {fileID: 0}
   enemyPrefabs: []
   playerSpawnPoint: {fileID: 0}
   enemySpawnPoints: []
