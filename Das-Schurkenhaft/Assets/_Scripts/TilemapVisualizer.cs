@@ -9,9 +9,21 @@ public class TilemapVisualizer : MonoBehaviour
     [SerializeField]
     private Tilemap floorTilemap, wallTilemap, fogTilemap;
     [SerializeField]
+    private GameObject grid;
+    [SerializeField]
     private TileBase floorTile, wallTop, wallSideRight, wallSideLeft, wallBottom, wallFull,
         wallInnerCornerDownLeft, wallInnerCornerDownRight,
         wallDiagonalCornerDownLeft, wallDiagonalCornerDownRight, wallDiagonalCornerUpLeft, wallDiagonalCornerUpRight;
+
+    private void Start()
+    {
+        Clear();
+    }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(grid);
+    }
 
     public void PaintFloorTiles(IEnumerable<Vector2Int> floorPositions)
     {
@@ -36,7 +48,7 @@ public class TilemapVisualizer : MonoBehaviour
     {
         floorTilemap.ClearAllTiles();
         wallTilemap.ClearAllTiles();
-        fogTilemap.ClearAllTiles();
+        //fogTilemap.ClearAllTiles();
     }
 
     internal void PaintSingleBasicWall(Vector2Int position, string binaryType)

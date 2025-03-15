@@ -11,12 +11,12 @@ public class NewMonoBehaviourScript : Editor
         generator = (AbstractMapGenerator)target;
     }
 
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-        if(GUILayout.Button("Create Map"))
-        {
-            generator.GenerateMap();
-        }
-    }
+    //public override void OnInspectorGUI()
+    //{
+    //    base.OnInspectorGUI();
+    //    if(GUILayout.Button("Create Map"))
+    //    {
+    //        generator.GenerateMap();
+    //    }
+    //}
 }
